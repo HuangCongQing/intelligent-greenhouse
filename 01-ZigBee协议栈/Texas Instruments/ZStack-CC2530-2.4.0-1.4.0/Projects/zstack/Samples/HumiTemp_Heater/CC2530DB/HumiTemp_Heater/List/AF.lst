@@ -1,0 +1,3416 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         11/Dec/2018  09:56:44 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë\01- #
+#                          ZigBeeÐ­ÒéÕ»\Texas Instruments\ZStack-CC2530-2.4.0 #
+#                          -1.4.0\Components\stack\af\AF.c                    #
+#    Command line       =  -f "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë #
+#                          \01-ZigBeeÐ­ÒéÕ»\Texas Instruments\ZStack-CC2530-2 #
+#                          .4.0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater #
+#                          \CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"    #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03- #
+#                          ³£ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë\01-ZigBeeÐ­ÒéÕ»\Texas         #
+#                          Instruments\ZStack-CC2530-2.4.0-1.4.0\Projects\zst #
+#                          ack\Samples\HumiTemp_Heater\CC2530DB\..\..\..\Tool #
+#                          s\CC2530DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0  #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0x1010                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=TRUE -DPOLL_RATE=1000         #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03- #
+#                          ³£ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë\01-ZigBeeÐ­ÒéÕ»\Texas         #
+#                          Instruments\ZStack-CC2530-2.4.0-1.4.0\Components\s #
+#                          tack\af\AF.c" -D NWK_AUTO_POLL -D ZTOOL_P1 -D      #
+#                          MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC -D           #
+#                          LCD_SUPPORTED=DEBUG -D xPOWER_SAVING -lC           #
+#                          "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë\01 #
+#                          -ZigBeeÐ­ÒéÕ»\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\HumiTemp_Heater\List\" -lA                  #
+#                          "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë\01 #
+#                          -ZigBeeÐ­ÒéÕ»\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\HumiTemp_Heater\List\" --diag_suppress      #
+#                          Pe001,Pa010 -o "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß #
+#                          \03-ÏµÍ³´úÂë\01-ZigBeeÐ­ÒéÕ»\Texas                 #
+#                          Instruments\ZStack-CC2530-2.4.0-1.4.0\Projects\zst #
+#                          ack\Samples\HumiTemp_Heater\CC2530DB\HumiTemp_Heat #
+#                          er\Obj\" -e --no_code_motion --debug --core=plain  #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03 #
+#                          -³£ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë\01-ZigBeeÐ­ÒéÕ»\Texas        #
+#                          Instruments\ZStack-CC2530-2.4.0-1.4.0\Projects\zst #
+#                          ack\Samples\HumiTemp_Heater\CC2530DB\" -I          #
+#                          "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë\01 #
+#                          -ZigBeeÐ­ÒéÕ»\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\..\Source\" -I "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³ #
+#                          £ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë\01-ZigBeeÐ­ÒéÕ»\Texas          #
+#                          Instruments\ZStack-CC2530-2.4.0-1.4.0\Projects\zst #
+#                          ack\Samples\HumiTemp_Heater\CC2530DB\..\..\..\ZMai #
+#                          n\TI2530DB\" -I "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ #
+#                          ß\03-ÏµÍ³´úÂë\01-ZigBeeÐ­ÒéÕ»\Texas                #
+#                          Instruments\ZStack-CC2530-2.4.0-1.4.0\Projects\zst #
+#                          ack\Samples\HumiTemp_Heater\CC2530DB\..\..\..\..\. #
+#                          .\Components\hal\include\" -I                      #
+#                          "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë\01 #
+#                          -ZigBeeÐ­ÒéÕ»\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\..\..\..\..\..\Components\hal\target\CC2530 #
+#                          EB\" -I "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß\03-ÏµÍ #
+#                          ³´úÂë\01-ZigBeeÐ­ÒéÕ»\Texas                        #
+#                          Instruments\ZStack-CC2530-2.4.0-1.4.0\Projects\zst #
+#                          ack\Samples\HumiTemp_Heater\CC2530DB\..\..\..\..\. #
+#                          .\Components\mac\include\" -I                      #
+#                          "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë\01 #
+#                          -ZigBeeÐ­ÒéÕ»\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\..\..\..\..\..\Components\mac\high_level\"  #
+#                          -I "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë #
+#                          \01-ZigBeeÐ­ÒéÕ»\Texas Instruments\ZStack-CC2530-2 #
+#                          .4.0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater #
+#                          \CC2530DB\..\..\..\..\..\Components\mac\low_level\ #
+#                          srf04\" -I "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß\03- #
+#                          ÏµÍ³´úÂë\01-ZigBeeÐ­ÒéÕ»\Texas                     #
+#                          Instruments\ZStack-CC2530-2.4.0-1.4.0\Projects\zst #
+#                          ack\Samples\HumiTemp_Heater\CC2530DB\..\..\..\..\. #
+#                          .\Components\mac\low_level\srf04\single_chip\" -I  #
+#                          "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë\01 #
+#                          -ZigBeeÐ­ÒéÕ»\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\..\..\..\..\..\Components\mt\" -I           #
+#                          "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë\01 #
+#                          -ZigBeeÐ­ÒéÕ»\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\..\..\..\..\..\Components\osal\include\"    #
+#                          -I "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë #
+#                          \01-ZigBeeÐ­ÒéÕ»\Texas Instruments\ZStack-CC2530-2 #
+#                          .4.0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater #
+#                          \CC2530DB\..\..\..\..\..\Components\osal\mcu\ccsoc #
+#                          \" -I "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß\03-ÏµÍ³´ #
+#                          úÂë\01-ZigBeeÐ­ÒéÕ»\Texas                          #
+#                          Instruments\ZStack-CC2530-2.4.0-1.4.0\Projects\zst #
+#                          ack\Samples\HumiTemp_Heater\CC2530DB\..\..\..\..\. #
+#                          .\Components\services\saddr\" -I                   #
+#                          "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë\01 #
+#                          -ZigBeeÐ­ÒéÕ»\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\..\..\..\..\..\Components\services\sdata\"  #
+#                          -I "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë #
+#                          \01-ZigBeeÐ­ÒéÕ»\Texas Instruments\ZStack-CC2530-2 #
+#                          .4.0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater #
+#                          \CC2530DB\..\..\..\..\..\Components\stack\af\" -I  #
+#                          "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë\01 #
+#                          -ZigBeeÐ­ÒéÕ»\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\..\..\..\..\..\Components\stack\nwk\" -I    #
+#                          "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë\01 #
+#                          -ZigBeeÐ­ÒéÕ»\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\..\..\..\..\..\Components\stack\sapi\" -I   #
+#                          "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë\01 #
+#                          -ZigBeeÐ­ÒéÕ»\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\..\..\..\..\..\Components\stack\sec\" -I    #
+#                          "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë\01 #
+#                          -ZigBeeÐ­ÒéÕ»\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\..\..\..\..\..\Components\stack\sys\" -I    #
+#                          "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë\01 #
+#                          -ZigBeeÐ­ÒéÕ»\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\..\..\..\..\..\Components\stack\zdo\" -I    #
+#                          "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë\01 #
+#                          -ZigBeeÐ­ÒéÕ»\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\..\..\..\..\..\Components\zmac\" -I         #
+#                          "F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë\01 #
+#                          -ZigBeeÐ­ÒéÕ»\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\..\..\..\..\..\Components\zmac\f8w\" -Ohz   #
+#                          --require_prototypes                               #
+#    List file          =  F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë\01- #
+#                          ZigBeeÐ­ÒéÕ»\Texas Instruments\ZStack-CC2530-2.4.0 #
+#                          -1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC2 #
+#                          530DB\HumiTemp_Heater\List\AF.lst                  #
+#    Object file        =  F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë\01- #
+#                          ZigBeeÐ­ÒéÕ»\Texas Instruments\ZStack-CC2530-2.4.0 #
+#                          -1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC2 #
+#                          530DB\HumiTemp_Heater\Obj\AF.r51                   #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+F:\´óËÄ\01ÎÂÊÒ´óÅï×ÊÁÏ\03-³£ÓÃ¹¤¾ß\03-ÏµÍ³´úÂë\01-ZigBeeÐ­ÒéÕ»\Texas Instruments\ZStack-CC2530-2.4.0-1.4.0\Components\stack\af\AF.c
+      1          /**************************************************************************************************
+      2            Filename:       AF.c
+      3            Revised:        $Date: 2010-10-13 10:54:13 -0700 (Wed, 13 Oct 2010) $
+      4            Revision:       $Revision: 24112 $
+      5          
+      6            Description:    Application Framework - Device Description helper functions
+      7          
+      8          
+      9            Copyright 2004-2010 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /*********************************************************************
+     41           * INCLUDES
+     42           */
+     43          
+     44          #include "OSAL.h"
+     45          #include "AF.h"
+     46          #include "nwk_globals.h"
+     47          #include "nwk_util.h"
+     48          #include "aps_groups.h"
+     49          #include "ZDProfile.h"
+     50          #include "aps_frag.h"
+     51          #include "rtg.h"
+     52          
+     53          #if defined ( MT_AF_CB_FUNC )
+     54            #include "MT_AF.h"
+     55          #endif
+     56          
+     57          #if defined ( INTER_PAN )
+     58            #include "stub_aps.h"
+     59          #endif
+     60          
+     61          /*********************************************************************
+     62           * MACROS
+     63           */
+     64          
+     65          /*********************************************************************
+     66           * @fn      afSend
+     67           *
+     68           * @brief   Helper macro for V1 API to invoke V2 API.
+     69           *
+     70           * input parameters
+     71           *
+     72           * @param  *dstAddr - Full ZB destination address: Nwk Addr + End Point.
+     73           * @param   srcEP - Origination (i.e. respond to or ack to) End Point.
+     74           * @param   cID - A valid cluster ID as specified by the Profile.
+     75           * @param   len - Number of bytes of data pointed to by next param.
+     76           * @param  *buf - A pointer to the data bytes to send.
+     77           * @param   options - Valid bit mask of AF Tx Options as defined in AF.h.
+     78           * @param  *transID - A pointer to a byte which can be modified and which will
+     79           *                    be used as the transaction sequence number of the msg.
+     80           *
+     81           * output parameters
+     82           *
+     83           * @param  *transID - Incremented by one if the return value is success.
+     84           *
+     85           * @return  afStatus_t - See previous definition of afStatus_... types.
+     86           */
+     87          #define afSend( dstAddr, srcEP, cID, len, buf, transID, options, radius ) \
+     88                  AF_DataRequest( (dstAddr), afFindEndPointDesc( (srcEP) ), \
+     89                                    (cID), (len), (buf), (transID), (options), (radius) )
+     90          
+     91          /*********************************************************************
+     92           * CONSTANTS
+     93           */
+     94          
+     95          /*********************************************************************
+     96           * TYPEDEFS
+     97           */
+     98          
+     99          /*********************************************************************
+    100           * GLOBAL VARIABLES
+    101           */
+    102          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    103          epList_t *epList;
+   \                     epList:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+    104          
+    105          /*********************************************************************
+    106           * EXTERNAL VARIABLES
+    107           */
+    108          
+    109          /*********************************************************************
+    110           * EXTERNAL FUNCTIONS
+    111           */
+    112          
+    113          /*********************************************************************
+    114           * LOCAL VARIABLES
+    115           */
+    116          
+    117          /*********************************************************************
+    118           * LOCAL FUNCTIONS
+    119           */
+    120          
+    121          static void afBuildMSGIncoming( aps_FrameFormat_t *aff, endPointDesc_t *epDesc,
+    122                          zAddrType_t *SrcAddress, uint16 SrcPanId, NLDE_Signal_t *sig,
+    123                          byte SecurityUse, uint32 timestamp );
+    124          
+    125          static epList_t *afFindEndPointDescList( byte EndPoint );
+    126          
+    127          static pDescCB afGetDescCB( endPointDesc_t *epDesc );
+    128          
+    129          /*********************************************************************
+    130           * NETWORK LAYER CALLBACKS
+    131           */
+    132          
+    133          /*********************************************************************
+    134           * PUBLIC FUNCTIONS
+    135           */
+    136          
+    137          /*********************************************************************
+    138           * @fn      afInit
+    139           *
+    140           * @brief   Initialization function for the AF.
+    141           *
+    142           * @param   none
+    143           *
+    144           * @return  none
+    145           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    146          void afInit( void )
+   \                     afInit:
+    147          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    148            // Start with no endpoint defined
+    149            epList = NULL;
+   \   000004   90....       MOV     DPTR,#epList
+   \   000007   E4           CLR     A
+   \   000008   F0           MOVX    @DPTR,A
+   \   000009   A3           INC     DPTR
+   \   00000A   F0           MOVX    @DPTR,A
+    150          }
+   \   00000B   02....       LJMP    ?Subroutine0 & 0xFFFF
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+    151          
+    152          /*********************************************************************
+    153           * @fn      afRegisterExtended
+    154           *
+    155           * @brief   Register an Application's EndPoint description.
+    156           *
+    157           * @param   epDesc - pointer to the Application's endpoint descriptor.
+    158           * @param   descFn - pointer to descriptor callback function
+    159           *
+    160           * NOTE:  The memory that epDesc is pointing to must exist after this call.
+    161           *
+    162           * @return  Pointer to epList_t on success, NULL otherwise.
+    163           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    164          epList_t *afRegisterExtended( endPointDesc_t *epDesc, pDescCB descFn )
+   \                     afRegisterExtended:
+    165          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   8C..         MOV     ?V0 + 0,R4
+   \   00000B   8D..         MOV     ?V0 + 1,R5
+    166            epList_t *ep;
+    167            epList_t *epSearch;
+    168          
+    169            ep = osal_mem_alloc( sizeof ( epList_t ) );
+   \   00000D                ; Setup parameters for call to function osal_mem_alloc
+   \   00000D   7A07         MOV     R2,#0x7
+   \   00000F   7B00         MOV     R3,#0x0
+   \   000011   12....       LCALL   ??osal_mem_alloc?relay
+    170            if ( ep )
+   \   000014   EA           MOV     A,R2
+   \   000015   4B           ORL     A,R3
+   \   000016   604F         JZ      ??afRegisterExtended_0
+    171            {
+    172              // Fill in the new list entry
+    173              ep->epDesc = epDesc;
+   \   000018   8A82         MOV     DPL,R2
+   \   00001A   8B83         MOV     DPH,R3
+   \   00001C   EE           MOV     A,R6
+   \   00001D   F0           MOVX    @DPTR,A
+   \   00001E   A3           INC     DPTR
+   \   00001F   EF           MOV     A,R7
+   \   000020   12....       LCALL   ?Subroutine22 & 0xFFFF
+    174          
+    175              // Default to allow Match Descriptor.
+    176              ep->flags = eEP_AllowMatch;
+   \                     ??CrossCallReturnLabel_30:
+   \   000023   7401         MOV     A,#0x1
+   \   000025   12....       LCALL   ?Subroutine4 & 0xFFFF
+    177              ep->pfnDescCB = descFn;
+   \                     ??CrossCallReturnLabel_0:
+   \   000028   E5..         MOV     A,?V0 + 0
+   \   00002A   F0           MOVX    @DPTR,A
+   \   00002B   A3           INC     DPTR
+   \   00002C   E5..         MOV     A,?V0 + 1
+   \   00002E   12....       LCALL   ?Subroutine4 & 0xFFFF
+    178              ep->nextDesc = NULL;
+   \                     ??CrossCallReturnLabel_1:
+   \   000031   A3           INC     DPTR
+   \   000032   A3           INC     DPTR
+   \   000033   E4           CLR     A
+   \   000034   F0           MOVX    @DPTR,A
+   \   000035   A3           INC     DPTR
+   \   000036   F0           MOVX    @DPTR,A
+    179          
+    180              // Does a list exist?
+    181              if ( epList == NULL )
+   \   000037   90....       MOV     DPTR,#epList
+   \   00003A   12....       LCALL   ??Subroutine26_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_50:
+   \   00003D   7008         JNZ     ??afRegisterExtended_1
+    182                epList = ep;  // Make this the first entry
+   \   00003F   90....       MOV     DPTR,#epList
+   \   000042   801E         SJMP    ??afRegisterExtended_2
+    183              else
+    184              {
+    185                // Look for the end of the list
+    186                epSearch = epList;
+    187                while( epSearch->nextDesc != NULL )
+    188                  epSearch = epSearch->nextDesc;
+   \                     ??afRegisterExtended_3:
+   \   000044   E0           MOVX    A,@DPTR
+   \   000045   F8           MOV     R0,A
+   \   000046   A3           INC     DPTR
+   \                     ??afRegisterExtended_1:
+   \   000047   E0           MOVX    A,@DPTR
+   \   000048   F9           MOV     R1,A
+   \   000049   8882         MOV     DPL,R0
+   \   00004B   8983         MOV     DPH,R1
+   \   00004D   A3           INC     DPTR
+   \   00004E   A3           INC     DPTR
+   \   00004F   A3           INC     DPTR
+   \   000050   A3           INC     DPTR
+   \   000051   A3           INC     DPTR
+   \   000052   12....       LCALL   ?Subroutine15 & 0xFFFF
+   \                     ??CrossCallReturnLabel_13:
+   \   000055   EC           MOV     A,R4
+   \   000056   4D           ORL     A,R5
+   \   000057   8882         MOV     DPL,R0
+   \   000059   8983         MOV     DPH,R1
+   \   00005B   A3           INC     DPTR
+   \   00005C   A3           INC     DPTR
+   \   00005D   A3           INC     DPTR
+   \   00005E   A3           INC     DPTR
+   \   00005F   A3           INC     DPTR
+   \   000060   70E2         JNZ     ??afRegisterExtended_3
+    189          
+    190                // Add new entry to end of list
+    191                epSearch->nextDesc = ep;
+   \                     ??afRegisterExtended_2:
+   \   000062   EA           MOV     A,R2
+   \   000063   F0           MOVX    @DPTR,A
+   \   000064   A3           INC     DPTR
+   \   000065   EB           MOV     A,R3
+   \   000066   F0           MOVX    @DPTR,A
+    192              }
+    193            }
+    194          
+    195            return ep;
+   \                     ??afRegisterExtended_0:
+   \   000067                REQUIRE ?Subroutine1
+   \   000067                ; // Fall through to label ?Subroutine1
+    196          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   7F04         MOV     R7,#0x4
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine22:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   8A82         MOV     DPL,R2
+   \   000003   8B83         MOV     DPH,R3
+   \   000005   A3           INC     DPTR
+   \   000006   A3           INC     DPTR
+   \   000007   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   12....       LCALL   ?Subroutine22 & 0xFFFF
+   \                     ??CrossCallReturnLabel_32:
+   \   000003   A3           INC     DPTR
+   \   000004   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine26_0:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F8           MOV     R0,A
+   \   000002   A3           INC     DPTR
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   F9           MOV     R1,A
+   \   000005   E8           MOV     A,R0
+   \   000006   49           ORL     A,R1
+   \   000007   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine15:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   FC           MOV     R4,A
+   \   000002   A3           INC     DPTR
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   FD           MOV     R5,A
+   \   000005   22           RET
+    197          
+    198          /*********************************************************************
+    199           * @fn      afRegister
+    200           *
+    201           * @brief   Register an Application's EndPoint description.
+    202           *
+    203           * @param   epDesc - pointer to the Application's endpoint descriptor.
+    204           *
+    205           * NOTE:  The memory that epDesc is pointing to must exist after this call.
+    206           *
+    207           * @return  afStatus_SUCCESS - Registered
+    208           *          afStatus_MEM_FAIL - not enough memory to add descriptor
+    209           *          afStatus_INVALID_PARAMETER - duplicate endpoint
+    210           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    211          afStatus_t afRegister( endPointDesc_t *epDesc )
+   \                     afRegister:
+    212          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    213            epList_t *ep;
+    214            
+    215            // Look for duplicate endpoint
+    216            if ( afFindEndPointDescList( epDesc->endPoint ) )
+   \   000009                ; Setup parameters for call to function afFindEndPointDescList
+   \   000009   8E82         MOV     DPL,R6
+   \   00000B   8F83         MOV     DPH,R7
+   \   00000D   E0           MOVX    A,@DPTR
+   \   00000E   F9           MOV     R1,A
+   \   00000F   12....       LCALL   ??afFindEndPointDescList?relay
+   \   000012   8B..         MOV     ?V0 + 1,R3
+   \   000014   EA           MOV     A,R2
+   \   000015   45..         ORL     A,?V0 + 1
+   \   000017   6004         JZ      ??afRegister_0
+    217              return ( afStatus_INVALID_PARAMETER );
+   \   000019   7902         MOV     R1,#0x2
+   \   00001B   8018         SJMP    ??afRegister_1
+    218            
+    219            ep = afRegisterExtended( epDesc, NULL );
+    220          
+    221            return ((ep == NULL) ? afStatus_MEM_FAIL : afStatus_SUCCESS);
+   \                     ??afRegister_0:
+   \   00001D                ; Setup parameters for call to function afRegisterExtended
+   \   00001D   7C00         MOV     R4,#0x0
+   \   00001F   7D00         MOV     R5,#0x0
+   \   000021   EE           MOV     A,R6
+   \   000022   FA           MOV     R2,A
+   \   000023   EF           MOV     A,R7
+   \   000024   FB           MOV     R3,A
+   \   000025   12....       LCALL   ??afRegisterExtended?relay
+   \   000028   8B..         MOV     ?V0 + 1,R3
+   \   00002A   EA           MOV     A,R2
+   \   00002B   45..         ORL     A,?V0 + 1
+   \   00002D   7004         JNZ     ??afRegister_2
+   \   00002F   7910         MOV     R1,#0x10
+   \   000031   8002         SJMP    ??afRegister_1
+   \                     ??afRegister_2:
+   \   000033   7900         MOV     R1,#0x0
+   \                     ??afRegister_1:
+   \   000035   02....       LJMP    ?Subroutine2 & 0xFFFF
+    222          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   7F02         MOV     R7,#0x2
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+    223          
+    224          
+    225          /*********************************************************************
+    226           * @fn          afDataConfirm
+    227           *
+    228           * @brief       This function will generate the Data Confirm back to
+    229           *              the application.
+    230           *
+    231           * @param       endPoint - confirm end point
+    232           * @param       transID - transaction ID from APSDE_DATA_REQUEST
+    233           * @param       status - status of APSDE_DATA_REQUEST
+    234           *
+    235           * @return      none
+    236           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    237          void afDataConfirm( uint8 endPoint, uint8 transID, ZStatus_t status )
+   \                     afDataConfirm:
+    238          {
+   \   000000   74F2         MOV     A,#-0xe
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 0,R1
+   \   000007   8A..         MOV     ?V0 + 1,R2
+   \   000009   8B..         MOV     ?V0 + 2,R3
+    239            endPointDesc_t *epDesc;
+    240            afDataConfirm_t *msgPtr;
+    241          
+    242            // Find the endpoint description
+    243            epDesc = afFindEndPointDesc( endPoint );
+   \   00000B                ; Setup parameters for call to function afFindEndPointDesc
+   \   00000B   12....       LCALL   ??afFindEndPointDesc?relay
+   \   00000E   8A..         MOV     ?V0 + 4,R2
+   \   000010   8B..         MOV     ?V0 + 5,R3
+   \   000012   AE..         MOV     R6,?V0 + 4
+   \   000014   AF..         MOV     R7,?V0 + 5
+    244            if ( epDesc == NULL )
+   \   000016   EE           MOV     A,R6
+   \   000017   4F           ORL     A,R7
+   \   000018   6027         JZ      ??CrossCallReturnLabel_9
+    245              return;
+    246          
+    247            // Determine the incoming command type
+    248            msgPtr = (afDataConfirm_t *)osal_msg_allocate( sizeof(afDataConfirm_t) );
+   \   00001A                ; Setup parameters for call to function osal_msg_allocate
+   \   00001A   7A04         MOV     R2,#0x4
+   \   00001C   7B00         MOV     R3,#0x0
+   \   00001E   12....       LCALL   ??osal_msg_allocate?relay
+    249            if ( msgPtr )
+   \   000021   EA           MOV     A,R2
+   \   000022   4B           ORL     A,R3
+   \   000023   601C         JZ      ??CrossCallReturnLabel_9
+    250            {
+    251              // Build the Data Confirm message
+    252              msgPtr->hdr.event = AF_DATA_CONFIRM_CMD;
+   \   000025   8A82         MOV     DPL,R2
+   \   000027   8B83         MOV     DPH,R3
+   \   000029   74FD         MOV     A,#-0x3
+   \   00002B   F0           MOVX    @DPTR,A
+    253              msgPtr->hdr.status = status;
+   \   00002C   A3           INC     DPTR
+   \   00002D   E5..         MOV     A,?V0 + 2
+   \   00002F   12....       LCALL   ?Subroutine22 & 0xFFFF
+    254              msgPtr->endpoint = endPoint;
+   \                     ??CrossCallReturnLabel_31:
+   \   000032   E5..         MOV     A,?V0 + 0
+   \   000034   12....       LCALL   ?Subroutine4 & 0xFFFF
+    255              msgPtr->transID = transID;
+   \                     ??CrossCallReturnLabel_2:
+   \   000037   E5..         MOV     A,?V0 + 1
+   \   000039   F0           MOVX    @DPTR,A
+    256          
+    257          #if defined ( MT_AF_CB_FUNC )
+    258              /* If MT has subscribed for this callback, don't send as a message. */
+    259              if ( AFCB_CHECK(CB_ID_AF_DATA_CNF,*(epDesc->task_id)) )
+    260              {
+    261                /* Send callback if it's subscribed */
+    262                MT_AfDataConfirm ((void *)msgPtr);
+    263                /* Release the memory. */
+    264                osal_msg_deallocate( (void *)msgPtr );
+    265              }
+    266              else
+    267          #endif
+    268              {
+    269                /* send message through task message */
+    270                osal_msg_send( *(epDesc->task_id), (byte *)msgPtr );
+   \   00003A                ; Setup parameters for call to function osal_msg_send
+   \   00003A   8E82         MOV     DPL,R6
+   \   00003C   8F83         MOV     DPH,R7
+   \   00003E   12....       LCALL   ?Subroutine11 & 0xFFFF
+    271              }
+    272            }
+   \                     ??CrossCallReturnLabel_9:
+   \   000041   7F06         MOV     R7,#0x6
+   \   000043   02....       LJMP    ?BANKED_LEAVE_XDATA
+    273          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine11:
+   \   000000   A3           INC     DPTR
+   \   000001   E0           MOVX    A,@DPTR
+   \   000002   F8           MOV     R0,A
+   \   000003   A3           INC     DPTR
+   \   000004   E0           MOVX    A,@DPTR
+   \   000005   F583         MOV     DPH,A
+   \   000007   8882         MOV     DPL,R0
+   \   000009   E0           MOVX    A,@DPTR
+   \   00000A   F9           MOV     R1,A
+   \   00000B   12....       LCALL   ??osal_msg_send?relay
+   \   00000E   22           RET
+    274          
+    275          /*********************************************************************
+    276           * @fn          afIncomingData
+    277           *
+    278           * @brief       Transfer a data PDU (ASDU) from the APS sub-layer to the AF.
+    279           *
+    280           * @param       aff  - pointer to APS frame format
+    281           * @param       SrcAddress  - Source address
+    282           * @param       sig - incoming message's link quality
+    283           * @param       SecurityUse - Security enable/disable
+    284           *
+    285           * @return      none
+    286           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    287          void afIncomingData( aps_FrameFormat_t *aff, zAddrType_t *SrcAddress, uint16 SrcPanId,
+   \                     afIncomingData:
+    288                               NLDE_Signal_t *sig, byte SecurityUse, uint32 timestamp )
+    289          {
+   \   000000   74E8         MOV     A,#-0x18
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 24
+   \   000005                ; Auto size: 3
+   \   000005   74FD         MOV     A,#-0x3
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   7401         MOV     A,#0x1
+   \   00000C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00000F   EC           MOV     A,R4
+   \   000010   F0           MOVX    @DPTR,A
+   \   000011   A3           INC     DPTR
+   \   000012   ED           MOV     A,R5
+   \   000013   F0           MOVX    @DPTR,A
+   \   000014   E9           MOV     A,R1
+   \   000015   85..82       MOV     DPL,?XSP + 0
+   \   000018   85..83       MOV     DPH,?XSP + 1
+   \   00001B   F0           MOVX    @DPTR,A
+   \   00001C   8A..         MOV     ?V0 + 8,R2
+   \   00001E   8B..         MOV     ?V0 + 9,R3
+   \   000020   741B         MOV     A,#0x1b
+   \   000022   12....       LCALL   ?XSTACK_DISP0_8
+   \   000025   E0           MOVX    A,@DPTR
+   \   000026   F5..         MOV     ?V0 + 10,A
+   \   000028   A3           INC     DPTR
+   \   000029   E0           MOVX    A,@DPTR
+   \   00002A   F5..         MOV     ?V0 + 11,A
+   \   00002C   741F         MOV     A,#0x1f
+   \   00002E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000031   78..         MOV     R0,#?V0 + 4
+   \   000033   12....       LCALL   ?L_MOV_X
+    290            endPointDesc_t *epDesc = NULL;
+    291            epList_t *pList = epList;
+   \   000036   90....       MOV     DPTR,#epList
+   \   000039   E0           MOVX    A,@DPTR
+   \   00003A   F5..         MOV     ?V0 + 0,A
+   \   00003C   A3           INC     DPTR
+   \   00003D   E0           MOVX    A,@DPTR
+   \   00003E   F5..         MOV     ?V0 + 1,A
+    292          #if !defined ( APS_NO_GROUPS )    
+    293            uint8 grpEp = APS_GROUPS_EP_NOT_FOUND;
+   \   000040   75..FE       MOV     ?V0 + 2,#-0x2
+    294          #endif  
+    295          
+    296            if ( ((aff->FrmCtrl & APS_DELIVERYMODE_MASK) == APS_FC_DM_GROUP) )
+   \   000043   8A82         MOV     DPL,R2
+   \   000045   8B83         MOV     DPH,R3
+   \   000047   E0           MOVX    A,@DPTR
+   \   000048   540C         ANL     A,#0xc
+   \   00004A   640C         XRL     A,#0xc
+   \   00004C   7017         JNZ     ??afIncomingData_0
+    297            {
+    298          #if !defined ( APS_NO_GROUPS )    
+    299              // Find the first endpoint for this group
+    300              grpEp = aps_FindGroupForEndpoint( aff->GroupID, APS_GROUPS_FIND_FIRST );
+   \   00004E                ; Setup parameters for call to function aps_FindGroupForEndpoint
+   \   00004E   79FE         MOV     R1,#-0x2
+   \   000050   12....       LCALL   ?Subroutine9 & 0xFFFF
+    301              if ( grpEp == APS_GROUPS_EP_NOT_FOUND )
+   \                     ??CrossCallReturnLabel_7:
+   \   000053   7003         JNZ     $+5
+   \   000055   02....       LJMP    ??afIncomingData_1 & 0xFFFF
+    302                return;   // No endpoint found
+    303          
+    304              epDesc = afFindEndPointDesc( grpEp );
+   \   000058                ; Setup parameters for call to function afFindEndPointDesc
+   \   000058   12....       LCALL   ?Subroutine20 & 0xFFFF
+    305              if ( epDesc == NULL )
+   \                     ??CrossCallReturnLabel_26:
+   \   00005B   7003         JNZ     $+5
+   \   00005D   02....       LJMP    ??afIncomingData_1 & 0xFFFF
+    306                return;   // Endpoint descriptor not found
+    307          
+    308              pList = afFindEndPointDescList( epDesc->endPoint );
+   \                     ??afIncomingData_2:
+   \   000060                ; Setup parameters for call to function afFindEndPointDescList
+   \   000060   12....       LCALL   ?Subroutine17 & 0xFFFF
+    309          #else
+    310              return; // Not supported
+    311          #endif    
+    312            }
+   \                     ??CrossCallReturnLabel_21:
+   \   000063   8039         SJMP    ??afIncomingData_3
+    313            else if ( aff->DstEndPoint == AF_BROADCAST_ENDPOINT )
+   \                     ??afIncomingData_0:
+   \   000065   A3           INC     DPTR
+   \   000066   A3           INC     DPTR
+   \   000067   E0           MOVX    A,@DPTR
+   \   000068   F4           CPL     A
+   \   000069   700B         JNZ     ??afIncomingData_4
+    314            {
+    315              // Set the list
+    316              if ( pList != NULL )
+   \   00006B   E5..         MOV     A,?V0 + 0
+   \   00006D   45..         ORL     A,?V0 + 1
+   \   00006F   7003         JNZ     $+5
+   \   000071   02....       LJMP    ??afIncomingData_1 & 0xFFFF
+    317              {
+    318                epDesc = pList->epDesc;
+   \   000074   801D         SJMP    ??afIncomingData_5
+    319              }
+    320            }
+    321            else if ( (epDesc = afFindEndPointDesc( aff->DstEndPoint )) )
+   \                     ??afIncomingData_4:
+   \   000076                ; Setup parameters for call to function afFindEndPointDesc
+   \   000076   8A82         MOV     DPL,R2
+   \   000078   8B83         MOV     DPH,R3
+   \   00007A   A3           INC     DPTR
+   \   00007B   A3           INC     DPTR
+   \   00007C   E0           MOVX    A,@DPTR
+   \   00007D   F9           MOV     R1,A
+   \   00007E   12....       LCALL   ??afFindEndPointDesc?relay
+   \   000081   8A..         MOV     ?V0 + 12,R2
+   \   000083   8B..         MOV     ?V0 + 13,R3
+   \   000085   A8..         MOV     R0,?V0 + 12
+   \   000087   A9..         MOV     R1,?V0 + 13
+   \   000089   E8           MOV     A,R0
+   \   00008A   FE           MOV     R6,A
+   \   00008B   E9           MOV     A,R1
+   \   00008C   FF           MOV     R7,A
+   \   00008D   E8           MOV     A,R0
+   \   00008E   49           ORL     A,R1
+   \   00008F   600D         JZ      ??afIncomingData_3
+   \   000091   80CD         SJMP    ??afIncomingData_2
+    322            {
+    323              pList = afFindEndPointDescList( epDesc->endPoint );
+    324            }
+    325          
+    326            while ( epDesc )
+    327            {
+    328              uint16 epProfileID = 0xFFFF;  // Invalid Profile ID
+    329              
+    330              if ( pList->pfnDescCB )
+    331              {
+    332                uint16 *pID = (uint16 *)(pList->pfnDescCB(
+    333                                           AF_DESCRIPTOR_PROFILE_ID, epDesc->endPoint ));
+    334                if ( pID )
+    335                {
+    336                  epProfileID = *pID;
+    337                  osal_mem_free( pID );
+    338                }
+    339              }
+    340              else if ( epDesc->simpleDesc )
+    341              {
+    342                epProfileID = epDesc->simpleDesc->AppProfId;
+    343              }
+    344          
+    345              if ( (aff->ProfileID == epProfileID) ||
+    346                   ((epDesc->endPoint == ZDO_EP) && (aff->ProfileID == ZDO_PROFILE_ID)) )
+    347              {
+    348                {
+    349                  // Save original endpoint
+    350                  uint8 endpoint = aff->DstEndPoint;
+    351                  
+    352                  // overwrite with descriptor's endpoint
+    353                  aff->DstEndPoint = epDesc->endPoint;   
+    354                  
+    355                  afBuildMSGIncoming( aff, epDesc, SrcAddress, SrcPanId, sig, SecurityUse, timestamp );
+    356                  
+    357                  // Restore with original endpoint
+    358                  aff->DstEndPoint = endpoint;
+    359                }
+    360              }
+    361          
+    362              if ( ((aff->FrmCtrl & APS_DELIVERYMODE_MASK) == APS_FC_DM_GROUP) )
+    363              {
+    364          #if !defined ( APS_NO_GROUPS )      
+    365                // Find the next endpoint for this group
+    366                grpEp = aps_FindGroupForEndpoint( aff->GroupID, grpEp );
+    367                if ( grpEp == APS_GROUPS_EP_NOT_FOUND )
+    368                  return;   // No endpoint found
+    369          
+    370                epDesc = afFindEndPointDesc( grpEp );
+    371                if ( epDesc == NULL )
+    372                  return;   // Endpoint descriptor not found
+    373          
+    374                pList = afFindEndPointDescList( epDesc->endPoint );
+    375          #else
+    376                return;
+    377          #endif      
+    378              }
+    379              else if ( aff->DstEndPoint == AF_BROADCAST_ENDPOINT )
+    380              {
+    381                pList = pList->nextDesc;
+    382                if ( pList )
+    383                  epDesc = pList->epDesc;
+   \                     ??afIncomingData_5:
+   \   000093   85..82       MOV     DPL,?V0 + 0
+   \   000096   85..83       MOV     DPH,?V0 + 1
+   \   000099   E0           MOVX    A,@DPTR
+   \   00009A   FE           MOV     R6,A
+   \   00009B   A3           INC     DPTR
+   \   00009C   E0           MOVX    A,@DPTR
+   \   00009D   FF           MOV     R7,A
+   \                     ??afIncomingData_3:
+   \   00009E   EE           MOV     A,R6
+   \   00009F   4F           ORL     A,R7
+   \   0000A0   7003         JNZ     $+5
+   \   0000A2   02....       LJMP    ??afIncomingData_1 & 0xFFFF
+   \   0000A5   8015         SJMP    ??CrossCallReturnLabel_22
+   \                     ??afIncomingData_6:
+   \   0000A7                ; Setup parameters for call to function aps_FindGroupForEndpoint
+   \   0000A7   A9..         MOV     R1,?V0 + 2
+   \   0000A9   12....       LCALL   ?Subroutine9 & 0xFFFF
+   \                     ??CrossCallReturnLabel_8:
+   \   0000AC   7003         JNZ     $+5
+   \   0000AE   02....       LJMP    ??afIncomingData_1 & 0xFFFF
+   \   0000B1                ; Setup parameters for call to function afFindEndPointDesc
+   \   0000B1   12....       LCALL   ?Subroutine20 & 0xFFFF
+   \                     ??CrossCallReturnLabel_27:
+   \   0000B4   7003         JNZ     $+5
+   \   0000B6   02....       LJMP    ??afIncomingData_1 & 0xFFFF
+   \   0000B9                ; Setup parameters for call to function afFindEndPointDescList
+   \   0000B9   12....       LCALL   ?Subroutine17 & 0xFFFF
+   \                     ??CrossCallReturnLabel_22:
+   \   0000BC   75..FF       MOV     ?V0 + 14,#-0x1
+   \   0000BF   75..FF       MOV     ?V0 + 15,#-0x1
+   \   0000C2   12....       LCALL   ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_54:
+   \   0000C5   8E82         MOV     DPL,R6
+   \   0000C7   8F83         MOV     DPH,R7
+   \   0000C9   601E         JZ      ??afIncomingData_7
+   \   0000CB                ; Setup parameters for indirect call
+   \   0000CB   E0           MOVX    A,@DPTR
+   \   0000CC   FA           MOV     R2,A
+   \   0000CD   7902         MOV     R1,#0x2
+   \   0000CF   12....       LCALL   ?Subroutine14 & 0xFFFF
+   \                     ??CrossCallReturnLabel_81:
+   \   0000D2   12....       LCALL   ?CALL_IND
+   \   0000D5   EA           MOV     A,R2
+   \   0000D6   4B           ORL     A,R3
+   \   0000D7   6024         JZ      ??afIncomingData_8
+   \   0000D9   8A82         MOV     DPL,R2
+   \   0000DB   8B83         MOV     DPH,R3
+   \   0000DD   E0           MOVX    A,@DPTR
+   \   0000DE   F5..         MOV     ?V0 + 14,A
+   \   0000E0   A3           INC     DPTR
+   \   0000E1   E0           MOVX    A,@DPTR
+   \   0000E2   F5..         MOV     ?V0 + 15,A
+   \   0000E4                ; Setup parameters for call to function osal_mem_free
+   \   0000E4   12....       LCALL   ??osal_mem_free?relay
+   \   0000E7   8014         SJMP    ??afIncomingData_8
+   \                     ??afIncomingData_7:
+   \   0000E9   12....       LCALL   ??Subroutine25_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_52:
+   \   0000EC   600F         JZ      ??afIncomingData_8
+   \   0000EE   8E82         MOV     DPL,R6
+   \   0000F0   8F83         MOV     DPH,R7
+   \   0000F2   12....       LCALL   ??Subroutine29_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_80:
+   \   0000F5   A3           INC     DPTR
+   \   0000F6   E0           MOVX    A,@DPTR
+   \   0000F7   F5..         MOV     ?V0 + 14,A
+   \   0000F9   A3           INC     DPTR
+   \   0000FA   E0           MOVX    A,@DPTR
+   \   0000FB   F5..         MOV     ?V0 + 15,A
+   \                     ??afIncomingData_8:
+   \   0000FD   85..82       MOV     DPL,?V0 + 8
+   \   000100   85..83       MOV     DPH,?V0 + 9
+   \   000103   A3           INC     DPTR
+   \   000104   A3           INC     DPTR
+   \   000105   A3           INC     DPTR
+   \   000106   A3           INC     DPTR
+   \   000107   A3           INC     DPTR
+   \   000108   A3           INC     DPTR
+   \   000109   A3           INC     DPTR
+   \   00010A   A3           INC     DPTR
+   \   00010B   E0           MOVX    A,@DPTR
+   \   00010C   65..         XRL     A,?V0 + 14
+   \   00010E   7004         JNZ     ??afIncomingData_9
+   \   000110   A3           INC     DPTR
+   \   000111   E0           MOVX    A,@DPTR
+   \   000112   65..         XRL     A,?V0 + 15
+   \                     ??afIncomingData_9:
+   \   000114   6017         JZ      ??afIncomingData_10
+   \   000116   8E82         MOV     DPL,R6
+   \   000118   8F83         MOV     DPH,R7
+   \   00011A   E0           MOVX    A,@DPTR
+   \   00011B   706A         JNZ     ??afIncomingData_11
+   \   00011D   85..82       MOV     DPL,?V0 + 8
+   \   000120   85..83       MOV     DPH,?V0 + 9
+   \   000123   A3           INC     DPTR
+   \   000124   A3           INC     DPTR
+   \   000125   A3           INC     DPTR
+   \   000126   A3           INC     DPTR
+   \   000127   A3           INC     DPTR
+   \   000128   12....       LCALL   ??Subroutine25_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_53:
+   \   00012B   705A         JNZ     ??afIncomingData_11
+   \                     ??afIncomingData_10:
+   \   00012D   E5..         MOV     A,?V0 + 8
+   \   00012F   2402         ADD     A,#0x2
+   \   000131   F5..         MOV     ?V0 + 12,A
+   \   000133   E5..         MOV     A,?V0 + 9
+   \   000135   3400         ADDC    A,#0x0
+   \   000137   F5..         MOV     ?V0 + 13,A
+   \   000139   85..82       MOV     DPL,?V0 + 12
+   \   00013C   F583         MOV     DPH,A
+   \   00013E   E0           MOVX    A,@DPTR
+   \   00013F   F5..         MOV     ?V0 + 3,A
+   \   000141   8E82         MOV     DPL,R6
+   \   000143   8F83         MOV     DPH,R7
+   \   000145   E0           MOVX    A,@DPTR
+   \   000146   85..82       MOV     DPL,?V0 + 12
+   \   000149   85..83       MOV     DPH,?V0 + 13
+   \   00014C   F0           MOVX    @DPTR,A
+   \   00014D                ; Setup parameters for call to function afBuildMSGIncoming
+   \   00014D   78..         MOV     R0,#?V0 + 4
+   \   00014F   12....       LCALL   ?PUSH_XSTACK_I_FOUR
+   \   000152   7421         MOV     A,#0x21
+   \   000154   12....       LCALL   ?XSTACK_DISP0_8
+   \   000157   12....       LCALL   ?PUSH_XSTACK8_X_TWO
+   \   00015A   78..         MOV     R0,#?V0 + 10
+   \   00015C   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00015F   7409         MOV     A,#0x9
+   \   000161   12....       LCALL   ?XSTACK_DISP0_8
+   \   000164   12....       LCALL   ?PUSH_XSTACK8_X_TWO
+   \   000167   740A         MOV     A,#0xa
+   \   000169   12....       LCALL   ?XSTACK_DISP0_8
+   \   00016C   E0           MOVX    A,@DPTR
+   \   00016D   F9           MOV     R1,A
+   \   00016E   EE           MOV     A,R6
+   \   00016F   FC           MOV     R4,A
+   \   000170   EF           MOV     A,R7
+   \   000171   FD           MOV     R5,A
+   \   000172   AA..         MOV     R2,?V0 + 8
+   \   000174   AB..         MOV     R3,?V0 + 9
+   \   000176   12....       LCALL   ??afBuildMSGIncoming?relay
+   \   000179   740A         MOV     A,#0xa
+   \   00017B   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00017E   85..82       MOV     DPL,?V0 + 12
+   \   000181   85..83       MOV     DPH,?V0 + 13
+   \   000184   E5..         MOV     A,?V0 + 3
+   \   000186   F0           MOVX    @DPTR,A
+   \                     ??afIncomingData_11:
+   \   000187   85..82       MOV     DPL,?V0 + 8
+   \   00018A   85..83       MOV     DPH,?V0 + 9
+   \   00018D   E0           MOVX    A,@DPTR
+   \   00018E   540C         ANL     A,#0xc
+   \   000190   640C         XRL     A,#0xc
+   \   000192   7003         JNZ     $+5
+   \   000194   02....       LJMP    ??afIncomingData_6 & 0xFFFF
+   \   000197   A3           INC     DPTR
+   \   000198   A3           INC     DPTR
+   \   000199   E0           MOVX    A,@DPTR
+   \   00019A   F4           CPL     A
+   \   00019B   701B         JNZ     ??afIncomingData_1
+   \   00019D   85..82       MOV     DPL,?V0 + 0
+   \   0001A0   85..83       MOV     DPH,?V0 + 1
+   \   0001A3   A3           INC     DPTR
+   \   0001A4   A3           INC     DPTR
+   \   0001A5   A3           INC     DPTR
+   \   0001A6   A3           INC     DPTR
+   \   0001A7   A3           INC     DPTR
+   \   0001A8   E0           MOVX    A,@DPTR
+   \   0001A9   F5..         MOV     ?V0 + 0,A
+   \   0001AB   A3           INC     DPTR
+   \   0001AC   E0           MOVX    A,@DPTR
+   \   0001AD   F5..         MOV     ?V0 + 1,A
+   \   0001AF   E5..         MOV     A,?V0 + 0
+   \   0001B1   45..         ORL     A,?V0 + 1
+   \   0001B3   6003         JZ      $+5
+   \   0001B5   02....       LJMP    ??afIncomingData_5 & 0xFFFF
+    384                else
+    385                  epDesc = NULL;
+   \                     ??afIncomingData_1:
+   \   0001B8   7403         MOV     A,#0x3
+   \   0001BA   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0001BD   7F10         MOV     R7,#0x10
+   \   0001BF   02....       LJMP    ?BANKED_LEAVE_XDATA
+    386              }
+    387              else
+    388                epDesc = NULL;
+    389            }
+    390          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine20:
+   \   000000   12....       LCALL   ??afFindEndPointDesc?relay
+   \   000003   8A..         MOV     ?V0 + 0,R2
+   \   000005   8B..         MOV     ?V0 + 1,R3
+   \   000007   AE..         MOV     R6,?V0 + 0
+   \   000009   AF..         MOV     R7,?V0 + 1
+   \   00000B   EE           MOV     A,R6
+   \   00000C   4F           ORL     A,R7
+   \   00000D   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine17:
+   \   000000   8E82         MOV     DPL,R6
+   \   000002   8F83         MOV     DPH,R7
+   \   000004   E0           MOVX    A,@DPTR
+   \   000005   F9           MOV     R1,A
+   \   000006   12....       LCALL   ??afFindEndPointDescList?relay
+   \   000009   8A..         MOV     ?V0 + 0,R2
+   \   00000B   8B..         MOV     ?V0 + 1,R3
+   \   00000D   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine9:
+   \   000000   A3           INC     DPTR
+   \   000001   A3           INC     DPTR
+   \   000002   A3           INC     DPTR
+   \   000003   A3           INC     DPTR
+   \   000004   E0           MOVX    A,@DPTR
+   \   000005   FA           MOV     R2,A
+   \   000006   A3           INC     DPTR
+   \   000007   E0           MOVX    A,@DPTR
+   \   000008   FB           MOV     R3,A
+   \   000009   12....       LCALL   ??aps_FindGroupForEndpoint?relay
+   \   00000C   E9           MOV     A,R1
+   \   00000D   F5..         MOV     ?V0 + 2,A
+   \   00000F   74FE         MOV     A,#-0x2
+   \   000011   65..         XRL     A,?V0 + 2
+   \   000013   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine8:
+   \   000000   85..82       MOV     DPL,?V0 + 0
+   \   000003   85..83       MOV     DPH,?V0 + 1
+   \   000006                REQUIRE ??Subroutine25_0
+   \   000006                ; // Fall through to label ??Subroutine25_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine25_0:
+   \   000000   A3           INC     DPTR
+   \   000001   A3           INC     DPTR
+   \   000002   A3           INC     DPTR
+   \   000003                REQUIRE ??Subroutine26_0
+   \   000003                ; // Fall through to label ??Subroutine26_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine14:
+   \   000000   85..82       MOV     DPL,?V0 + 0
+   \   000003   85..83       MOV     DPH,?V0 + 1
+   \   000006                REQUIRE ??Subroutine29_0
+   \   000006                ; // Fall through to label ??Subroutine29_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine29_0:
+   \   000000   A3           INC     DPTR
+   \   000001   A3           INC     DPTR
+   \   000002   A3           INC     DPTR
+   \   000003                REQUIRE ??Subroutine30_0
+   \   000003                ; // Fall through to label ??Subroutine30_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine30_0:
+   \   000000   A3           INC     DPTR
+   \   000001                REQUIRE ??Subroutine31_0
+   \   000001                ; // Fall through to label ??Subroutine31_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine31_0:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F583         MOV     DPH,A
+   \   000003   8882         MOV     DPL,R0
+   \   000005   22           RET
+    391          
+    392          /*********************************************************************
+    393           * @fn          afBuildMSGIncoming
+    394           *
+    395           * @brief       Build the message for the app
+    396           *
+    397           * @param
+    398           *
+    399           * @return      pointer to next in data buffer
+    400           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    401          static void afBuildMSGIncoming( aps_FrameFormat_t *aff, endPointDesc_t *epDesc,
+   \                     afBuildMSGIncoming:
+    402                           zAddrType_t *SrcAddress, uint16 SrcPanId, NLDE_Signal_t *sig, 
+    403                           byte SecurityUse, uint32 timestamp )
+    404          {
+   \   000000   74E9         MOV     A,#-0x17
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 23
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V0 + 0,R2
+   \   000007   8B..         MOV     ?V0 + 1,R3
+   \   000009   8C..         MOV     ?V0 + 10,R4
+   \   00000B   8D..         MOV     ?V0 + 11,R5
+   \   00000D   89..         MOV     ?V0 + 14,R1
+   \   00000F   741B         MOV     A,#0x1b
+   \   000011   12....       LCALL   ?XSTACK_DISP0_8
+   \   000014   E0           MOVX    A,@DPTR
+   \   000015   F5..         MOV     ?V0 + 2,A
+   \   000017   A3           INC     DPTR
+   \   000018   E0           MOVX    A,@DPTR
+   \   000019   F5..         MOV     ?V0 + 3,A
+   \   00001B   741D         MOV     A,#0x1d
+   \   00001D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000020   78..         MOV     R0,#?V0 + 4
+   \   000022   12....       LCALL   ?L_MOV_X
+    405            afIncomingMSGPacket_t *MSGpkt;
+    406            const byte len = sizeof( afIncomingMSGPacket_t ) + aff->asduLength;
+    407            byte *asdu = aff->asdu;
+   \   000025   EA           MOV     A,R2
+   \   000026   240E         ADD     A,#0xe
+   \   000028   F582         MOV     DPL,A
+   \   00002A   EB           MOV     A,R3
+   \   00002B   12....       LCALL   ??Subroutine24_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_33:
+   \   00002E   12....       LCALL   ?Subroutine16 & 0xFFFF
+    408            MSGpkt = (afIncomingMSGPacket_t *)osal_msg_allocate( len );
+   \                     ??CrossCallReturnLabel_18:
+   \   000031                ; Setup parameters for call to function osal_msg_allocate
+   \   000031   EA           MOV     A,R2
+   \   000032   2410         ADD     A,#0x10
+   \   000034   F582         MOV     DPL,A
+   \   000036   EB           MOV     A,R3
+   \   000037   12....       LCALL   ??Subroutine24_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_34:
+   \   00003A   E0           MOVX    A,@DPTR
+   \   00003B   2423         ADD     A,#0x23
+   \   00003D   FA           MOV     R2,A
+   \   00003E   7B00         MOV     R3,#0x0
+   \   000040   12....       LCALL   ??osal_msg_allocate?relay
+   \   000043   8A..         MOV     ?V0 + 12,R2
+   \   000045   8B..         MOV     ?V0 + 13,R3
+   \   000047   AE..         MOV     R6,?V0 + 12
+   \   000049   AF..         MOV     R7,?V0 + 13
+    409          
+    410            if ( MSGpkt == NULL )
+   \   00004B   EE           MOV     A,R6
+   \   00004C   4F           ORL     A,R7
+   \   00004D   7003         JNZ     $+5
+   \   00004F   02....       LJMP    ??CrossCallReturnLabel_10 & 0xFFFF
+    411            {
+    412              return;
+    413            }
+    414          
+    415            MSGpkt->hdr.event = AF_INCOMING_MSG_CMD;
+   \   000052   8E82         MOV     DPL,R6
+   \   000054   8F83         MOV     DPH,R7
+   \   000056   741A         MOV     A,#0x1a
+   \   000058   F0           MOVX    @DPTR,A
+    416            MSGpkt->groupId = aff->GroupID;
+   \   000059   85..82       MOV     DPL,?V0 + 0
+   \   00005C   85..83       MOV     DPH,?V0 + 1
+   \   00005F   12....       LCALL   ?Subroutine12 & 0xFFFF
+   \                     ??CrossCallReturnLabel_11:
+   \   000062   12....       LCALL   ??Subroutine27_0 & 0xFFFF
+    417            MSGpkt->clusterId = aff->ClusterID;
+   \                     ??CrossCallReturnLabel_56:
+   \   000065   85..82       MOV     DPL,?V0 + 0
+   \   000068   85..83       MOV     DPH,?V0 + 1
+   \   00006B   A3           INC     DPTR
+   \   00006C   A3           INC     DPTR
+   \   00006D   12....       LCALL   ?Subroutine12 & 0xFFFF
+   \                     ??CrossCallReturnLabel_12:
+   \   000070   A3           INC     DPTR
+   \   000071   A3           INC     DPTR
+   \   000072   12....       LCALL   ??Subroutine27_0 & 0xFFFF
+    418            afCopyAddress( &MSGpkt->srcAddr, SrcAddress );
+   \                     ??CrossCallReturnLabel_57:
+   \   000075                ; Setup parameters for call to function afCopyAddress
+   \   000075   7417         MOV     A,#0x17
+   \   000077   12....       LCALL   ?XSTACK_DISP0_8
+   \   00007A   12....       LCALL   ?Subroutine15 & 0xFFFF
+   \                     ??CrossCallReturnLabel_14:
+   \   00007D   EE           MOV     A,R6
+   \   00007E   2406         ADD     A,#0x6
+   \   000080   FA           MOV     R2,A
+   \   000081   EF           MOV     A,R7
+   \   000082   3400         ADDC    A,#0x0
+   \   000084   FB           MOV     R3,A
+   \   000085   12....       LCALL   ??afCopyAddress?relay
+    419            MSGpkt->srcAddr.endPoint = aff->SrcEndPoint;
+   \   000088   85..82       MOV     DPL,?V0 + 0
+   \   00008B   85..83       MOV     DPH,?V0 + 1
+   \   00008E   A3           INC     DPTR
+   \   00008F   A3           INC     DPTR
+   \   000090   A3           INC     DPTR
+   \   000091   E0           MOVX    A,@DPTR
+   \   000092   C0E0         PUSH    A
+   \   000094   EE           MOV     A,R6
+   \   000095   240F         ADD     A,#0xf
+   \   000097   12....       LCALL   ??Subroutine23_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_37:
+   \   00009A   D0E0         POP     A
+   \   00009C   F0           MOVX    @DPTR,A
+    420            MSGpkt->endPoint = epDesc->endPoint;
+   \   00009D   85..82       MOV     DPL,?V0 + 10
+   \   0000A0   85..83       MOV     DPH,?V0 + 11
+   \   0000A3   E0           MOVX    A,@DPTR
+   \   0000A4   C0E0         PUSH    A
+   \   0000A6   EE           MOV     A,R6
+   \   0000A7   2414         ADD     A,#0x14
+   \   0000A9   12....       LCALL   ??Subroutine23_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_38:
+   \   0000AC   D0E0         POP     A
+   \   0000AE   F0           MOVX    @DPTR,A
+    421            MSGpkt->wasBroadcast = aff->wasBroadcast;
+   \   0000AF   E5..         MOV     A,?V0 + 0
+   \   0000B1   240C         ADD     A,#0xc
+   \   0000B3   F582         MOV     DPL,A
+   \   0000B5   E5..         MOV     A,?V0 + 1
+   \   0000B7   12....       LCALL   ??Subroutine24_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_35:
+   \   0000BA   E0           MOVX    A,@DPTR
+   \   0000BB   C0E0         PUSH    A
+   \   0000BD   EE           MOV     A,R6
+   \   0000BE   2415         ADD     A,#0x15
+   \   0000C0   12....       LCALL   ??Subroutine23_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_39:
+   \   0000C3   D0E0         POP     A
+   \   0000C5   F0           MOVX    @DPTR,A
+    422            MSGpkt->LinkQuality = sig->LinkQuality;
+   \   0000C6   85..82       MOV     DPL,?V0 + 2
+   \   0000C9   85..83       MOV     DPH,?V0 + 3
+   \   0000CC   E0           MOVX    A,@DPTR
+   \   0000CD   C0E0         PUSH    A
+   \   0000CF   EE           MOV     A,R6
+   \   0000D0   2416         ADD     A,#0x16
+   \   0000D2   12....       LCALL   ??Subroutine23_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_40:
+   \   0000D5   D0E0         POP     A
+   \   0000D7   12....       LCALL   ?Subroutine6 & 0xFFFF
+    423            MSGpkt->correlation = sig->correlation;
+   \                     ??CrossCallReturnLabel_3:
+   \   0000DA   E0           MOVX    A,@DPTR
+   \   0000DB   C0E0         PUSH    A
+   \   0000DD   EE           MOV     A,R6
+   \   0000DE   2417         ADD     A,#0x17
+   \   0000E0   12....       LCALL   ??Subroutine23_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_41:
+   \   0000E3   D0E0         POP     A
+   \   0000E5   12....       LCALL   ?Subroutine6 & 0xFFFF
+    424            MSGpkt->rssi = sig->rssi;
+   \                     ??CrossCallReturnLabel_4:
+   \   0000E8   A3           INC     DPTR
+   \   0000E9   E0           MOVX    A,@DPTR
+   \   0000EA   C0E0         PUSH    A
+   \   0000EC   EE           MOV     A,R6
+   \   0000ED   2418         ADD     A,#0x18
+   \   0000EF   12....       LCALL   ??Subroutine23_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_42:
+   \   0000F2   D0E0         POP     A
+   \   0000F4   F0           MOVX    @DPTR,A
+    425            MSGpkt->SecurityUse = SecurityUse;
+   \   0000F5   EE           MOV     A,R6
+   \   0000F6   2419         ADD     A,#0x19
+   \   0000F8   12....       LCALL   ??Subroutine23_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_43:
+   \   0000FB   E5..         MOV     A,?V0 + 14
+   \   0000FD   F0           MOVX    @DPTR,A
+    426            MSGpkt->timestamp = timestamp;
+   \   0000FE   EE           MOV     A,R6
+   \   0000FF   241A         ADD     A,#0x1a
+   \   000101   12....       LCALL   ??Subroutine23_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_44:
+   \   000104   78..         MOV     R0,#?V0 + 4
+   \   000106   12....       LCALL   ?L_MOV_TO_X
+    427            MSGpkt->macDestAddr = aff->macDestAddr;
+   \   000109   85..82       MOV     DPL,?V0 + 0
+   \   00010C   85..83       MOV     DPH,?V0 + 1
+   \   00010F   A3           INC     DPTR
+   \   000110   A3           INC     DPTR
+   \   000111   A3           INC     DPTR
+   \   000112   A3           INC     DPTR
+   \   000113   A3           INC     DPTR
+   \   000114   A3           INC     DPTR
+   \   000115   A3           INC     DPTR
+   \   000116   A3           INC     DPTR
+   \   000117   A3           INC     DPTR
+   \   000118   12....       LCALL   ?Subroutine13 & 0xFFFF
+   \                     ??CrossCallReturnLabel_89:
+   \   00011B   EE           MOV     A,R6
+   \   00011C   2412         ADD     A,#0x12
+   \   00011E   12....       LCALL   ?Subroutine5 & 0xFFFF
+    428            MSGpkt->srcAddr.panId = SrcPanId;
+   \                     ??CrossCallReturnLabel_63:
+   \   000121   7419         MOV     A,#0x19
+   \   000123   12....       LCALL   ?XSTACK_DISP0_8
+   \   000126   12....       LCALL   ??Subroutine32_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_83:
+   \   000129   EE           MOV     A,R6
+   \   00012A   2410         ADD     A,#0x10
+   \   00012C   12....       LCALL   ?Subroutine5 & 0xFFFF
+    429            MSGpkt->cmd.TransSeqNumber = 0;
+   \                     ??CrossCallReturnLabel_64:
+   \   00012F   EE           MOV     A,R6
+   \   000130   241E         ADD     A,#0x1e
+   \   000132   12....       LCALL   ??Subroutine23_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_45:
+   \   000135   E4           CLR     A
+   \   000136   F0           MOVX    @DPTR,A
+   \   000137   E5..         MOV     A,?V0 + 0
+   \   000139   2410         ADD     A,#0x10
+   \   00013B   F582         MOV     DPL,A
+   \   00013D   E5..         MOV     A,?V0 + 1
+   \   00013F   12....       LCALL   ??Subroutine24_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_36:
+   \   000142   E0           MOVX    A,@DPTR
+   \   000143   F8           MOV     R0,A
+   \   000144   12....       LCALL   ?Subroutine19 & 0xFFFF
+   \                     ??CrossCallReturnLabel_47:
+   \   000147   E8           MOV     A,R0
+   \   000148   F0           MOVX    @DPTR,A
+   \   000149   A3           INC     DPTR
+   \   00014A   E4           CLR     A
+   \   00014B   F0           MOVX    @DPTR,A
+    430            MSGpkt->cmd.DataLength = aff->asduLength;
+    431          
+    432            if ( MSGpkt->cmd.DataLength )
+   \   00014C   E8           MOV     A,R0
+   \   00014D   6041         JZ      ??afBuildMSGIncoming_0
+    433            {
+    434              MSGpkt->cmd.Data = (byte *)(MSGpkt + 1);
+   \   00014F   EE           MOV     A,R6
+   \   000150   2421         ADD     A,#0x21
+   \   000152   F8           MOV     R0,A
+   \   000153   EF           MOV     A,R7
+   \   000154   3400         ADDC    A,#0x0
+   \   000156   F9           MOV     R1,A
+   \   000157   E8           MOV     A,R0
+   \   000158   FA           MOV     R2,A
+   \   000159   E9           MOV     A,R1
+   \   00015A   FB           MOV     R3,A
+   \   00015B   EE           MOV     A,R6
+   \   00015C   2423         ADD     A,#0x23
+   \   00015E   08           INC     R0
+   \   00015F   08           INC     R0
+   \   000160   EF           MOV     A,R7
+   \   000161   3400         ADDC    A,#0x0
+   \   000163   F9           MOV     R1,A
+   \   000164   8A82         MOV     DPL,R2
+   \   000166   8B83         MOV     DPH,R3
+   \   000168   12....       LCALL   ??Subroutine27_0 & 0xFFFF
+    435              osal_memcpy( MSGpkt->cmd.Data, asdu, MSGpkt->cmd.DataLength );
+   \                     ??CrossCallReturnLabel_58:
+   \   00016B                ; Setup parameters for call to function osal_memcpy
+   \   00016B   85....       MOV     ?V0 + 0,?V0 + 8
+   \   00016E   85....       MOV     ?V0 + 1,?V0 + 9
+   \   000171   75..00       MOV     ?V0 + 2,#0x0
+   \   000174   78..         MOV     R0,#?V0 + 0
+   \   000176   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000179   12....       LCALL   ?Subroutine19 & 0xFFFF
+    436            }
+   \                     ??CrossCallReturnLabel_48:
+   \   00017C   12....       LCALL   ?Subroutine15 & 0xFFFF
+   \                     ??CrossCallReturnLabel_15:
+   \   00017F   8A82         MOV     DPL,R2
+   \   000181   8B83         MOV     DPH,R3
+   \   000183   12....       LCALL   ??Subroutine28_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_65:
+   \   000186   12....       LCALL   ??osal_memcpy?relay
+   \   000189   7403         MOV     A,#0x3
+   \   00018B   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00018E   800A         SJMP    ??afBuildMSGIncoming_1
+    437            else
+    438            {
+    439              MSGpkt->cmd.Data = NULL;
+   \                     ??afBuildMSGIncoming_0:
+   \   000190   EE           MOV     A,R6
+   \   000191   2421         ADD     A,#0x21
+   \   000193   12....       LCALL   ??Subroutine23_0 & 0xFFFF
+    440            }
+   \                     ??CrossCallReturnLabel_46:
+   \   000196   E4           CLR     A
+   \   000197   F0           MOVX    @DPTR,A
+   \   000198   A3           INC     DPTR
+   \   000199   F0           MOVX    @DPTR,A
+    441          
+    442          #if defined ( MT_AF_CB_FUNC )
+    443            // If ZDO or SAPI have registered for this endpoint, dont intercept it here
+    444            if (AFCB_CHECK(CB_ID_AF_DATA_IND, *(epDesc->task_id)))
+    445            {
+    446              MT_AfIncomingMsg( (void *)MSGpkt );
+    447              // Release the memory.
+    448              osal_msg_deallocate( (void *)MSGpkt );
+    449            }
+    450            else
+    451          #endif
+    452            {
+    453              // Send message through task message.
+    454              osal_msg_send( *(epDesc->task_id), (uint8 *)MSGpkt );
+   \                     ??afBuildMSGIncoming_1:
+   \   00019A                ; Setup parameters for call to function osal_msg_send
+   \   00019A   EE           MOV     A,R6
+   \   00019B   FA           MOV     R2,A
+   \   00019C   EF           MOV     A,R7
+   \   00019D   FB           MOV     R3,A
+   \   00019E   85..82       MOV     DPL,?V0 + 10
+   \   0001A1   85..83       MOV     DPH,?V0 + 11
+   \   0001A4   12....       LCALL   ?Subroutine11 & 0xFFFF
+    455            }
+    456          }
+   \                     ??CrossCallReturnLabel_10:
+   \   0001A7   7F0F         MOV     R7,#0xf
+   \   0001A9   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine19:
+   \   000000   EE           MOV     A,R6
+   \   000001   241F         ADD     A,#0x1f
+   \   000003                REQUIRE ??Subroutine23_0
+   \   000003                ; // Fall through to label ??Subroutine23_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine23_0:
+   \   000000   F582         MOV     DPL,A
+   \   000002   EF           MOV     A,R7
+   \   000003                REQUIRE ??Subroutine24_0
+   \   000003                ; // Fall through to label ??Subroutine24_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine24_0:
+   \   000000   3400         ADDC    A,#0x0
+   \   000002   F583         MOV     DPH,A
+   \   000004   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine12:
+   \   000000   A3           INC     DPTR
+   \   000001   A3           INC     DPTR
+   \   000002   A3           INC     DPTR
+   \   000003   A3           INC     DPTR
+   \   000004   E0           MOVX    A,@DPTR
+   \   000005   F8           MOV     R0,A
+   \   000006   A3           INC     DPTR
+   \   000007   E0           MOVX    A,@DPTR
+   \   000008   F9           MOV     R1,A
+   \   000009   8E82         MOV     DPL,R6
+   \   00000B   8F83         MOV     DPH,R7
+   \   00000D   A3           INC     DPTR
+   \   00000E   A3           INC     DPTR
+   \   00000F   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   85..82       MOV     DPL,?V0 + 2
+   \   000004   85..83       MOV     DPH,?V0 + 3
+   \   000007   A3           INC     DPTR
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine16:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F5..         MOV     ?V0 + 8,A
+   \   000003   A3           INC     DPTR
+   \   000004   E0           MOVX    A,@DPTR
+   \   000005   F5..         MOV     ?V0 + 9,A
+   \   000007   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   F582         MOV     DPL,A
+   \   000002   EF           MOV     A,R7
+   \   000003   3400         ADDC    A,#0x0
+   \   000005   F583         MOV     DPH,A
+   \   000007                REQUIRE ??Subroutine27_0
+   \   000007                ; // Fall through to label ??Subroutine27_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine27_0:
+   \   000000   E8           MOV     A,R0
+   \   000001   F0           MOVX    @DPTR,A
+   \   000002   A3           INC     DPTR
+   \   000003   E9           MOV     A,R1
+   \   000004   F0           MOVX    @DPTR,A
+   \   000005   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine28_0:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   FA           MOV     R2,A
+   \   000002   A3           INC     DPTR
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   FB           MOV     R3,A
+   \   000005   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine13:
+   \   000000   A3           INC     DPTR
+   \   000001                REQUIRE ??Subroutine32_0
+   \   000001                ; // Fall through to label ??Subroutine32_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine32_0:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F8           MOV     R0,A
+   \   000002   A3           INC     DPTR
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   F9           MOV     R1,A
+   \   000005   22           RET
+    457          
+    458          /*********************************************************************
+    459           * @fn      AF_DataRequest
+    460           *
+    461           * @brief   Common functionality for invoking APSDE_DataReq() for both
+    462           *          SendMulti and MSG-Send.
+    463           *
+    464           * input parameters
+    465           *
+    466           * @param  *dstAddr - Full ZB destination address: Nwk Addr + End Point.
+    467           * @param  *srcEP - Origination (i.e. respond to or ack to) End Point Descr.
+    468           * @param   cID - A valid cluster ID as specified by the Profile.
+    469           * @param   len - Number of bytes of data pointed to by next param.
+    470           * @param  *buf - A pointer to the data bytes to send.
+    471           * @param  *transID - A pointer to a byte which can be modified and which will
+    472           *                    be used as the transaction sequence number of the msg.
+    473           * @param   options - Valid bit mask of Tx options.
+    474           * @param   radius - Normally set to AF_DEFAULT_RADIUS.
+    475           *
+    476           * output parameters
+    477           *
+    478           * @param  *transID - Incremented by one if the return value is success.
+    479           *
+    480           * @return  afStatus_t - See previous definition of afStatus_... types.
+    481           */
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    482          uint8 AF_DataRequestDiscoverRoute = TRUE;
+   \                     AF_DataRequestDiscoverRoute:
+   \   000000                DS 1
+   \   000001                REQUIRE `?<Initializer for AF_DataRequestDiscoverRoute>`
+   \   000001                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    483          afStatus_t AF_DataRequest( afAddrType_t *dstAddr, endPointDesc_t *srcEP,
+   \                     AF_DataRequest:
+    484                                     uint16 cID, uint16 len, uint8 *buf, uint8 *transID,
+    485                                     uint8 options, uint8 radius )
+    486          {
+   \   000000   74EA         MOV     A,#-0x16
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 22
+   \   000005                ; Auto size: 30
+   \   000005   74E2         MOV     A,#-0x1e
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   EA           MOV     A,R2
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EB           MOV     A,R3
+   \   00000D   FF           MOV     R7,A
+   \   00000E   8C..         MOV     ?V0 + 0,R4
+   \   000010   8D..         MOV     ?V0 + 1,R5
+   \   000012   89..         MOV     ?V0 + 2,R1
+   \   000014   7434         MOV     A,#0x34
+   \   000016   12....       LCALL   ?XSTACK_DISP0_8
+   \   000019   12....       LCALL   ?Subroutine16 & 0xFFFF
+   \                     ??CrossCallReturnLabel_19:
+   \   00001C   7436         MOV     A,#0x36
+   \   00001E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000021   E0           MOVX    A,@DPTR
+   \   000022   F5..         MOV     ?V0 + 6,A
+   \   000024   A3           INC     DPTR
+   \   000025   E0           MOVX    A,@DPTR
+   \   000026   F5..         MOV     ?V0 + 7,A
+   \   000028   7438         MOV     A,#0x38
+   \   00002A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00002D   E0           MOVX    A,@DPTR
+   \   00002E   F5..         MOV     ?V0 + 12,A
+   \   000030   A3           INC     DPTR
+   \   000031   E0           MOVX    A,@DPTR
+   \   000032   F5..         MOV     ?V0 + 13,A
+   \   000034   743A         MOV     A,#0x3a
+   \   000036   12....       LCALL   ?XSTACK_DISP0_8
+   \   000039   E0           MOVX    A,@DPTR
+   \   00003A   F5..         MOV     ?V0 + 4,A
+   \   00003C   A3           INC     DPTR
+   \   00003D   E0           MOVX    A,@DPTR
+   \   00003E   F5..         MOV     ?V0 + 5,A
+   \   000040   743C         MOV     A,#0x3c
+   \   000042   12....       LCALL   ?XSTACK_DISP0_8
+   \   000045   E0           MOVX    A,@DPTR
+   \   000046   F5..         MOV     ?V0 + 3,A
+    487            pDescCB pfnDescCB;
+    488            ZStatus_t stat;
+    489            APSDE_DataReq_t req;
+    490            afDataReqMTU_t mtu;
+    491          
+    492            // Verify source end point
+    493            if ( srcEP == NULL )
+   \   000048   EC           MOV     A,R4
+   \   000049   45..         ORL     A,?V0 + 1
+   \   00004B   7005         JNZ     ??AF_DataRequest_0
+    494            {
+    495              return afStatus_INVALID_PARAMETER;
+   \                     ??AF_DataRequest_1:
+   \   00004D   7902         MOV     R1,#0x2
+   \   00004F   02....       LJMP    ??AF_DataRequest_2 & 0xFFFF
+    496            }
+    497          
+    498          #if !defined( REFLECTOR )
+    499            if ( dstAddr->addrMode == afAddrNotPresent )
+    500            {
+    501              return afStatus_INVALID_PARAMETER;
+    502            }
+    503          #endif
+    504            
+    505            // Check if route is available before sending data 
+    506            if ( options & AF_LIMIT_CONCENTRATOR  )
+   \                     ??AF_DataRequest_0:
+   \   000052   E9           MOV     A,R1
+   \   000053   A2E3         MOV     C,0xE0 /* A   */.3
+   \   000055   503B         JNC     ??AF_DataRequest_3
+    507            {
+    508              if ( dstAddr->addrMode != afAddr16Bit )
+   \   000057   8E82         MOV     DPL,R6
+   \   000059   8F83         MOV     DPH,R7
+   \   00005B   A3           INC     DPTR
+   \   00005C   A3           INC     DPTR
+   \   00005D   A3           INC     DPTR
+   \   00005E   A3           INC     DPTR
+   \   00005F   A3           INC     DPTR
+   \   000060   A3           INC     DPTR
+   \   000061   A3           INC     DPTR
+   \   000062   A3           INC     DPTR
+   \   000063   E0           MOVX    A,@DPTR
+   \   000064   6402         XRL     A,#0x2
+   \   000066   70E5         JNZ     ??AF_DataRequest_1
+    509              {
+    510                return ( afStatus_INVALID_PARAMETER );
+    511              }
+    512               
+    513              // First, make sure the destination is not its self, then check for an existing route.
+    514              if ( (dstAddr->addr.shortAddr != NLME_GetShortAddr())
+    515                  && (RTG_CheckRtStatus( dstAddr->addr.shortAddr, RT_ACTIVE, (MTO_ROUTE | NO_ROUTE_CACHE) ) != RTG_SUCCESS) )
+   \   000068                ; Setup parameters for call to function NLME_GetShortAddr
+   \   000068   12....       LCALL   ??NLME_GetShortAddr?relay
+   \   00006B   8A..         MOV     ?V0 + 10,R2
+   \   00006D   8B..         MOV     ?V0 + 11,R3
+   \   00006F   A8..         MOV     R0,?V0 + 10
+   \   000071   A9..         MOV     R1,?V0 + 11
+   \   000073   8E82         MOV     DPL,R6
+   \   000075   8F83         MOV     DPH,R7
+   \   000077   E0           MOVX    A,@DPTR
+   \   000078   68           XRL     A,R0
+   \   000079   7003         JNZ     ??AF_DataRequest_4
+   \   00007B   A3           INC     DPTR
+   \   00007C   E0           MOVX    A,@DPTR
+   \   00007D   69           XRL     A,R1
+   \                     ??AF_DataRequest_4:
+   \   00007E   6012         JZ      ??AF_DataRequest_3
+   \   000080                ; Setup parameters for call to function RTG_CheckRtStatus
+   \   000080   7C03         MOV     R4,#0x3
+   \   000082   7901         MOV     R1,#0x1
+   \   000084   12....       LCALL   ?Subroutine10 & 0xFFFF
+   \                     ??CrossCallReturnLabel_72:
+   \   000087   12....       LCALL   ??RTG_CheckRtStatus?relay
+   \   00008A   E9           MOV     A,R1
+   \   00008B   6005         JZ      ??AF_DataRequest_3
+    516              {
+    517                // A valid route to a concentrator wasn't found
+    518                return ( afStatus_NO_ROUTE );
+   \   00008D   79CD         MOV     R1,#-0x33
+   \   00008F   02....       LJMP    ??AF_DataRequest_2 & 0xFFFF
+    519              }
+    520            } 
+    521            
+    522            // Validate broadcasting
+    523            if ( ( dstAddr->addrMode == afAddr16Bit     ) ||
+    524                 ( dstAddr->addrMode == afAddrBroadcast )    )
+   \                     ??AF_DataRequest_3:
+   \   000092   8E82         MOV     DPL,R6
+   \   000094   8F83         MOV     DPH,R7
+   \   000096   A3           INC     DPTR
+   \   000097   A3           INC     DPTR
+   \   000098   A3           INC     DPTR
+   \   000099   A3           INC     DPTR
+   \   00009A   A3           INC     DPTR
+   \   00009B   A3           INC     DPTR
+   \   00009C   A3           INC     DPTR
+   \   00009D   A3           INC     DPTR
+   \   00009E   E0           MOVX    A,@DPTR
+   \   00009F   6402         XRL     A,#0x2
+   \   0000A1   6011         JZ      ??AF_DataRequest_5
+   \   0000A3   8E82         MOV     DPL,R6
+   \   0000A5   8F83         MOV     DPH,R7
+   \   0000A7   A3           INC     DPTR
+   \   0000A8   A3           INC     DPTR
+   \   0000A9   A3           INC     DPTR
+   \   0000AA   A3           INC     DPTR
+   \   0000AB   A3           INC     DPTR
+   \   0000AC   A3           INC     DPTR
+   \   0000AD   A3           INC     DPTR
+   \   0000AE   A3           INC     DPTR
+   \   0000AF   E0           MOVX    A,@DPTR
+   \   0000B0   640F         XRL     A,#0xf
+   \   0000B2   7022         JNZ     ??AF_DataRequest_6
+    525            {
+    526              // Check for valid broadcast values
+    527              if( ADDR_NOT_BCAST != NLME_IsAddressBroadcast( dstAddr->addr.shortAddr )  )
+   \                     ??AF_DataRequest_5:
+   \   0000B4                ; Setup parameters for call to function NLME_IsAddressBroadcast
+   \   0000B4   12....       LCALL   ?Subroutine10 & 0xFFFF
+   \                     ??CrossCallReturnLabel_73:
+   \   0000B7   12....       LCALL   ??NLME_IsAddressBroadcast?relay
+   \   0000BA   E9           MOV     A,R1
+   \   0000BB   8E82         MOV     DPL,R6
+   \   0000BD   8F83         MOV     DPH,R7
+   \   0000BF   A3           INC     DPTR
+   \   0000C0   A3           INC     DPTR
+   \   0000C1   A3           INC     DPTR
+   \   0000C2   A3           INC     DPTR
+   \   0000C3   A3           INC     DPTR
+   \   0000C4   A3           INC     DPTR
+   \   0000C5   A3           INC     DPTR
+   \   0000C6   A3           INC     DPTR
+   \   0000C7   6005         JZ      ??AF_DataRequest_7
+    528              {
+    529                // Force mode to broadcast
+    530                dstAddr->addrMode = afAddrBroadcast;
+   \   0000C9   740F         MOV     A,#0xf
+   \   0000CB   F0           MOVX    @DPTR,A
+   \   0000CC   803C         SJMP    ??AF_DataRequest_8
+    531              }
+    532              else
+    533              {
+    534                // Address is not a valid broadcast type
+    535                if ( dstAddr->addrMode == afAddrBroadcast )
+   \                     ??AF_DataRequest_7:
+   \   0000CE   E0           MOVX    A,@DPTR
+   \   0000CF   640F         XRL     A,#0xf
+   \   0000D1   7037         JNZ     ??AF_DataRequest_8
+   \   0000D3   02....       LJMP    ??AF_DataRequest_1 & 0xFFFF
+    536                {
+    537                  return afStatus_INVALID_PARAMETER;
+    538                }
+    539              }
+    540            }
+    541            else if ( dstAddr->addrMode != afAddr64Bit &&
+    542                      dstAddr->addrMode != afAddrGroup &&
+    543                      dstAddr->addrMode != afAddrNotPresent )
+   \                     ??AF_DataRequest_6:
+   \   0000D6   8E82         MOV     DPL,R6
+   \   0000D8   8F83         MOV     DPH,R7
+   \   0000DA   A3           INC     DPTR
+   \   0000DB   A3           INC     DPTR
+   \   0000DC   A3           INC     DPTR
+   \   0000DD   A3           INC     DPTR
+   \   0000DE   A3           INC     DPTR
+   \   0000DF   A3           INC     DPTR
+   \   0000E0   A3           INC     DPTR
+   \   0000E1   A3           INC     DPTR
+   \   0000E2   E0           MOVX    A,@DPTR
+   \   0000E3   6403         XRL     A,#0x3
+   \   0000E5   6023         JZ      ??AF_DataRequest_8
+   \   0000E7   8E82         MOV     DPL,R6
+   \   0000E9   8F83         MOV     DPH,R7
+   \   0000EB   A3           INC     DPTR
+   \   0000EC   A3           INC     DPTR
+   \   0000ED   A3           INC     DPTR
+   \   0000EE   A3           INC     DPTR
+   \   0000EF   A3           INC     DPTR
+   \   0000F0   A3           INC     DPTR
+   \   0000F1   A3           INC     DPTR
+   \   0000F2   A3           INC     DPTR
+   \   0000F3   E0           MOVX    A,@DPTR
+   \   0000F4   6401         XRL     A,#0x1
+   \   0000F6   6012         JZ      ??AF_DataRequest_8
+   \   0000F8   8E82         MOV     DPL,R6
+   \   0000FA   8F83         MOV     DPH,R7
+   \   0000FC   A3           INC     DPTR
+   \   0000FD   A3           INC     DPTR
+   \   0000FE   A3           INC     DPTR
+   \   0000FF   A3           INC     DPTR
+   \   000100   A3           INC     DPTR
+   \   000101   A3           INC     DPTR
+   \   000102   A3           INC     DPTR
+   \   000103   A3           INC     DPTR
+   \   000104   E0           MOVX    A,@DPTR
+   \   000105   6003         JZ      $+5
+   \   000107   02....       LJMP    ??AF_DataRequest_1 & 0xFFFF
+    544            {
+    545              return afStatus_INVALID_PARAMETER;
+    546            }
+    547            
+    548            // Set destination address
+    549            req.dstAddr.addrMode = dstAddr->addrMode;
+   \                     ??AF_DataRequest_8:
+   \   00010A   EE           MOV     A,R6
+   \   00010B   2408         ADD     A,#0x8
+   \   00010D   F8           MOV     R0,A
+   \   00010E   EF           MOV     A,R7
+   \   00010F   12....       LCALL   ?Subroutine21 & 0xFFFF
+   \                     ??CrossCallReturnLabel_28:
+   \   000112   C0E0         PUSH    A
+   \   000114   740A         MOV     A,#0xa
+   \   000116   12....       LCALL   ?XSTACK_DISP0_8
+   \   000119   D0E0         POP     A
+   \   00011B   12....       LCALL   ?Subroutine7 & 0xFFFF
+    550            if ( dstAddr->addrMode == afAddr64Bit )
+   \                     ??CrossCallReturnLabel_5:
+   \   00011E   7012         JNZ     ??AF_DataRequest_9
+    551              osal_cpyExtAddr( req.dstAddr.addr.extAddr, dstAddr->addr.extAddr );
+   \   000120                ; Setup parameters for call to function sAddrExtCpy
+   \   000120   EE           MOV     A,R6
+   \   000121   FC           MOV     R4,A
+   \   000122   EF           MOV     A,R7
+   \   000123   FD           MOV     R5,A
+   \   000124   7402         MOV     A,#0x2
+   \   000126   12....       LCALL   ?XSTACK_DISP0_8
+   \   000129   AA82         MOV     R2,DPL
+   \   00012B   AB83         MOV     R3,DPH
+   \   00012D   12....       LCALL   ??sAddrExtCpy?relay
+   \   000130   800F         SJMP    ??CrossCallReturnLabel_59
+    552            else
+    553              req.dstAddr.addr.shortAddr = dstAddr->addr.shortAddr;
+   \                     ??AF_DataRequest_9:
+   \   000132   8E82         MOV     DPL,R6
+   \   000134   8F83         MOV     DPH,R7
+   \   000136   12....       LCALL   ??Subroutine32_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_84:
+   \   000139   7402         MOV     A,#0x2
+   \   00013B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00013E   12....       LCALL   ??Subroutine27_0 & 0xFFFF
+    554            
+    555            req.profileID = ZDO_PROFILE_ID;
+   \                     ??CrossCallReturnLabel_59:
+   \   000141   7411         MOV     A,#0x11
+   \   000143   12....       LCALL   ?XSTACK_DISP0_8
+   \   000146   E4           CLR     A
+   \   000147   F0           MOVX    @DPTR,A
+   \   000148   A3           INC     DPTR
+   \   000149   F0           MOVX    @DPTR,A
+    556          
+    557            if ( (pfnDescCB = afGetDescCB( srcEP )) )
+   \   00014A   90....       MOV     DPTR,#epList
+   \   00014D   8002         SJMP    ??AF_DataRequest_10
+   \                     ??AF_DataRequest_11:
+   \   00014F   A3           INC     DPTR
+   \   000150   A3           INC     DPTR
+   \                     ??AF_DataRequest_10:
+   \   000151   12....       LCALL   ??Subroutine26_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_49:
+   \   000154   604C         JZ      ??AF_DataRequest_12
+   \   000156   8882         MOV     DPL,R0
+   \   000158   8983         MOV     DPH,R1
+   \   00015A   12....       LCALL   ??Subroutine28_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_66:
+   \   00015D   E5..         MOV     A,?V0 + 0
+   \   00015F   6A           XRL     A,R2
+   \   000160   7003         JNZ     ??AF_DataRequest_13
+   \   000162   E5..         MOV     A,?V0 + 1
+   \   000164   6B           XRL     A,R3
+   \                     ??AF_DataRequest_13:
+   \   000165   8882         MOV     DPL,R0
+   \   000167   8983         MOV     DPH,R1
+   \   000169   A3           INC     DPTR
+   \   00016A   A3           INC     DPTR
+   \   00016B   A3           INC     DPTR
+   \   00016C   70E1         JNZ     ??AF_DataRequest_11
+   \   00016E   12....       LCALL   ??Subroutine32_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_85:
+   \   000171   E8           MOV     A,R0
+   \   000172   FC           MOV     R4,A
+   \   000173   E9           MOV     A,R1
+   \   000174   FD           MOV     R5,A
+   \   000175   EC           MOV     A,R4
+   \   000176   4D           ORL     A,R5
+   \   000177   6029         JZ      ??AF_DataRequest_12
+    558            {
+    559              uint16 *pID = (uint16 *)(pfnDescCB(
+    560                                           AF_DESCRIPTOR_PROFILE_ID, srcEP->endPoint ));
+   \   000179                ; Setup parameters for indirect call
+   \   000179   85..82       MOV     DPL,?V0 + 0
+   \   00017C   85..83       MOV     DPH,?V0 + 1
+   \   00017F   E0           MOVX    A,@DPTR
+   \   000180   FA           MOV     R2,A
+   \   000181   7902         MOV     R1,#0x2
+   \   000183   8C82         MOV     DPL,R4
+   \   000185   8D83         MOV     DPH,R5
+   \   000187   12....       LCALL   ?CALL_IND
+    561              if ( pID )
+   \   00018A   EA           MOV     A,R2
+   \   00018B   4B           ORL     A,R3
+   \   00018C   6027         JZ      ??CrossCallReturnLabel_61
+    562              {
+    563                req.profileID = *pID;
+   \   00018E   8A82         MOV     DPL,R2
+   \   000190   8B83         MOV     DPH,R3
+   \   000192   12....       LCALL   ??Subroutine32_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_86:
+   \   000195   7411         MOV     A,#0x11
+   \   000197   12....       LCALL   ?XSTACK_DISP0_8
+   \   00019A   12....       LCALL   ??Subroutine27_0 & 0xFFFF
+    564                osal_mem_free( pID );
+   \                     ??CrossCallReturnLabel_60:
+   \   00019D                ; Setup parameters for call to function osal_mem_free
+   \   00019D   12....       LCALL   ??osal_mem_free?relay
+   \   0001A0   8013         SJMP    ??CrossCallReturnLabel_61
+    565              }
+    566            }
+    567            else if ( srcEP->simpleDesc )
+   \                     ??AF_DataRequest_12:
+   \   0001A2   12....       LCALL   ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_55:
+   \   0001A5   600E         JZ      ??CrossCallReturnLabel_61
+    568            {
+    569              req.profileID = srcEP->simpleDesc->AppProfId;
+   \   0001A7   12....       LCALL   ?Subroutine14 & 0xFFFF
+    570            }
+   \                     ??CrossCallReturnLabel_82:
+   \   0001AA   12....       LCALL   ?Subroutine13 & 0xFFFF
+   \                     ??CrossCallReturnLabel_90:
+   \   0001AD   7411         MOV     A,#0x11
+   \   0001AF   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001B2   12....       LCALL   ??Subroutine27_0 & 0xFFFF
+    571          
+    572            req.txOptions = 0;
+   \                     ??CrossCallReturnLabel_61:
+   \   0001B5   7417         MOV     A,#0x17
+   \   0001B7   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001BA   E4           CLR     A
+   \   0001BB   F0           MOVX    @DPTR,A
+   \   0001BC   A3           INC     DPTR
+   \   0001BD   F0           MOVX    @DPTR,A
+    573          
+    574            if ( ( options & AF_ACK_REQUEST              ) &&
+    575                 ( req.dstAddr.addrMode != AddrBroadcast ) &&
+    576                 ( req.dstAddr.addrMode != AddrGroup     )    )
+   \   0001BE   E5..         MOV     A,?V0 + 2
+   \   0001C0   A2E4         MOV     C,0xE0 /* A   */.4
+   \   0001C2   501A         JNC     ??AF_DataRequest_14
+   \   0001C4   740A         MOV     A,#0xa
+   \   0001C6   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001C9   E0           MOVX    A,@DPTR
+   \   0001CA   640F         XRL     A,#0xf
+   \   0001CC   6010         JZ      ??AF_DataRequest_14
+   \   0001CE   E0           MOVX    A,@DPTR
+   \   0001CF   6401         XRL     A,#0x1
+   \   0001D1   600B         JZ      ??AF_DataRequest_14
+    577            {
+    578              req.txOptions |=  APS_TX_OPTIONS_ACK;
+   \   0001D3   7417         MOV     A,#0x17
+   \   0001D5   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001D8   7404         MOV     A,#0x4
+   \   0001DA   F0           MOVX    @DPTR,A
+   \   0001DB   A3           INC     DPTR
+   \   0001DC   E4           CLR     A
+   \   0001DD   F0           MOVX    @DPTR,A
+    579            }
+    580          
+    581            if ( options & AF_SKIP_ROUTING )
+   \                     ??AF_DataRequest_14:
+   \   0001DE   E5..         MOV     A,?V0 + 2
+   \   0001E0   A2E7         MOV     C,0xE0 /* A   */.7
+   \   0001E2   5009         JNC     ??AF_DataRequest_15
+    582            {
+    583              req.txOptions |=  APS_TX_OPTIONS_SKIP_ROUTING;
+   \   0001E4   7417         MOV     A,#0x17
+   \   0001E6   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001E9   E0           MOVX    A,@DPTR
+   \   0001EA   4410         ORL     A,#0x10
+   \   0001EC   F0           MOVX    @DPTR,A
+    584            }
+    585          
+    586            if ( options & AF_EN_SECURITY )
+   \                     ??AF_DataRequest_15:
+   \   0001ED   E5..         MOV     A,?V0 + 2
+   \   0001EF   A2E6         MOV     C,0xE0 /* A   */.6
+   \   0001F1   5012         JNC     ??AF_DataRequest_16
+    587            {
+    588              req.txOptions |= APS_TX_OPTIONS_SECURITY_ENABLE;
+   \   0001F3   7417         MOV     A,#0x17
+   \   0001F5   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001F8   E0           MOVX    A,@DPTR
+   \   0001F9   4401         ORL     A,#0x1
+   \   0001FB   F0           MOVX    @DPTR,A
+    589              mtu.aps.secure = TRUE;
+   \   0001FC   7401         MOV     A,#0x1
+   \   0001FE   12....       LCALL   ?XSTACK_DISP0_8
+   \   000201   7401         MOV     A,#0x1
+   \   000203   8006         SJMP    ??AF_DataRequest_17
+    590            }
+    591            else
+    592            {
+    593              mtu.aps.secure = FALSE;
+   \                     ??AF_DataRequest_16:
+   \   000205   7401         MOV     A,#0x1
+   \   000207   12....       LCALL   ?XSTACK_DISP0_8
+   \   00020A   E4           CLR     A
+   \                     ??AF_DataRequest_17:
+   \   00020B   F0           MOVX    @DPTR,A
+    594            }
+    595          
+    596            if ( options & AF_PREPROCESS )
+   \   00020C   E5..         MOV     A,?V0 + 2
+   \   00020E   A2E2         MOV     C,0xE0 /* A   */.2
+   \   000210   5009         JNC     ??AF_DataRequest_18
+    597            {
+    598              req.txOptions |=  APS_TX_OPTIONS_PREPROCESS;
+   \   000212   7417         MOV     A,#0x17
+   \   000214   12....       LCALL   ?XSTACK_DISP0_8
+   \   000217   E0           MOVX    A,@DPTR
+   \   000218   4440         ORL     A,#0x40
+   \   00021A   F0           MOVX    @DPTR,A
+    599            }
+    600          
+    601            mtu.kvp = FALSE;
+   \                     ??AF_DataRequest_18:
+   \   00021B   85..82       MOV     DPL,?XSP + 0
+   \   00021E   85..83       MOV     DPH,?XSP + 1
+   \   000221   E4           CLR     A
+   \   000222   F0           MOVX    @DPTR,A
+    602          
+    603            req.transID       = *transID;
+   \   000223   85..82       MOV     DPL,?V0 + 4
+   \   000226   85..83       MOV     DPH,?V0 + 5
+   \   000229   E0           MOVX    A,@DPTR
+   \   00022A   C0E0         PUSH    A
+   \   00022C   7419         MOV     A,#0x19
+   \   00022E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000231   D0E0         POP     A
+   \   000233   F0           MOVX    @DPTR,A
+    604            req.srcEP         = srcEP->endPoint;
+   \   000234   85..82       MOV     DPL,?V0 + 0
+   \   000237   85..83       MOV     DPH,?V0 + 1
+   \   00023A   E0           MOVX    A,@DPTR
+   \   00023B   C0E0         PUSH    A
+   \   00023D   740B         MOV     A,#0xb
+   \   00023F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000242   D0E0         POP     A
+   \   000244   F0           MOVX    @DPTR,A
+    605            req.dstEP         = dstAddr->endPoint;
+   \   000245   8E82         MOV     DPL,R6
+   \   000247   8F83         MOV     DPH,R7
+   \   000249   A3           INC     DPTR
+   \   00024A   A3           INC     DPTR
+   \   00024B   A3           INC     DPTR
+   \   00024C   A3           INC     DPTR
+   \   00024D   A3           INC     DPTR
+   \   00024E   A3           INC     DPTR
+   \   00024F   A3           INC     DPTR
+   \   000250   A3           INC     DPTR
+   \   000251   A3           INC     DPTR
+   \   000252   E0           MOVX    A,@DPTR
+   \   000253   C0E0         PUSH    A
+   \   000255   740C         MOV     A,#0xc
+   \   000257   12....       LCALL   ?XSTACK_DISP0_8
+   \   00025A   D0E0         POP     A
+   \   00025C   F0           MOVX    @DPTR,A
+    606            req.clusterID     = cID;
+   \   00025D   740F         MOV     A,#0xf
+   \   00025F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000262   E5..         MOV     A,?V0 + 8
+   \   000264   F0           MOVX    @DPTR,A
+   \   000265   A3           INC     DPTR
+   \   000266   E5..         MOV     A,?V0 + 9
+   \   000268   F0           MOVX    @DPTR,A
+    607            req.asduLen       = len;
+   \   000269   7413         MOV     A,#0x13
+   \   00026B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00026E   E5..         MOV     A,?V0 + 6
+   \   000270   F0           MOVX    @DPTR,A
+   \   000271   A3           INC     DPTR
+   \   000272   E5..         MOV     A,?V0 + 7
+   \   000274   F0           MOVX    @DPTR,A
+    608            req.asdu          = buf;
+   \   000275   7415         MOV     A,#0x15
+   \   000277   12....       LCALL   ?XSTACK_DISP0_8
+   \   00027A   E5..         MOV     A,?V0 + 12
+   \   00027C   F0           MOVX    @DPTR,A
+   \   00027D   A3           INC     DPTR
+   \   00027E   E5..         MOV     A,?V0 + 13
+   \   000280   F0           MOVX    @DPTR,A
+    609            req.discoverRoute = AF_DataRequestDiscoverRoute;//(uint8)((options & AF_DISCV_ROUTE) ? 1 : 0);
+   \   000281   90....       MOV     DPTR,#AF_DataRequestDiscoverRoute
+   \   000284   E0           MOVX    A,@DPTR
+   \   000285   C0E0         PUSH    A
+   \   000287   741A         MOV     A,#0x1a
+   \   000289   12....       LCALL   ?XSTACK_DISP0_8
+   \   00028C   D0E0         POP     A
+   \   00028E   F0           MOVX    @DPTR,A
+    610            req.radiusCounter = radius;
+   \   00028F   741B         MOV     A,#0x1b
+   \   000291   12....       LCALL   ?XSTACK_DISP0_8
+   \   000294   E5..         MOV     A,?V0 + 3
+   \   000296   F0           MOVX    @DPTR,A
+    611          #if defined ( INTER_PAN )
+    612            req.dstPanId      = dstAddr->panId;
+    613          
+    614            if ( StubAPS_InterPan( dstAddr->panId, dstAddr->endPoint ) )
+    615            {
+    616              if ( len > INTERP_DataReqMTU() )
+    617              {
+    618                stat = afStatus_INVALID_PARAMETER;
+    619              }
+    620              else
+    621              {
+    622                stat = INTERP_DataReq( &req );
+    623              }
+    624            }
+    625            else
+    626          #endif // INTER_PAN
+    627            {
+    628              if (len > afDataReqMTU( &mtu ) )
+   \   000297                ; Setup parameters for call to function afDataReqMTU
+   \   000297   85..82       MOV     DPL,?XSP + 0
+   \   00029A   85..83       MOV     DPH,?XSP + 1
+   \   00029D   AA82         MOV     R2,DPL
+   \   00029F   AB83         MOV     R3,DPH
+   \   0002A1   12....       LCALL   ??afDataReqMTU?relay
+   \   0002A4   E9           MOV     A,R1
+   \   0002A5   C3           CLR     C
+   \   0002A6   95..         SUBB    A,?V0 + 6
+   \   0002A8   E4           CLR     A
+   \   0002A9   95..         SUBB    A,?V0 + 7
+   \   0002AB   5020         JNC     ??AF_DataRequest_19
+    629              {
+    630                if (apsfSendFragmented)
+   \   0002AD   90....       MOV     DPTR,#apsfSendFragmented
+   \   0002B0   12....       LCALL   ??Subroutine26_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_51:
+   \   0002B3   6014         JZ      ??AF_DataRequest_20
+    631                {
+    632                  stat = (*apsfSendFragmented)( &req );
+   \   0002B5                ; Setup parameters for indirect call
+   \   0002B5   7402         MOV     A,#0x2
+   \   0002B7   12....       LCALL   ?XSTACK_DISP0_8
+   \   0002BA   AA82         MOV     R2,DPL
+   \   0002BC   AB83         MOV     R3,DPH
+   \   0002BE   90....       MOV     DPTR,#apsfSendFragmented + 1
+   \   0002C1   12....       LCALL   ??Subroutine31_0 & 0xFFFF
+    633                }
+   \                     ??CrossCallReturnLabel_75:
+   \   0002C4   12....       LCALL   ?CALL_IND
+   \   0002C7   8010         SJMP    ??AF_DataRequest_21
+    634                else
+    635                {
+    636                  stat = afStatus_INVALID_PARAMETER;
+   \                     ??AF_DataRequest_20:
+   \   0002C9   7E02         MOV     R6,#0x2
+   \   0002CB   800E         SJMP    ??AF_DataRequest_22
+    637                }
+    638              }
+    639              else
+    640              {
+    641                stat = APSDE_DataReq( &req );
+   \                     ??AF_DataRequest_19:
+   \   0002CD                ; Setup parameters for call to function APSDE_DataReq
+   \   0002CD   7402         MOV     A,#0x2
+   \   0002CF   12....       LCALL   ?XSTACK_DISP0_8
+   \   0002D2   AA82         MOV     R2,DPL
+   \   0002D4   AB83         MOV     R3,DPH
+   \   0002D6   12....       LCALL   ??APSDE_DataReq?relay
+   \                     ??AF_DataRequest_21:
+   \   0002D9   E9           MOV     A,R1
+   \   0002DA   FE           MOV     R6,A
+    642              }
+    643            }
+    644          
+    645            /*
+    646             * If this is an EndPoint-to-EndPoint message on the same device, it will not
+    647             * get added to the NWK databufs. So it will not go OTA and it will not get
+    648             * a MACCB_DATA_CONFIRM_CMD callback. Thus it is necessary to generate the
+    649             * AF_DATA_CONFIRM_CMD here. Note that APSDE_DataConfirm() only generates one
+    650             * message with the first in line TransSeqNumber, even on a multi message.
+    651             * Also note that a reflected msg will not have its confirmation generated
+    652             * here.
+    653             */
+    654            if ( (req.dstAddr.addrMode == Addr16Bit) &&
+    655                 (req.dstAddr.addr.shortAddr == NLME_GetShortAddr()) )
+   \                     ??AF_DataRequest_22:
+   \   0002DB   740A         MOV     A,#0xa
+   \   0002DD   12....       LCALL   ?XSTACK_DISP0_8
+   \   0002E0   E0           MOVX    A,@DPTR
+   \   0002E1   6402         XRL     A,#0x2
+   \   0002E3   702E         JNZ     ??AF_DataRequest_23
+   \   0002E5                ; Setup parameters for call to function NLME_GetShortAddr
+   \   0002E5   12....       LCALL   ??NLME_GetShortAddr?relay
+   \   0002E8   8A..         MOV     ?V0 + 6,R2
+   \   0002EA   8B..         MOV     ?V0 + 7,R3
+   \   0002EC   A8..         MOV     R0,?V0 + 6
+   \   0002EE   A9..         MOV     R1,?V0 + 7
+   \   0002F0   7402         MOV     A,#0x2
+   \   0002F2   12....       LCALL   ?XSTACK_DISP0_8
+   \   0002F5   E0           MOVX    A,@DPTR
+   \   0002F6   68           XRL     A,R0
+   \   0002F7   7003         JNZ     ??AF_DataRequest_24
+   \   0002F9   A3           INC     DPTR
+   \   0002FA   E0           MOVX    A,@DPTR
+   \   0002FB   69           XRL     A,R1
+   \                     ??AF_DataRequest_24:
+   \   0002FC   7015         JNZ     ??AF_DataRequest_23
+    656            {
+    657              afDataConfirm( srcEP->endPoint, *transID, stat );
+   \   0002FE                ; Setup parameters for call to function afDataConfirm
+   \   0002FE   EE           MOV     A,R6
+   \   0002FF   FB           MOV     R3,A
+   \   000300   85..82       MOV     DPL,?V0 + 4
+   \   000303   85..83       MOV     DPH,?V0 + 5
+   \   000306   E0           MOVX    A,@DPTR
+   \   000307   FA           MOV     R2,A
+   \   000308   85..82       MOV     DPL,?V0 + 0
+   \   00030B   85..83       MOV     DPH,?V0 + 1
+   \   00030E   E0           MOVX    A,@DPTR
+   \   00030F   F9           MOV     R1,A
+   \   000310   12....       LCALL   ??afDataConfirm?relay
+    658            }
+    659          
+    660            if ( stat == afStatus_SUCCESS )
+   \                     ??AF_DataRequest_23:
+   \   000313   EE           MOV     A,R6
+   \   000314   7009         JNZ     ??AF_DataRequest_25
+    661            {
+    662              (*transID)++;
+   \   000316   85..82       MOV     DPL,?V0 + 4
+   \   000319   85..83       MOV     DPH,?V0 + 5
+   \   00031C   E0           MOVX    A,@DPTR
+   \   00031D   04           INC     A
+   \   00031E   F0           MOVX    @DPTR,A
+    663            }
+    664          
+    665            return (afStatus_t)stat;
+   \                     ??AF_DataRequest_25:
+   \   00031F   EE           MOV     A,R6
+   \   000320   F9           MOV     R1,A
+   \                     ??AF_DataRequest_2:
+   \   000321   741E         MOV     A,#0x1e
+   \   000323   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000326   7F0E         MOV     R7,#0xe
+   \   000328   02....       LJMP    ?BANKED_LEAVE_XDATA
+    666          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine10:
+   \   000000   8E82         MOV     DPL,R6
+   \   000002   8F83         MOV     DPH,R7
+   \   000004                REQUIRE ??Subroutine28_0
+   \   000004                ; // Fall through to label ??Subroutine28_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine21:
+   \   000000   3400         ADDC    A,#0x0
+   \   000002   F9           MOV     R1,A
+   \   000003   8882         MOV     DPL,R0
+   \   000005   8983         MOV     DPH,R1
+   \   000007   E0           MOVX    A,@DPTR
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine7:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   8882         MOV     DPL,R0
+   \   000003   8983         MOV     DPH,R1
+   \   000005   E0           MOVX    A,@DPTR
+   \   000006   6403         XRL     A,#0x3
+   \   000008   22           RET
+    667          
+    668          #if defined ( ZIGBEE_SOURCE_ROUTING )
+    669          /*********************************************************************
+    670           * @fn      AF_DataRequestSrcRtg
+    671           *
+    672           * @brief   Common functionality for invoking APSDE_DataReq() for both
+    673           *          SendMulti and MSG-Send.
+    674           *
+    675           * input parameters
+    676           *
+    677           * @param  *dstAddr - Full ZB destination address: Nwk Addr + End Point.
+    678           * @param  *srcEP - Origination (i.e. respond to or ack to) End Point Descr.
+    679           * @param   cID - A valid cluster ID as specified by the Profile.
+    680           * @param   len - Number of bytes of data pointed to by next param.
+    681           * @param  *buf - A pointer to the data bytes to send.
+    682           * @param  *transID - A pointer to a byte which can be modified and which will
+    683           *                    be used as the transaction sequence number of the msg.
+    684           * @param   options - Valid bit mask of Tx options.
+    685           * @param   radius - Normally set to AF_DEFAULT_RADIUS.
+    686           * @param   relayCnt - Number of devices in the relay list
+    687           * @param   pRelayList - Pointer to the relay list
+    688           *
+    689           * output parameters
+    690           *
+    691           * @param  *transID - Incremented by one if the return value is success.
+    692           *
+    693           * @return  afStatus_t - See previous definition of afStatus_... types.
+    694           */
+    695          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    696          afStatus_t AF_DataRequestSrcRtg( afAddrType_t *dstAddr, endPointDesc_t *srcEP,
+   \                     AF_DataRequestSrcRtg:
+    697                                     uint16 cID, uint16 len, uint8 *buf, uint8 *transID,
+    698                                     uint8 options, uint8 radius, uint8 relayCnt, uint16* pRelayList )
+    699          {
+   \   000000   74EC         MOV     A,#-0x14
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 20
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   8C..         MOV     ?V0 + 0,R4
+   \   00000B   8D..         MOV     ?V0 + 1,R5
+   \   00000D   89..         MOV     ?V0 + 2,R1
+   \   00000F   7414         MOV     A,#0x14
+   \   000011   12....       LCALL   ?XSTACK_DISP0_8
+   \   000014   E0           MOVX    A,@DPTR
+   \   000015   F5..         MOV     ?V0 + 10,A
+   \   000017   A3           INC     DPTR
+   \   000018   E0           MOVX    A,@DPTR
+   \   000019   F5..         MOV     ?V0 + 11,A
+   \   00001B   7416         MOV     A,#0x16
+   \   00001D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000020   12....       LCALL   ?Subroutine16 & 0xFFFF
+   \                     ??CrossCallReturnLabel_20:
+   \   000023   7418         MOV     A,#0x18
+   \   000025   12....       LCALL   ?XSTACK_DISP0_8
+   \   000028   E0           MOVX    A,@DPTR
+   \   000029   F5..         MOV     ?V0 + 6,A
+   \   00002B   A3           INC     DPTR
+   \   00002C   E0           MOVX    A,@DPTR
+   \   00002D   F5..         MOV     ?V0 + 7,A
+   \   00002F   741A         MOV     A,#0x1a
+   \   000031   12....       LCALL   ?XSTACK_DISP0_8
+   \   000034   E0           MOVX    A,@DPTR
+   \   000035   F5..         MOV     ?V0 + 4,A
+   \   000037   A3           INC     DPTR
+   \   000038   E0           MOVX    A,@DPTR
+   \   000039   F5..         MOV     ?V0 + 5,A
+   \   00003B   741C         MOV     A,#0x1c
+   \   00003D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000040   E0           MOVX    A,@DPTR
+   \   000041   F5..         MOV     ?V0 + 3,A
+   \   000043   741D         MOV     A,#0x1d
+   \   000045   12....       LCALL   ?XSTACK_DISP0_8
+   \   000048   E0           MOVX    A,@DPTR
+   \   000049   F9           MOV     R1,A
+   \   00004A   741E         MOV     A,#0x1e
+   \   00004C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004F   12....       LCALL   ?Subroutine15 & 0xFFFF
+    700            uint8 status;
+    701            
+    702            /* Add the source route to the source routing table */
+    703            status = RTG_AddSrcRtgEntry_Guaranteed( dstAddr->addr.shortAddr, relayCnt, 
+    704                                                   pRelayList );
+   \                     ??CrossCallReturnLabel_16:
+   \   000052                ; Setup parameters for call to function RTG_AddSrcRtgEntry_Guaranteed
+   \   000052   12....       LCALL   ?Subroutine10 & 0xFFFF
+   \                     ??CrossCallReturnLabel_74:
+   \   000055   12....       LCALL   ??RTG_AddSrcRtgEntry_Guaranteed?relay
+   \   000058   E9           MOV     A,R1
+    705          
+    706            if( status == RTG_SUCCESS)
+   \   000059   702D         JNZ     ??AF_DataRequestSrcRtg_0
+    707            {
+    708              /* Call AF_DataRequest to send the data */
+    709              status = AF_DataRequest( dstAddr, srcEP, cID, len, buf, transID, options, radius );
+   \   00005B                ; Setup parameters for call to function AF_DataRequest
+   \   00005B   78..         MOV     R0,#?V0 + 3
+   \   00005D   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000060   78..         MOV     R0,#?V0 + 4
+   \   000062   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000065   78..         MOV     R0,#?V0 + 6
+   \   000067   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00006A   78..         MOV     R0,#?V0 + 8
+   \   00006C   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00006F   78..         MOV     R0,#?V0 + 10
+   \   000071   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000074   A9..         MOV     R1,?V0 + 2
+   \   000076   AC..         MOV     R4,?V0 + 0
+   \   000078   AD..         MOV     R5,?V0 + 1
+   \   00007A   EE           MOV     A,R6
+   \   00007B   FA           MOV     R2,A
+   \   00007C   EF           MOV     A,R7
+   \   00007D   FB           MOV     R3,A
+   \   00007E   12....       LCALL   ??AF_DataRequest?relay
+   \   000081   7409         MOV     A,#0x9
+   \   000083   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000086   800B         SJMP    ??AF_DataRequestSrcRtg_1
+    710            }
+    711            else if( status == RTG_INVALID_PATH )
+   \                     ??AF_DataRequestSrcRtg_0:
+   \   000088   7405         MOV     A,#0x5
+   \   00008A   69           XRL     A,R1
+   \   00008B   7004         JNZ     ??AF_DataRequestSrcRtg_2
+    712            {
+    713              /* The source route relay count is exceeding the network limit */
+    714              status = afStatus_INVALID_PARAMETER;
+   \   00008D   7902         MOV     R1,#0x2
+   \   00008F   8002         SJMP    ??AF_DataRequestSrcRtg_1
+    715            }
+    716            else
+    717            {
+    718              /* The guaranteed adding entry fails due to memory failure */
+    719              status = afStatus_MEM_FAIL;
+   \                     ??AF_DataRequestSrcRtg_2:
+   \   000091   7910         MOV     R1,#0x10
+    720            }
+    721            return status;
+   \                     ??AF_DataRequestSrcRtg_1:
+   \   000093   7F0C         MOV     R7,#0xc
+   \   000095   02....       LJMP    ?BANKED_LEAVE_XDATA
+    722          }
+    723          
+    724          #endif
+    725          
+    726          /*********************************************************************
+    727           * @fn      afFindEndPointDescList
+    728           *
+    729           * @brief   Find the endpoint description entry from the endpoint
+    730           *          number.
+    731           *
+    732           * @param   EndPoint - Application Endpoint to look for
+    733           *
+    734           * @return  the address to the endpoint/interface description entry
+    735           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    736          static epList_t *afFindEndPointDescList( byte EndPoint )
+   \                     afFindEndPointDescList:
+    737          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    738            epList_t *epSearch;
+    739          
+    740            // Start at the beginning
+    741            epSearch = epList;
+   \   000004   90....       MOV     DPTR,#epList
+   \   000007   8009         SJMP    ??afFindEndPointDescList_0
+    742          
+    743            // Look through the list until the end
+    744            while ( epSearch )
+    745            {
+    746              // Is there a match?
+    747              if ( epSearch->epDesc->endPoint == EndPoint )
+    748              {
+    749                return ( epSearch );
+    750              }
+    751              else
+    752                epSearch = epSearch->nextDesc;  // Next entry
+   \                     ??afFindEndPointDescList_1:
+   \   000009   8A82         MOV     DPL,R2
+   \   00000B   8B83         MOV     DPH,R3
+   \   00000D   A3           INC     DPTR
+   \   00000E   A3           INC     DPTR
+   \   00000F   A3           INC     DPTR
+   \   000010   A3           INC     DPTR
+   \   000011   A3           INC     DPTR
+   \                     ??afFindEndPointDescList_0:
+   \   000012   12....       LCALL   ??Subroutine28_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_67:
+   \   000015   EA           MOV     A,R2
+   \   000016   4B           ORL     A,R3
+   \   000017   600F         JZ      ??afFindEndPointDescList_2
+   \   000019   8A82         MOV     DPL,R2
+   \   00001B   8B83         MOV     DPH,R3
+   \   00001D   E0           MOVX    A,@DPTR
+   \   00001E   F8           MOV     R0,A
+   \   00001F   12....       LCALL   ??Subroutine30_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_76:
+   \   000022   E0           MOVX    A,@DPTR
+   \   000023   69           XRL     A,R1
+   \   000024   70E3         JNZ     ??afFindEndPointDescList_1
+   \   000026   8004         SJMP    ??afFindEndPointDescList_3
+    753            }
+    754          
+    755            return ( (epList_t *)NULL );
+   \                     ??afFindEndPointDescList_2:
+   \   000028   7A00         MOV     R2,#0x0
+   \   00002A   7B00         MOV     R3,#0x0
+   \                     ??afFindEndPointDescList_3:
+   \   00002C   02....       LJMP    ?Subroutine0 & 0xFFFF
+    756          }
+    757          
+    758          /*********************************************************************
+    759           * @fn      afFindEndPointDesc
+    760           *
+    761           * @brief   Find the endpoint description entry from the endpoint
+    762           *          number.
+    763           *
+    764           * @param   EndPoint - Application Endpoint to look for
+    765           *
+    766           * @return  the address to the endpoint/interface description entry
+    767           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    768          endPointDesc_t *afFindEndPointDesc( byte EndPoint )
+   \                     afFindEndPointDesc:
+    769          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    770            epList_t *epSearch;
+    771          
+    772            // Look for the endpoint
+    773            epSearch = afFindEndPointDescList( EndPoint );
+   \   000005                ; Setup parameters for call to function afFindEndPointDescList
+   \   000005   12....       LCALL   ?Subroutine18 & 0xFFFF
+    774          
+    775            if ( epSearch )
+   \                     ??CrossCallReturnLabel_23:
+   \   000008   6005         JZ      ??afFindEndPointDesc_0
+    776              return ( epSearch->epDesc );
+   \   00000A   12....       LCALL   ??Subroutine28_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_68:
+   \   00000D   8004         SJMP    ??afFindEndPointDesc_1
+    777            else
+    778              return ( (endPointDesc_t *)NULL );
+   \                     ??afFindEndPointDesc_0:
+   \   00000F   7A00         MOV     R2,#0x0
+   \   000011   7B00         MOV     R3,#0x0
+   \                     ??afFindEndPointDesc_1:
+   \   000013   02....       LJMP    ?Subroutine2 & 0xFFFF
+    779          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine18:
+   \   000000   12....       LCALL   ??afFindEndPointDescList?relay
+   \   000003   8A82         MOV     DPL,R2
+   \   000005   8B83         MOV     DPH,R3
+   \   000007   E582         MOV     A,DPL
+   \   000009   4583         ORL     A,DPH
+   \   00000B   22           RET
+    780          
+    781          /*********************************************************************
+    782           * @fn      afFindSimpleDesc
+    783           *
+    784           * @brief   Find the Simple Descriptor from the endpoint number.
+    785           *
+    786           * @param   EP - Application Endpoint to look for.
+    787           *
+    788           * @return  Non-zero to indicate that the descriptor memory must be freed.
+    789           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    790          byte afFindSimpleDesc( SimpleDescriptionFormat_t **ppDesc, byte EP )
+   \                     afFindSimpleDesc:
+    791          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   89..         MOV     ?V0 + 0,R1
+    792            epList_t *epItem = afFindEndPointDescList( EP );
+   \   00000B                ; Setup parameters for call to function afFindEndPointDescList
+   \   00000B   12....       LCALL   ??afFindEndPointDescList?relay
+   \   00000E   8A..         MOV     ?V0 + 2,R2
+   \   000010   8B..         MOV     ?V0 + 3,R3
+   \   000012   AC..         MOV     R4,?V0 + 2
+   \   000014   AD..         MOV     R5,?V0 + 3
+    793            byte rtrn = FALSE;
+   \   000016   7900         MOV     R1,#0x0
+    794          
+    795            if ( epItem )
+   \   000018   EC           MOV     A,R4
+   \   000019   4D           ORL     A,R5
+   \   00001A   6046         JZ      ??afFindSimpleDesc_0
+    796            {
+    797              if ( epItem->pfnDescCB )
+   \   00001C   8C82         MOV     DPL,R4
+   \   00001E   8D83         MOV     DPH,R5
+   \   000020   A3           INC     DPTR
+   \   000021   A3           INC     DPTR
+   \   000022   A3           INC     DPTR
+   \   000023   12....       LCALL   ??Subroutine28_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_69:
+   \   000026   EA           MOV     A,R2
+   \   000027   4B           ORL     A,R3
+   \   000028   601F         JZ      ??afFindSimpleDesc_1
+    798              {
+    799                *ppDesc = epItem->pfnDescCB( AF_DESCRIPTOR_SIMPLE, EP );
+   \   00002A                ; Setup parameters for indirect call
+   \   00002A   AA..         MOV     R2,?V0 + 0
+   \   00002C   09           INC     R1
+   \   00002D   8C82         MOV     DPL,R4
+   \   00002F   8D83         MOV     DPH,R5
+   \   000031   A3           INC     DPTR
+   \   000032   A3           INC     DPTR
+   \   000033   A3           INC     DPTR
+   \   000034   E0           MOVX    A,@DPTR
+   \   000035   F8           MOV     R0,A
+   \   000036   12....       LCALL   ??Subroutine30_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_77:
+   \   000039   12....       LCALL   ?CALL_IND
+   \   00003C   8E82         MOV     DPL,R6
+   \   00003E   8F83         MOV     DPH,R7
+   \   000040   EA           MOV     A,R2
+   \   000041   F0           MOVX    @DPTR,A
+   \   000042   A3           INC     DPTR
+   \   000043   EB           MOV     A,R3
+   \   000044   F0           MOVX    @DPTR,A
+    800                rtrn = TRUE;
+   \   000045   7901         MOV     R1,#0x1
+   \   000047   8021         SJMP    ??afFindSimpleDesc_2
+    801              }
+    802              else
+    803              {
+    804                *ppDesc = epItem->epDesc->simpleDesc;
+   \                     ??afFindSimpleDesc_1:
+   \   000049   8C82         MOV     DPL,R4
+   \   00004B   8D83         MOV     DPH,R5
+   \   00004D   E0           MOVX    A,@DPTR
+   \   00004E   F8           MOV     R0,A
+   \   00004F   12....       LCALL   ??Subroutine30_0 & 0xFFFF
+    805              }
+    806            }
+   \                     ??CrossCallReturnLabel_78:
+   \   000052   A3           INC     DPTR
+   \   000053   A3           INC     DPTR
+   \   000054   A3           INC     DPTR
+   \   000055   12....       LCALL   ??Subroutine28_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_70:
+   \   000058   8E82         MOV     DPL,R6
+   \   00005A   8F83         MOV     DPH,R7
+   \   00005C   EA           MOV     A,R2
+   \   00005D   F0           MOVX    @DPTR,A
+   \   00005E   A3           INC     DPTR
+   \   00005F   EB           MOV     A,R3
+   \   000060   8007         SJMP    ??afFindSimpleDesc_3
+    807            else
+    808            {
+    809              *ppDesc = NULL;
+   \                     ??afFindSimpleDesc_0:
+   \   000062   8E82         MOV     DPL,R6
+   \   000064   8F83         MOV     DPH,R7
+   \   000066   E4           CLR     A
+   \   000067   F0           MOVX    @DPTR,A
+   \   000068   A3           INC     DPTR
+   \                     ??afFindSimpleDesc_3:
+   \   000069   F0           MOVX    @DPTR,A
+    810            }
+    811          
+    812            return rtrn;
+   \                     ??afFindSimpleDesc_2:
+   \   00006A   02....       LJMP    ?Subroutine1 & 0xFFFF
+    813          }
+    814          
+    815          /*********************************************************************
+    816           * @fn      afGetDescCB
+    817           *
+    818           * @brief   Get the Descriptor callback function.
+    819           *
+    820           * @param   epDesc - pointer to the endpoint descriptor
+    821           *
+    822           * @return  function pointer or NULL
+    823           */
+    824          static pDescCB afGetDescCB( endPointDesc_t *epDesc )
+    825          {
+    826            epList_t *epSearch;
+    827          
+    828            // Start at the beginning
+    829            epSearch = epList;
+    830          
+    831            // Look through the list until the end
+    832            while ( epSearch )
+    833            {
+    834              // Is there a match?
+    835              if ( epSearch->epDesc == epDesc )
+    836              {
+    837                return ( epSearch->pfnDescCB );
+    838              }
+    839              else
+    840                epSearch = epSearch->nextDesc;  // Next entry
+    841            }
+    842          
+    843            return ( (pDescCB)NULL );
+    844          }
+    845          
+    846          /*********************************************************************
+    847           * @fn      afDataReqMTU
+    848           *
+    849           * @brief   Get the Data Request MTU(Max Transport Unit).
+    850           *
+    851           * @param   fields - afDataReqMTU_t
+    852           *
+    853           * @return  uint8(MTU)
+    854           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    855          uint8 afDataReqMTU( afDataReqMTU_t* fields )
+   \                     afDataReqMTU:
+    856          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    857            uint8 len;
+    858            uint8 hdr;
+    859          
+    860            if ( fields->kvp == TRUE )
+   \   000005   8A82         MOV     DPL,R2
+   \   000007   8B83         MOV     DPH,R3
+   \   000009   E0           MOVX    A,@DPTR
+   \   00000A   6401         XRL     A,#0x1
+   \   00000C   7004         JNZ     ??afDataReqMTU_0
+    861            {
+    862              hdr = AF_HDR_KVP_MAX_LEN;
+   \   00000E   7E08         MOV     R6,#0x8
+   \   000010   8002         SJMP    ??afDataReqMTU_1
+    863            }
+    864            else
+    865            {
+    866              hdr = AF_HDR_V1_1_MAX_LEN;
+   \                     ??afDataReqMTU_0:
+   \   000012   7E00         MOV     R6,#0x0
+    867            }
+    868          
+    869            len = (uint8)(APSDE_DataReqMTU(&fields->aps) - hdr);
+    870          
+    871            return len;
+   \                     ??afDataReqMTU_1:
+   \   000014                ; Setup parameters for call to function APSDE_DataReqMTU
+   \   000014   A3           INC     DPTR
+   \   000015   AA82         MOV     R2,DPL
+   \   000017   AB83         MOV     R3,DPH
+   \   000019   12....       LCALL   ??APSDE_DataReqMTU?relay
+   \   00001C   E9           MOV     A,R1
+   \   00001D   C3           CLR     C
+   \   00001E   9E           SUBB    A,R6
+   \   00001F   F9           MOV     R1,A
+   \   000020                REQUIRE ?Subroutine3
+   \   000020                ; // Fall through to label ?Subroutine3
+    872          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+    873          
+    874          /*********************************************************************
+    875           * @fn      afGetMatch
+    876           *
+    877           * @brief   Set the allow response flag.
+    878           *
+    879           * @param   ep - Application Endpoint to look for
+    880           * @param   action - true - allow response, false - no response
+    881           *
+    882           * @return  TRUE allow responses, FALSE no response
+    883           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    884          uint8 afGetMatch( uint8 ep )
+   \                     afGetMatch:
+    885          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    886            epList_t *epSearch;
+    887          
+    888            // Look for the endpoint
+    889            epSearch = afFindEndPointDescList( ep );
+   \   000005                ; Setup parameters for call to function afFindEndPointDescList
+   \   000005   12....       LCALL   ?Subroutine18 & 0xFFFF
+    890          
+    891            if ( epSearch )
+   \                     ??CrossCallReturnLabel_24:
+   \   000008   600B         JZ      ??afGetMatch_0
+    892            {
+    893              if ( epSearch->flags & eEP_AllowMatch )
+   \   00000A   A3           INC     DPTR
+   \   00000B   A3           INC     DPTR
+   \   00000C   E0           MOVX    A,@DPTR
+   \   00000D   A2E0         MOV     C,0xE0 /* A   */.0
+   \   00000F   5004         JNC     ??afGetMatch_0
+    894                return ( TRUE );
+   \   000011   7901         MOV     R1,#0x1
+   \   000013   8002         SJMP    ??afGetMatch_1
+    895              else
+    896                return ( FALSE );
+   \                     ??afGetMatch_0:
+   \   000015   7900         MOV     R1,#0x0
+    897            }
+   \                     ??afGetMatch_1:
+   \   000017                REQUIRE ?Subroutine2
+   \   000017                ; // Fall through to label ?Subroutine2
+    898            else
+    899              return ( FALSE );
+    900          }
+    901          
+    902          /*********************************************************************
+    903           * @fn      afSetMatch
+    904           *
+    905           * @brief   Set the allow response flag.
+    906           *
+    907           * @param   ep - Application Endpoint to look for
+    908           * @param   action - true - allow response, false - no response
+    909           *
+    910           * @return  TRUE if success, FALSE if endpoint not found
+    911           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    912          uint8 afSetMatch( uint8 ep, uint8 action )
+   \                     afSetMatch:
+    913          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FF           MOV     R7,A
+    914            epList_t *epSearch;
+    915          
+    916            // Look for the endpoint
+    917            epSearch = afFindEndPointDescList( ep );
+   \   000007                ; Setup parameters for call to function afFindEndPointDescList
+   \   000007   12....       LCALL   ?Subroutine18 & 0xFFFF
+    918          
+    919            if ( epSearch )
+   \                     ??CrossCallReturnLabel_25:
+   \   00000A   6012         JZ      ??afSetMatch_0
+    920            {
+    921              if ( action )
+   \   00000C   EF           MOV     A,R7
+   \   00000D   A3           INC     DPTR
+   \   00000E   A3           INC     DPTR
+   \   00000F   6005         JZ      ??afSetMatch_1
+    922              {
+    923                epSearch->flags |= eEP_AllowMatch;
+   \   000011   E0           MOVX    A,@DPTR
+   \   000012   D2E0         SETB    0xE0 /* A   */.0
+   \   000014   8003         SJMP    ??afSetMatch_2
+    924              }
+    925              else
+    926              {
+    927                epSearch->flags &= (eEP_AllowMatch ^ 0xFFFF);
+   \                     ??afSetMatch_1:
+   \   000016   E0           MOVX    A,@DPTR
+   \   000017   C2E0         CLR     0xE0 /* A   */.0
+   \                     ??afSetMatch_2:
+   \   000019   F0           MOVX    @DPTR,A
+    928              }
+    929              return ( TRUE );
+   \   00001A   7901         MOV     R1,#0x1
+   \   00001C   8002         SJMP    ??afSetMatch_3
+    930            }
+    931            else
+    932              return ( FALSE );
+   \                     ??afSetMatch_0:
+   \   00001E   7900         MOV     R1,#0x0
+   \                     ??afSetMatch_3:
+   \   000020   80..         SJMP    ?Subroutine2
+    933          }
+    934          
+    935          /*********************************************************************
+    936           * @fn      afNumEndPoints
+    937           *
+    938           * @brief   Returns the number of endpoints defined (including 0)
+    939           *
+    940           * @param   none
+    941           *
+    942           * @return  number of endpoints
+    943           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    944          byte afNumEndPoints( void )
+   \                     afNumEndPoints:
+    945          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    946            epList_t *epSearch;
+    947            byte endpoints;
+    948          
+    949            // Start at the beginning
+    950            epSearch = epList;
+   \   000004   90....       MOV     DPTR,#epList
+   \   000007   12....       LCALL   ??Subroutine32_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_87:
+   \   00000A   8882         MOV     DPL,R0
+   \   00000C   8983         MOV     DPH,R1
+    951            endpoints = 0;
+   \   00000E   7900         MOV     R1,#0x0
+   \   000010   800D         SJMP    ??afNumEndPoints_0
+    952          
+    953            while ( epSearch )
+    954            {
+    955              endpoints++;
+   \                     ??afNumEndPoints_1:
+   \   000012   09           INC     R1
+    956              epSearch = epSearch->nextDesc;
+   \   000013   A3           INC     DPTR
+   \   000014   A3           INC     DPTR
+   \   000015   A3           INC     DPTR
+   \   000016   A3           INC     DPTR
+   \   000017   A3           INC     DPTR
+   \   000018   12....       LCALL   ??Subroutine28_0 & 0xFFFF
+    957            }
+   \                     ??CrossCallReturnLabel_71:
+   \   00001B   8A82         MOV     DPL,R2
+   \   00001D   8B83         MOV     DPH,R3
+   \                     ??afNumEndPoints_0:
+   \   00001F   E582         MOV     A,DPL
+   \   000021   4583         ORL     A,DPH
+   \   000023   70ED         JNZ     ??afNumEndPoints_1
+    958          
+    959            return ( endpoints );
+   \   000025                REQUIRE ?Subroutine0
+   \   000025                ; // Fall through to label ?Subroutine0
+    960          }
+    961          
+    962          /*********************************************************************
+    963           * @fn      afEndPoints
+    964           *
+    965           * @brief   Fills in the passed in buffer with the endpoint (numbers).
+    966           *          Use afNumEndPoints to find out how big a buffer to supply.
+    967           *
+    968           * @param   epBuf - pointer to mem used
+    969           *
+    970           * @return  void
+    971           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    972          void afEndPoints( byte *epBuf, byte skipZDO )
+   \                     afEndPoints:
+    973          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    974            epList_t *epSearch;
+    975            byte endPoint;
+    976          
+    977            // Start at the beginning
+    978            epSearch = epList;
+   \   000004   90....       MOV     DPTR,#epList
+   \   000007   8025         SJMP    ??afEndPoints_0
+    979          
+    980            while ( epSearch )
+    981            {
+    982              endPoint = epSearch->epDesc->endPoint;
+   \                     ??afEndPoints_1:
+   \   000009   8C82         MOV     DPL,R4
+   \   00000B   8D83         MOV     DPH,R5
+   \   00000D   E0           MOVX    A,@DPTR
+   \   00000E   F8           MOV     R0,A
+   \   00000F   12....       LCALL   ??Subroutine30_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_79:
+   \   000012   E0           MOVX    A,@DPTR
+   \   000013   F8           MOV     R0,A
+    983          
+    984              if ( !skipZDO || endPoint != 0 )
+   \   000014   E9           MOV     A,R1
+   \   000015   6003         JZ      ??afEndPoints_2
+   \   000017   E8           MOV     A,R0
+   \   000018   600B         JZ      ??afEndPoints_3
+    985                *epBuf++ = endPoint;
+   \                     ??afEndPoints_2:
+   \   00001A   E8           MOV     A,R0
+   \   00001B   8A82         MOV     DPL,R2
+   \   00001D   8B83         MOV     DPH,R3
+   \   00001F   F0           MOVX    @DPTR,A
+   \   000020   A3           INC     DPTR
+   \   000021   AA82         MOV     R2,DPL
+   \   000023   AB83         MOV     R3,DPH
+    986          
+    987              epSearch = epSearch->nextDesc;
+   \                     ??afEndPoints_3:
+   \   000025   8C82         MOV     DPL,R4
+   \   000027   8D83         MOV     DPH,R5
+   \   000029   A3           INC     DPTR
+   \   00002A   A3           INC     DPTR
+   \   00002B   A3           INC     DPTR
+   \   00002C   A3           INC     DPTR
+   \   00002D   A3           INC     DPTR
+    988            }
+   \                     ??afEndPoints_0:
+   \   00002E   12....       LCALL   ?Subroutine15 & 0xFFFF
+   \                     ??CrossCallReturnLabel_17:
+   \   000031   EC           MOV     A,R4
+   \   000032   4D           ORL     A,R5
+   \   000033   70D4         JNZ     ??afEndPoints_1
+    989          }
+   \   000035   80..         SJMP    ?Subroutine0
+    990          
+    991          /*********************************************************************
+    992           * @fn      afCopyAddress
+    993           *
+    994           * @brief   Fills in the passed in afAddrType_t parameter with the corresponding information
+    995           *          from the zAddrType_t parameter. 
+    996           *
+    997           * @param   epBuf - pointer to mem used
+    998           *
+    999           * @return  void
+   1000           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   1001          void afCopyAddress( afAddrType_t *afAddr, zAddrType_t *zAddr )
+   \                     afCopyAddress:
+   1002          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   1003            afAddr->addrMode = (afAddrMode_t)zAddr->addrMode;
+   \   000009   EC           MOV     A,R4
+   \   00000A   2408         ADD     A,#0x8
+   \   00000C   F8           MOV     R0,A
+   \   00000D   ED           MOV     A,R5
+   \   00000E   12....       LCALL   ?Subroutine21 & 0xFFFF
+   \                     ??CrossCallReturnLabel_29:
+   \   000011   8E82         MOV     DPL,R6
+   \   000013   8F83         MOV     DPH,R7
+   \   000015   A3           INC     DPTR
+   \   000016   A3           INC     DPTR
+   \   000017   A3           INC     DPTR
+   \   000018   A3           INC     DPTR
+   \   000019   A3           INC     DPTR
+   \   00001A   A3           INC     DPTR
+   \   00001B   A3           INC     DPTR
+   \   00001C   A3           INC     DPTR
+   \   00001D   12....       LCALL   ?Subroutine7 & 0xFFFF
+   1004            if ( zAddr->addrMode == Addr64Bit )
+   \                     ??CrossCallReturnLabel_6:
+   \   000020   7005         JNZ     ??afCopyAddress_0
+   1005            {
+   1006              (void)osal_cpyExtAddr( afAddr->addr.extAddr, zAddr->addr.extAddr );
+   \   000022                ; Setup parameters for call to function sAddrExtCpy
+   \   000022   12....       LCALL   ??sAddrExtCpy?relay
+   \   000025   800E         SJMP    ??CrossCallReturnLabel_62
+   1007            }
+   1008            else
+   1009            {
+   1010              afAddr->addr.shortAddr = zAddr->addr.shortAddr;
+   \                     ??afCopyAddress_0:
+   \   000027   8C82         MOV     DPL,R4
+   \   000029   8D83         MOV     DPH,R5
+   \   00002B   12....       LCALL   ??Subroutine32_0 & 0xFFFF
+   1011            }
+   \                     ??CrossCallReturnLabel_88:
+   \   00002E   8E82         MOV     DPL,R6
+   \   000030   8F83         MOV     DPH,R7
+   \   000032   12....       LCALL   ??Subroutine27_0 & 0xFFFF
+   1012          
+   1013            // Since zAddrType_t has no INTER-PAN information, set the panId member to zero.
+   1014            afAddr->panId = 0;
+   \                     ??CrossCallReturnLabel_62:
+   \   000035   8E82         MOV     DPL,R6
+   \   000037   8F83         MOV     DPH,R7
+   \   000039   A3           INC     DPTR
+   \   00003A   A3           INC     DPTR
+   \   00003B   A3           INC     DPTR
+   \   00003C   A3           INC     DPTR
+   \   00003D   A3           INC     DPTR
+   \   00003E   A3           INC     DPTR
+   \   00003F   A3           INC     DPTR
+   \   000040   A3           INC     DPTR
+   \   000041   A3           INC     DPTR
+   \   000042   A3           INC     DPTR
+   \   000043   E4           CLR     A
+   \   000044   F0           MOVX    @DPTR,A
+   \   000045   A3           INC     DPTR
+   \   000046   F0           MOVX    @DPTR,A
+   1015          }
+   \   000047   02....       LJMP    ?Subroutine3 & 0xFFFF
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for AF_DataRequestDiscoverRoute>`:
+   \   000000   01           DB 1
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??afInit?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    afInit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??afRegisterExtended?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    afRegisterExtended
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??afRegister?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    afRegister
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??afDataConfirm?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    afDataConfirm
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??afIncomingData?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    afIncomingData
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??afBuildMSGIncoming?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    afBuildMSGIncoming
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AF_DataRequest?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AF_DataRequest
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AF_DataRequestSrcRtg?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AF_DataRequestSrcRtg
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??afFindEndPointDescList?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    afFindEndPointDescList
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??afFindEndPointDesc?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    afFindEndPointDesc
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??afFindSimpleDesc?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    afFindSimpleDesc
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??afDataReqMTU?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    afDataReqMTU
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??afGetMatch?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    afGetMatch
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??afSetMatch?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    afSetMatch
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??afNumEndPoints?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    afNumEndPoints
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??afEndPoints?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    afEndPoints
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??afCopyAddress?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    afCopyAddress
+   1016          
+   1017          /*********************************************************************
+   1018          *********************************************************************/
+   1019          
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     AF_DataRequest                     1      0     81
+       -> NLME_GetShortAddr             0      0    104
+       -> RTG_CheckRtStatus             0      0    104
+       -> NLME_IsAddressBroadcast       0      0    104
+       -> sAddrExtCpy                   0      0    104
+       -> osal_mem_free                 0      0    104
+       -> afDataReqMTU                  0      0    104
+       -> APSDE_DataReq                 0      0    104
+       -> NLME_GetShortAddr             0      0    104
+       -> afDataConfirm                 0      0    104
+     AF_DataRequestSrcRtg               0      0     41
+       -> RTG_AddSrcRtgEntry_Guaranteed
+                                        0      0     40
+       -> AF_DataRequest                0      0     58
+     afBuildMSGIncoming                 1      0     63
+       -> osal_msg_allocate             0      0     46
+       -> afCopyAddress                 0      0     46
+       -> osal_memcpy                   0      0     52
+       -> osal_msg_send                 0      0     46
+     afCopyAddress                      1      0     32
+       -> sAddrExtCpy                   0      0     18
+     afDataConfirm                      1      0     66
+       -> afFindEndPointDesc            0      0     28
+       -> osal_msg_allocate             0      0     28
+       -> osal_msg_send                 0      0     28
+     afDataReqMTU                       0      0     61
+       -> APSDE_DataReqMTU              0      0     18
+     afEndPoints                        3      0      0
+     afFindEndPointDesc                 0      0     37
+       -> afFindEndPointDescList        0      0     20
+     afFindEndPointDescList             2      0     27
+     afFindSimpleDesc                   0      0     12
+       -> afFindEndPointDescList        0      0     24
+     afGetMatch                         0      0     10
+       -> afFindEndPointDescList        0      0     20
+     afIncomingData                     1      0     45
+       -> aps_FindGroupForEndpoint      0      0     54
+       -> afFindEndPointDesc            0      0     54
+       -> afFindEndPointDescList        0      0     54
+       -> afFindEndPointDesc            0      0     54
+       -> aps_FindGroupForEndpoint      0      0     54
+       -> afFindEndPointDesc            0      0     54
+       -> afFindEndPointDescList        0      0     54
+       -> osal_mem_free                 0      0     54
+       -> afBuildMSGIncoming            0      0     74
+     afInit                             2      0      0
+     afNumEndPoints                     2      0      0
+     afRegister                         0      0     10
+       -> afFindEndPointDescList        0      0     20
+       -> afRegisterExtended            0      0     20
+     afRegisterExtended                 0      0     22
+       -> osal_mem_alloc                0      0     24
+     afSetMatch                         0      0     10
+       -> afFindEndPointDescList        0      0     20
+
+
+   Segment part sizes:
+
+     Function/Label                                 Bytes
+     --------------                                 -----
+     epList                                            2
+     afInit                                           14
+     ?Subroutine0                                      7
+     afRegisterExtended                              103
+     ?Subroutine1                                      5
+     ?Subroutine22                                     8
+     ?Subroutine4                                      5
+     ??Subroutine26_0                                  8
+     ?Subroutine15                                     6
+     afRegister                                       56
+     ?Subroutine2                                      5
+     afDataConfirm                                    70
+     ?Subroutine11                                    15
+     afIncomingData                                  450
+     ?Subroutine20                                    14
+     ?Subroutine17                                    14
+     ?Subroutine9                                     20
+     ?Subroutine8                                      6
+     ??Subroutine25_0                                  3
+     ?Subroutine14                                     6
+     ??Subroutine29_0                                  3
+     ??Subroutine30_0                                  1
+     ??Subroutine31_0                                  6
+     afBuildMSGIncoming                              428
+     ?Subroutine19                                     3
+     ??Subroutine23_0                                  3
+     ??Subroutine24_0                                  5
+     ?Subroutine12                                    16
+     ?Subroutine6                                      9
+     ?Subroutine16                                     8
+     ?Subroutine5                                      7
+     ??Subroutine27_0                                  6
+     ??Subroutine28_0                                  6
+     ?Subroutine13                                     1
+     ??Subroutine32_0                                  6
+     AF_DataRequestDiscoverRoute                       1
+     AF_DataRequest                                  811
+     ?Subroutine10                                     4
+     ?Subroutine21                                     9
+     ?Subroutine7                                      9
+     AF_DataRequestSrcRtg                            152
+     afFindEndPointDescList                           47
+     afFindEndPointDesc                               22
+     ?Subroutine18                                    12
+     afFindSimpleDesc                                109
+     afDataReqMTU                                     32
+     ?Subroutine3                                      5
+     afGetMatch                                       23
+     afSetMatch                                       34
+     afNumEndPoints                                   37
+     afEndPoints                                      55
+     afCopyAddress                                    74
+     ?<Initializer for AF_DataRequestDiscoverRoute>    1
+     ??afInit?relay                                    6
+     ??afRegisterExtended?relay                        6
+     ??afRegister?relay                                6
+     ??afDataConfirm?relay                             6
+     ??afIncomingData?relay                            6
+     ??afBuildMSGIncoming?relay                        6
+     ??AF_DataRequest?relay                            6
+     ??AF_DataRequestSrcRtg?relay                      6
+     ??afFindEndPointDescList?relay                    6
+     ??afFindEndPointDesc?relay                        6
+     ??afFindSimpleDesc?relay                          6
+     ??afDataReqMTU?relay                              6
+     ??afGetMatch?relay                                6
+     ??afSetMatch?relay                                6
+     ??afNumEndPoints?relay                            6
+     ??afEndPoints?relay                               6
+     ??afCopyAddress?relay                             6
+
+ 
+ 2 758 bytes in segment BANKED_CODE
+   102 bytes in segment BANK_RELAYS
+     1 byte  in segment XDATA_I
+     1 byte  in segment XDATA_ID
+     2 bytes in segment XDATA_Z
+ 
+ 2 861 bytes of CODE  memory
+     3 bytes of XDATA memory
+
+Errors: none
+Warnings: none

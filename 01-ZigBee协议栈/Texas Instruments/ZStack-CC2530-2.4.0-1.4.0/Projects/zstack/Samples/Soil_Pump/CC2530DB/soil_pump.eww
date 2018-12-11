@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\soil_pump.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>ALL</name>
+      <member>
+        <project>soil_pump</project>
+        <configuration>CoordinatorEB</configuration>
+      </member>
+      <member>
+        <project>soil_pump</project>
+        <configuration>RouterEB</configuration>
+      </member>
+      <member>
+        <project>soil_pump</project>
+        <configuration>EndDeviceEB</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+

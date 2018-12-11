@@ -1,0 +1,1612 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         11/Dec/2018  09:56:44 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03-œµÕ≥¥˙¬Î\01- #
+#                          ZigBee–≠“È’ª\Texas Instruments\ZStack-CC2530-2.4.0 #
+#                          -1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC2 #
+#                          530DB\AM2321b.c                                    #
+#    Command line       =  -f "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03-œµÕ≥¥˙¬Î #
+#                          \01-ZigBee–≠“È’ª\Texas Instruments\ZStack-CC2530-2 #
+#                          .4.0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater #
+#                          \CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"    #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03- #
+#                          ≥£”√π§æﬂ\03-œµÕ≥¥˙¬Î\01-ZigBee–≠“È’ª\Texas         #
+#                          Instruments\ZStack-CC2530-2.4.0-1.4.0\Projects\zst #
+#                          ack\Samples\HumiTemp_Heater\CC2530DB\..\..\..\Tool #
+#                          s\CC2530DB\f8wConfig.cfg" (-DZIGBEEPRO -DSECURE=0  #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0x1010                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=TRUE -DPOLL_RATE=1000         #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03- #
+#                          ≥£”√π§æﬂ\03-œµÕ≥¥˙¬Î\01-ZigBee–≠“È’ª\Texas         #
+#                          Instruments\ZStack-CC2530-2.4.0-1.4.0\Projects\zst #
+#                          ack\Samples\HumiTemp_Heater\CC2530DB\AM2321b.c"    #
+#                          -D NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D         #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG  #
+#                          -D xPOWER_SAVING -lC "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£ #
+#                          ”√π§æﬂ\03-œµÕ≥¥˙¬Î\01-ZigBee–≠“È’ª\Texas           #
+#                          Instruments\ZStack-CC2530-2.4.0-1.4.0\Projects\zst #
+#                          ack\Samples\HumiTemp_Heater\CC2530DB\HumiTemp_Heat #
+#                          er\List\" -lA "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\ #
+#                          03-œµÕ≥¥˙¬Î\01-ZigBee–≠“È’ª\Texas                  #
+#                          Instruments\ZStack-CC2530-2.4.0-1.4.0\Projects\zst #
+#                          ack\Samples\HumiTemp_Heater\CC2530DB\HumiTemp_Heat #
+#                          er\List\" --diag_suppress Pe001,Pa010 -o           #
+#                          "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03-œµÕ≥¥˙¬Î\01 #
+#                          -ZigBee–≠“È’ª\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\HumiTemp_Heater\Obj\" -e --no_code_motion   #
+#                          --debug --core=plain --dptr=16,1                   #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03-œµÕ≥¥˙¬Î #
+#                          \01-ZigBee–≠“È’ª\Texas Instruments\ZStack-CC2530-2 #
+#                          .4.0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater #
+#                          \CC2530DB\" -I "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ #
+#                          \03-œµÕ≥¥˙¬Î\01-ZigBee–≠“È’ª\Texas                 #
+#                          Instruments\ZStack-CC2530-2.4.0-1.4.0\Projects\zst #
+#                          ack\Samples\HumiTemp_Heater\CC2530DB\..\Source\"   #
+#                          -I "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03-œµÕ≥¥˙¬Î #
+#                          \01-ZigBee–≠“È’ª\Texas Instruments\ZStack-CC2530-2 #
+#                          .4.0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater #
+#                          \CC2530DB\..\..\..\ZMain\TI2530DB\" -I             #
+#                          "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03-œµÕ≥¥˙¬Î\01 #
+#                          -ZigBee–≠“È’ª\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\..\..\..\..\..\Components\hal\include\" -I  #
+#                          "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03-œµÕ≥¥˙¬Î\01 #
+#                          -ZigBee–≠“È’ª\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\..\..\..\..\..\Components\hal\target\CC2530 #
+#                          EB\" -I "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03-œµÕ #
+#                          ≥¥˙¬Î\01-ZigBee–≠“È’ª\Texas                        #
+#                          Instruments\ZStack-CC2530-2.4.0-1.4.0\Projects\zst #
+#                          ack\Samples\HumiTemp_Heater\CC2530DB\..\..\..\..\. #
+#                          .\Components\mac\include\" -I                      #
+#                          "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03-œµÕ≥¥˙¬Î\01 #
+#                          -ZigBee–≠“È’ª\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\..\..\..\..\..\Components\mac\high_level\"  #
+#                          -I "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03-œµÕ≥¥˙¬Î #
+#                          \01-ZigBee–≠“È’ª\Texas Instruments\ZStack-CC2530-2 #
+#                          .4.0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater #
+#                          \CC2530DB\..\..\..\..\..\Components\mac\low_level\ #
+#                          srf04\" -I "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03- #
+#                          œµÕ≥¥˙¬Î\01-ZigBee–≠“È’ª\Texas                     #
+#                          Instruments\ZStack-CC2530-2.4.0-1.4.0\Projects\zst #
+#                          ack\Samples\HumiTemp_Heater\CC2530DB\..\..\..\..\. #
+#                          .\Components\mac\low_level\srf04\single_chip\" -I  #
+#                          "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03-œµÕ≥¥˙¬Î\01 #
+#                          -ZigBee–≠“È’ª\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\..\..\..\..\..\Components\mt\" -I           #
+#                          "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03-œµÕ≥¥˙¬Î\01 #
+#                          -ZigBee–≠“È’ª\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\..\..\..\..\..\Components\osal\include\"    #
+#                          -I "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03-œµÕ≥¥˙¬Î #
+#                          \01-ZigBee–≠“È’ª\Texas Instruments\ZStack-CC2530-2 #
+#                          .4.0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater #
+#                          \CC2530DB\..\..\..\..\..\Components\osal\mcu\ccsoc #
+#                          \" -I "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03-œµÕ≥¥ #
+#                          ˙¬Î\01-ZigBee–≠“È’ª\Texas                          #
+#                          Instruments\ZStack-CC2530-2.4.0-1.4.0\Projects\zst #
+#                          ack\Samples\HumiTemp_Heater\CC2530DB\..\..\..\..\. #
+#                          .\Components\services\saddr\" -I                   #
+#                          "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03-œµÕ≥¥˙¬Î\01 #
+#                          -ZigBee–≠“È’ª\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\..\..\..\..\..\Components\services\sdata\"  #
+#                          -I "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03-œµÕ≥¥˙¬Î #
+#                          \01-ZigBee–≠“È’ª\Texas Instruments\ZStack-CC2530-2 #
+#                          .4.0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater #
+#                          \CC2530DB\..\..\..\..\..\Components\stack\af\" -I  #
+#                          "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03-œµÕ≥¥˙¬Î\01 #
+#                          -ZigBee–≠“È’ª\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\..\..\..\..\..\Components\stack\nwk\" -I    #
+#                          "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03-œµÕ≥¥˙¬Î\01 #
+#                          -ZigBee–≠“È’ª\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\..\..\..\..\..\Components\stack\sapi\" -I   #
+#                          "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03-œµÕ≥¥˙¬Î\01 #
+#                          -ZigBee–≠“È’ª\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\..\..\..\..\..\Components\stack\sec\" -I    #
+#                          "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03-œµÕ≥¥˙¬Î\01 #
+#                          -ZigBee–≠“È’ª\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\..\..\..\..\..\Components\stack\sys\" -I    #
+#                          "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03-œµÕ≥¥˙¬Î\01 #
+#                          -ZigBee–≠“È’ª\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\..\..\..\..\..\Components\stack\zdo\" -I    #
+#                          "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03-œµÕ≥¥˙¬Î\01 #
+#                          -ZigBee–≠“È’ª\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\..\..\..\..\..\Components\zmac\" -I         #
+#                          "F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03-œµÕ≥¥˙¬Î\01 #
+#                          -ZigBee–≠“È’ª\Texas Instruments\ZStack-CC2530-2.4. #
+#                          0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC #
+#                          2530DB\..\..\..\..\..\Components\zmac\f8w\" -Ohz   #
+#                          --require_prototypes                               #
+#    List file          =  F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03-œµÕ≥¥˙¬Î\01- #
+#                          ZigBee–≠“È’ª\Texas Instruments\ZStack-CC2530-2.4.0 #
+#                          -1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC2 #
+#                          530DB\HumiTemp_Heater\List\AM2321b.lst             #
+#    Object file        =  F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03-œµÕ≥¥˙¬Î\01- #
+#                          ZigBee–≠“È’ª\Texas Instruments\ZStack-CC2530-2.4.0 #
+#                          -1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC2 #
+#                          530DB\HumiTemp_Heater\Obj\AM2321b.r51              #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+F:\¥ÛÀƒ\01Œ¬ “¥Û≈Ô◊ ¡œ\03-≥£”√π§æﬂ\03-œµÕ≥¥˙¬Î\01-ZigBee–≠“È’ª\Texas Instruments\ZStack-CC2530-2.4.0-1.4.0\Projects\zstack\Samples\HumiTemp_Heater\CC2530DB\AM2321b.c
+      1          /********************************************************************************
+      2          * Copyright (c) 2015£¨¡™¥¥÷–øÿ£®±±æ©£©ø∆ºº”–œﬁπ´Àæ
+      3          * All rights reserved.
+      4          *
+      5          * Œƒº˛√˚≥∆£∫AM2312b.c
+      6          * ’™	“™£∫Œ¬ “¥Û≈Ô«¯π¶ƒ‹∫Ø ˝
+      7          *
+      8          * µ±«∞∞Ê±æ£∫V1.0
+      9          * ◊˜	’ﬂ£∫’≈–°∏’
+     10          * ÕÍ≥…»’∆⁄£∫2016ƒÍ4‘¬7»’
+     11          * –ﬁ∏ƒ’™“™£∫
+     12          ********************************************************************************/
+     13          
+     14          /*************Õ∑Œƒº˛********************/
+     15          #include "AM2321b.h"
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+     16          
+     17          /**************AM2312b ¥´∏–∆˜ π”√∂Àø⁄∂®“Â*******************/
+     18          #define SDA                    P1_6		//Œ¬∂»¥´∏–∆˜ ˝æ›“˝Ω≈µƒ∂®“Â
+     19          #define SDAPxSEL               P1SEL
+     20          #define SDAPxDIR               P1DIR
+     21          #define SDAPORTBIT             0x40
+     22          
+     23          #define SCL                     P1_7		//Œ¬∂»¥´∏–∆˜ ±÷”“˝Ω≈µƒ∂®“Â
+     24          #define SCLPxSEL                P1SEL
+     25          #define SCLPxDIR                P1DIR
+     26          #define SCLPORTBIT              0x80
+     27          
+     28          #define Clr_IIC_SCL()   SCL=0
+     29          #define Set_IIC_SCL()   SCL=1
+     30          
+     31          #define Set_IIC_SDA()   SDA =1
+     32          #define Clr_IIC_SDA()   SDA =0
+     33          #define READ_SDA()      SDA
+     34          #define WRITE_SDA(x)    SDA=x    
+     35          
+     36          
+     37          /*********************************************************/
+     38          
+     39          #define IIC_Add 0xB8    //∆˜º˛µÿ÷∑
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     40          unsigned char IIC_CMD[]={0x03,0x00,0x04}; //∂¡Œ¬ ™∂»√¸¡Ó£®ŒﬁCRC–£—È£©
+   \                     IIC_CMD:
+   \   000000                DS 3
+   \   000003                REQUIRE `?<Initializer for IIC_CMD>`
+   \   000003                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     41          unsigned char Buffer[8] = {0x00};
+   \                     Buffer:
+   \   000000                DS 8
+   \   000008                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     42          unsigned char WR_Flag;
+   \                     WR_Flag:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     43          
+     44          
+     45          /*****************±æµÿ∫Ø ˝…˘√˜************************/
+     46          void IIC_Config(void);
+     47          void IIC_SDA_OUT(void);
+     48          void IIC_SDA_IN(void );
+     49          void Delay1us(uint16 t);
+     50          void delay_ms(uint16 ms);
+     51          void AM232XX_Init(void);
+     52          void I2C_Start(void);
+     53          void I2C_Stop(void);
+     54          void Ack(void);
+     55          void NoAck(void);
+     56          char Test_Ack(void);
+     57          void SendData(unsigned char buffer);
+     58          unsigned char ReceiveData(void);
+     59          char WriteNByte(unsigned char sla,unsigned char *s,unsigned char n);
+     60          char ReadNByte(unsigned char Sal, unsigned char *p,unsigned char n);
+     61          unsigned int CRC16(unsigned char *ptr, unsigned char len);
+     62          unsigned char CheckCRC(unsigned char *ptr,unsigned char len);
+     63          void Waken(void);
+     64          
+     65          /***********************************************/
+     66          
+     67          
+     68          /*******************************************************************************
+     69          *∫Ø ˝√˚≥∆£∫IICInit
+     70          *∫Ø ˝Àµ√˜£∫IIC≥ı ºªØ
+     71          *∫Ø ˝◊˜’ﬂ£∫embest
+     72          *******************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     73          void IIC_Config(void)
+   \                     IIC_Config:
+     74          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     75            SDAPxSEL &= ~SDAPORTBIT;  //DATAø⁄◊˜Œ™Õ®”√IOø⁄
+   \   000000   53F4BF       ANL     0xf4,#0xbf
+     76            SCLPxSEL &= ~SDAPORTBIT;  //SCKø⁄◊˜Œ™Õ®”√IOø⁄
+   \   000003   53F4BF       ANL     0xf4,#0xbf
+     77              
+     78            SCLPxDIR  |= SCLPORTBIT;    //SCK…Ë÷√Œ™ ‰≥ˆ
+   \   000006   43FE80       ORL     0xfe,#0x80
+     79            SDAPxDIR  |= SDAPORTBIT;    //DATA…Ë÷√Œ™ ‰≥ˆ
+   \   000009                REQUIRE ?Subroutine1
+   \   000009                REQUIRE P1SEL
+   \   000009                REQUIRE P1DIR
+   \   000009                ; // Fall through to label ?Subroutine1
+     80          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   43FE40       ORL     0xfe,#0x40
+   \   000003   02....       LJMP    ?BRET
+     81          
+     82          
+     83          /************************************************************************
+     84          ∫Ø ˝√˚≥∆£∫IIC_SDA_IN
+     85          ∫Ø ˝π¶ƒ‹£∫…Ë÷√SDA∂Àø⁄Œ™ ‰»Îø⁄
+     86          ∫Ø ˝¥´≤Œ£∫Œﬁ
+     87          ∫Ø ˝∑µªÿ÷µ£∫Œﬁ
+     88          ∫Ø ˝◊˜’ﬂ£∫2016-4 zxg
+     89          ************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     90          void IIC_SDA_IN(void)
+   \                     IIC_SDA_IN:
+     91          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     92            SDAPxDIR &= ~SDAPORTBIT ;
+   \   000000   53FEBF       ANL     0xfe,#0xbf
+     93          }
+   \   000003   02....       LJMP    ?BRET
+   \   000006                REQUIRE P1DIR
+     94          
+     95          /************************************************************************
+     96          ∫Ø ˝√˚≥∆£∫IIC_SDA_OUT
+     97          ∫Ø ˝π¶ƒ‹£∫…Ë÷√SDA∂Àø⁄Œ™ ‰≥ˆø⁄
+     98          ∫Ø ˝¥´≤Œ£∫Œﬁ
+     99          ∫Ø ˝∑µªÿ÷µ£∫Œﬁ
+    100          ∫Ø ˝◊˜’ﬂ£∫2016-4 zxg
+    101          ************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    102          void IIC_SDA_OUT(void)
+   \                     IIC_SDA_OUT:
+    103          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    104            SDAPxDIR |= SDAPORTBIT;
+   \   000000   80..         SJMP    ?Subroutine1
+   \   000002                REQUIRE P1DIR
+    105          }
+    106          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    107          void MicroWait( uint16 timeout )
+   \                     MicroWait:
+    108          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+   \   000000   8003         SJMP    ??MicroWait_0
+    109            while (timeout--)
+    110            {
+    111              asm("NOP");
+   \                     ??MicroWait_1:
+   \   000002   00           NOP
+    112              asm("NOP");
+   \   000003   00           NOP
+    113              asm("NOP");
+   \   000004   00           NOP
+    114            }
+   \                     ??MicroWait_0:
+   \   000005   EA           MOV     A,R2
+   \   000006   F8           MOV     R0,A
+   \   000007   EB           MOV     A,R3
+   \   000008   F9           MOV     R1,A
+   \   000009   E8           MOV     A,R0
+   \   00000A   24FF         ADD     A,#-0x1
+   \   00000C   1A           DEC     R2
+   \   00000D   E9           MOV     A,R1
+   \   00000E   34FF         ADDC    A,#-0x1
+   \   000010   FB           MOV     R3,A
+   \   000011   E8           MOV     A,R0
+   \   000012   49           ORL     A,R1
+   \   000013   70ED         JNZ     ??MicroWait_1
+    115          }
+   \   000015   02....       LJMP    ?BRET
+    116          /***********************************************************
+    117          * √˚≥∆: Delay1us()
+    118          * π¶ƒ‹: —” ±1us∫Ø ˝
+    119          * ≤Œ ˝:  ‰»Î –Ë“™—” ±µƒŒ¢√Î ˝
+    120          * ∑µªÿ: Œﬁ
+    121          * –ﬁ∏ƒ:
+    122          * ◊¢ Õ: 
+    123          ***********************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    124          void Delay1us(uint16 t)
+   \                     Delay1us:
+    125          { 
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    126              /*uint8 i;
+    127              for(i = 30; i > 0; i--)
+    128                  ;
+    129                  //MicroWait(1);     //’‚ «–≠“È’ªƒ⁄µƒ∫Ø ˝
+    130            */
+    131            uint8 i;
+    132              for(i = t; i > 0; i--)        
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   8008         SJMP    ??Delay1us_0
+    133                  MicroWait(1);     //’‚ «–≠“È’ªƒ⁄µƒ∫Ø ˝
+   \                     ??Delay1us_1:
+   \   000009                ; Setup parameters for call to function MicroWait
+   \   000009   7A01         MOV     R2,#0x1
+   \   00000B   7B00         MOV     R3,#0x0
+   \   00000D   12....       LCALL   ??MicroWait?relay
+   \   000010   1E           DEC     R6
+   \                     ??Delay1us_0:
+   \   000011   EE           MOV     A,R6
+   \   000012   70F5         JNZ     ??Delay1us_1
+    134          }
+   \   000014   02....       LJMP    ?Subroutine2 & 0xFFFF
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+    135          
+    136          /***********************************************************
+    137          * √˚≥∆: delay_ms()
+    138          * π¶ƒ‹: ¥÷¬‘—” ±1ms∫Ø ˝
+    139          * ≤Œ ˝:  ‰»Î–Ë“™—” ±µƒ∫¡√Î ˝
+    140          * ∑µªÿ: Œﬁ
+    141          * –ﬁ∏ƒ:
+    142          * ◊¢ Õ: 
+    143          ***********************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    144          void delay_ms(uint16 ms)
+   \                     delay_ms:
+    145          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    146            /* unsigned char i; 
+    147              while(ms--)  
+    148              { 
+    149                for(i=0;i<100;i++)    
+    150                 Delay1us(10);  
+    151              }
+    152            */
+    153            unsigned char i; 
+    154              while(ms--)  
+   \                     ??delay_ms_0:
+   \   000009   EE           MOV     A,R6
+   \   00000A   F8           MOV     R0,A
+   \   00000B   EF           MOV     A,R7
+   \   00000C   F9           MOV     R1,A
+   \   00000D   E8           MOV     A,R0
+   \   00000E   24FF         ADD     A,#-0x1
+   \   000010   1E           DEC     R6
+   \   000011   E9           MOV     A,R1
+   \   000012   34FF         ADDC    A,#-0x1
+   \   000014   FF           MOV     R7,A
+   \   000015   E8           MOV     A,R0
+   \   000016   49           ORL     A,R1
+   \   000017   6012         JZ      ??delay_ms_1
+    155              { 
+    156                for(i=0;i<100;i++)    
+   \   000019   75..64       MOV     ?V0 + 0,#0x64
+    157                 MicroWait(10);  
+   \                     ??delay_ms_2:
+   \   00001C                ; Setup parameters for call to function MicroWait
+   \   00001C   7A0A         MOV     R2,#0xa
+   \   00001E   7B00         MOV     R3,#0x0
+   \   000020   12....       LCALL   ??MicroWait?relay
+   \   000023   15..         DEC     ?V0 + 0
+   \   000025   E5..         MOV     A,?V0 + 0
+   \   000027   60E0         JZ      ??delay_ms_0
+   \   000029   80F1         SJMP    ??delay_ms_2
+    158              }
+    159          }
+   \                     ??delay_ms_1:
+   \   00002B   02....       LJMP    ?Subroutine2 & 0xFFFF
+    160          /***********************************************************
+    161          * √˚≥∆: AM232XX_Init()
+    162          * π¶ƒ‹: Œ¬ ™∂»¥´∏–∆˜≥ı ºªØ∫Ø ˝
+    163          * ≤Œ ˝: Œﬁ
+    164          * ∑µªÿ: Œﬁ
+    165          * –ﬁ∏ƒ:
+    166          * ◊¢ Õ: 
+    167          ***********************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    168          void AM232XX_Init(void)
+   \                     AM232XX_Init:
+    169          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    170            IIC_Config();
+   \   000004                ; Setup parameters for call to function IIC_Config
+   \   000004   12....       LCALL   ??IIC_Config?relay
+    171            Set_IIC_SCL();
+   \   000007   D297         SETB    0x90.7
+    172            Set_IIC_SDA(); 
+   \   000009   80..         SJMP    ?Subroutine0
+   \   00000B                REQUIRE _A_P1
+    173          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D296         SETB    0x90.6
+   \   000002                REQUIRE ??Subroutine10_0
+   \   000002                ; // Fall through to label ??Subroutine10_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine10_0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+    174          
+    175          //**********************************************
+    176          //ÀÕ∆ ºŒª sda=1->0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    177          void I2C_Start(void)
+   \                     I2C_Start:
+    178          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    179            IIC_SDA_OUT();
+   \   000004   43FE40       ORL     0xfe,#0x40
+    180            Set_IIC_SDA();
+   \   000007   D296         SETB    0x90.6
+    181            Set_IIC_SCL();
+   \   000009   D297         SETB    0x90.7
+    182            Delay1us(10);
+   \   00000B                ; Setup parameters for call to function Delay1us
+   \   00000B   7A0A         MOV     R2,#0xa
+   \   00000D   7B00         MOV     R3,#0x0
+   \   00000F   12....       LCALL   ??Delay1us?relay
+    183            Clr_IIC_SDA();
+   \   000012   C296         CLR     0x90.6
+    184            Delay1us(10);
+   \   000014                ; Setup parameters for call to function Delay1us
+   \   000014   7A0A         MOV     R2,#0xa
+   \   000016   7B00         MOV     R3,#0x0
+   \   000018   12....       LCALL   ??Delay1us?relay
+    185            Clr_IIC_SCL(); 
+   \   00001B                REQUIRE ?Subroutine4
+   \   00001B                REQUIRE _A_P1
+   \   00001B                REQUIRE P1DIR
+   \   00001B                ; // Fall through to label ?Subroutine4
+    186          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   C297         CLR     0x90.7
+   \   000002   80..         SJMP    ??Subroutine10_0
+    187          //************************************************
+    188          //ÀÕÕ£÷πŒª sda=0->1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    189          void I2C_Stop(void)
+   \                     I2C_Stop:
+    190          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    191            IIC_SDA_OUT();
+   \   000004   43FE40       ORL     0xfe,#0x40
+    192            Clr_IIC_SDA();
+   \   000007   C296         CLR     0x90.6
+    193            Delay1us(10);
+   \   000009                ; Setup parameters for call to function Delay1us
+   \   000009   12....       LCALL   ??Subroutine11_0 & 0xFFFF
+    194            Set_IIC_SCL();
+    195            Delay1us(10);
+    196            Set_IIC_SDA();
+   \                     ??CrossCallReturnLabel_8:
+   \   00000C   80..         SJMP    ?Subroutine0
+   \   00000E                REQUIRE _A_P1
+   \   00000E                REQUIRE P1DIR
+    197          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine11_0:
+   \   000000   7A0A         MOV     R2,#0xa
+   \   000002   7B00         MOV     R3,#0x0
+   \   000004   12....       LCALL   ??Delay1us?relay
+   \   000007   D297         SETB    0x90.7
+   \   000009                ; Setup parameters for call to function Delay1us
+   \   000009                ; Setup parameters for call to function Delay1us
+   \   000009                ; Setup parameters for call to function Delay1us
+   \   000009                ; Setup parameters for call to function Delay1us
+   \   000009   7A0A         MOV     R2,#0xa
+   \   00000B   7B00         MOV     R3,#0x0
+   \   00000D   12....       LCALL   ??Delay1us?relay
+   \   000010   22           RET
+    198          
+    199          //************************************************
+    200          //÷˜”¶¥(∞¸∫¨ack:sda=0∫Õno_ack:sda=0)
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    201          void Ack(void)
+   \                     Ack:
+    202          {  //…Ë÷√SDA ø⁄Œ™ ‰≥ˆ
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    203            IIC_SDA_OUT();
+   \   000004   43FE40       ORL     0xfe,#0x40
+    204            Clr_IIC_SDA();
+   \   000007   C296         CLR     0x90.6
+    205            Clr_IIC_SCL();
+   \   000009   12....       LCALL   ?Subroutine5 & 0xFFFF
+    206            Delay1us(10);
+    207            Set_IIC_SCL();
+    208            Delay1us(10);	
+    209            Clr_IIC_SCL();
+   \                     ??CrossCallReturnLabel_6:
+   \   00000C   C297         CLR     0x90.7
+    210            Set_IIC_SDA();
+   \   00000E   80..         SJMP    ?Subroutine0
+   \   000010                REQUIRE _A_P1
+   \   000010                REQUIRE P1DIR
+    211          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   C297         CLR     0x90.7
+   \   000002                ; Setup parameters for call to function Delay1us
+   \   000002                ; Setup parameters for call to function Delay1us
+   \   000002                REQUIRE ??Subroutine11_0
+   \   000002                ; // Fall through to label ??Subroutine11_0
+    212          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    213          void NoAck(void)
+   \                     NoAck:
+    214          {  //…Ë÷√SDA ø⁄Œ™ ‰≥ˆ
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    215            IIC_SDA_OUT();
+   \   000004   43FE40       ORL     0xfe,#0x40
+    216            Set_IIC_SDA();  
+   \   000007   D296         SETB    0x90.6
+    217            Clr_IIC_SCL();
+   \   000009   12....       LCALL   ?Subroutine5 & 0xFFFF
+    218            Delay1us(10);
+    219            Set_IIC_SCL();
+    220            Delay1us(10);
+    221            Set_IIC_SDA();
+   \                     ??CrossCallReturnLabel_7:
+   \   00000C   D296         SETB    0x90.6
+    222            Clr_IIC_SCL();
+   \   00000E   80..         SJMP    ?Subroutine4
+   \   000010                REQUIRE _A_P1
+   \   000010                REQUIRE P1DIR
+    223          }
+    224          
+    225          // ºÏ≤‚ SDA «∑ÒªÿACK
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    226          char Test_Ack(void)
+   \                     Test_Ack:
+    227          {  //…Ë÷√SDA ø⁄Œ™ ‰»Î
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    228            char ACK_Flag=0;
+    229            IIC_SDA_IN();
+   \   000004   53FEBF       ANL     0xfe,#0xbf
+    230            Clr_IIC_SCL();
+   \   000007   C297         CLR     0x90.7
+    231            Set_IIC_SDA();   
+   \   000009   D296         SETB    0x90.6
+    232            Delay1us(10);
+   \   00000B                ; Setup parameters for call to function Delay1us
+   \   00000B   12....       LCALL   ??Subroutine11_0 & 0xFFFF
+    233            Set_IIC_SCL();
+    234            Delay1us(10);
+    235            if(READ_SDA()==0)
+   \                     ??CrossCallReturnLabel_9:
+   \   00000E   E590         MOV     A,0x90
+    236              ACK_Flag = 1;
+    237            else 
+    238              ACK_Flag = 0;
+    239            Clr_IIC_SCL();
+   \   000010   C297         CLR     0x90.7
+    240            return ACK_Flag;
+   \   000012   A2E6         MOV     C,0xE0 /* A   */.6
+   \   000014   B3           CPL     C
+   \   000015   E4           CLR     A
+   \   000016   33           RLC     A
+   \   000017   F9           MOV     R1,A
+   \   000018   80..         SJMP    ??Subroutine10_0
+   \   00001A                REQUIRE _A_P1
+   \   00001A                REQUIRE P1DIR
+    241          }
+    242          
+    243          //*************************************************
+    244          //◊÷Ω⁄∑¢ÀÕ≥Ã–Ú
+    245          //∑¢ÀÕc(ø…“‘ « ˝æ›“≤ø… «µÿ÷∑)£¨ÀÕÕÍ∫ÛΩ” ’¥””¶¥
+    246          //≤ªøº¬«¥””¶¥Œª
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    247          void SendData(unsigned char buffer)
+   \                     SendData:
+    248          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FF           MOV     R7,A
+    249            unsigned char BitCnt=8;//“ª◊÷Ω⁄8Œª
+    250            IIC_SDA_OUT();
+   \   000007   43FE40       ORL     0xfe,#0x40
+   \   00000A   7E08         MOV     R6,#0x8
+    251            do
+    252            {
+    253              Clr_IIC_SCL();
+   \                     ??SendData_0:
+   \   00000C   C297         CLR     0x90.7
+    254              Delay1us(10);
+   \   00000E                ; Setup parameters for call to function Delay1us
+   \   00000E   7A0A         MOV     R2,#0xa
+   \   000010   7B00         MOV     R3,#0x0
+   \   000012   12....       LCALL   ??Delay1us?relay
+    255              if((buffer&0x80)==0) //≈–∂œ◊Ó∏ﬂŒª «0ªπ «1
+   \   000015   EF           MOV     A,R7
+   \   000016   A2E7         MOV     C,0xE0 /* A   */.7
+   \   000018   4004         JC      ??SendData_1
+    256                Clr_IIC_SDA();
+   \   00001A   C296         CLR     0x90.6
+   \   00001C   8002         SJMP    ??SendData_2
+    257              else
+    258                Set_IIC_SDA();  
+   \                     ??SendData_1:
+   \   00001E   D296         SETB    0x90.6
+    259              Set_IIC_SCL();
+   \                     ??SendData_2:
+   \   000020   D297         SETB    0x90.7
+    260              Delay1us(10);
+   \   000022                ; Setup parameters for call to function Delay1us
+   \   000022   7A0A         MOV     R2,#0xa
+   \   000024   7B00         MOV     R3,#0x0
+   \   000026   12....       LCALL   ??Delay1us?relay
+    261              buffer=buffer<<1;//Ω´buffer÷–µƒ ˝æ›◊Û“∆“ªŒª
+   \   000029   EF           MOV     A,R7
+   \   00002A   C3           CLR     C
+   \   00002B   33           RLC     A
+   \   00002C   FF           MOV     R7,A
+    262              BitCnt--;
+    263            }
+    264            while(BitCnt);
+   \   00002D   1E           DEC     R6
+   \   00002E   EE           MOV     A,R6
+   \   00002F   70DB         JNZ     ??SendData_0
+    265            Clr_IIC_SCL();      
+   \   000031   C297         CLR     0x90.7
+    266          }
+   \   000033                REQUIRE ?Subroutine2
+   \   000033                REQUIRE _A_P1
+   \   000033                REQUIRE P1DIR
+   \   000033                ; // Fall through to label ?Subroutine2
+    267          
+    268          
+    269          //**************************************************
+    270          //◊÷Ω⁄Ω” ’≥Ã–Ú
+    271          //Ω” ’∆˜º˛¥´¿¥µƒ ˝æ›£¨¥À≥Ã–Ú”¶≈‰∫œ|÷˜”¶¥∫Ø ˝|i2c_ack_main() π”√
+    272          //return: uchar–Õ1◊÷Ω⁄
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    273          unsigned char ReceiveData(void)
+   \                     ReceiveData:
+    274          { 
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    275            unsigned char BitCnt=8,Data=0;
+   \   000005   7E00         MOV     R6,#0x0
+    276            Set_IIC_SDA();             //∂¡»Î ˝æ› …Ë÷√SDA ø⁄Œ™ ‰»Î
+   \   000007   D296         SETB    0x90.6
+    277            IIC_SDA_IN();
+   \   000009   53FEBF       ANL     0xfe,#0xbf
+   \   00000C   7F08         MOV     R7,#0x8
+    278            do
+    279            {
+    280              Clr_IIC_SCL();  
+   \                     ??ReceiveData_0:
+   \   00000E   C297         CLR     0x90.7
+    281              Delay1us(10);  
+   \   000010                ; Setup parameters for call to function Delay1us
+   \   000010   7A0A         MOV     R2,#0xa
+   \   000012   7B00         MOV     R3,#0x0
+   \   000014   12....       LCALL   ??Delay1us?relay
+    282              Data=Data<<1;   // ˝æ›◊Û“∆“ªŒª
+   \   000017   EE           MOV     A,R6
+   \   000018   C3           CLR     C
+   \   000019   33           RLC     A
+   \   00001A   FE           MOV     R6,A
+    283              BitCnt--;	  
+    284              Set_IIC_SCL();
+   \   00001B   D297         SETB    0x90.7
+    285              Delay1us(10); 
+   \   00001D                ; Setup parameters for call to function Delay1us
+   \   00001D   7A0A         MOV     R2,#0xa
+   \   00001F   7B00         MOV     R3,#0x0
+   \   000021   12....       LCALL   ??Delay1us?relay
+    286              if(READ_SDA()==1)
+   \   000024   E590         MOV     A,0x90
+   \   000026   1F           DEC     R7
+   \   000027   A2E6         MOV     C,0xE0 /* A   */.6
+   \   000029   5004         JNC     ??ReceiveData_1
+    287                Data = Data|0x01;  //µÕŒª÷√1
+   \   00002B   EE           MOV     A,R6
+   \   00002C   D2E0         SETB    0xE0 /* A   */.0
+   \   00002E   FE           MOV     R6,A
+    288              else
+    289                Data = Data&0x0fe; //µÕŒª«Â0	    
+    290            }
+    291            while(BitCnt);
+   \                     ??ReceiveData_1:
+   \   00002F   EF           MOV     A,R7
+   \   000030   70DC         JNZ     ??ReceiveData_0
+    292            Clr_IIC_SCL();  
+   \   000032   C297         CLR     0x90.7
+    293            return Data;
+   \   000034   EE           MOV     A,R6
+   \   000035   F9           MOV     R1,A
+   \   000036   80..         SJMP    ?Subroutine2
+   \   000038                REQUIRE _A_P1
+   \   000038                REQUIRE P1DIR
+    294          }
+    295          
+    296          //***************************************************
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    297          char WriteNByte(unsigned char sla,unsigned char *s,unsigned char n)
+   \                     WriteNByte:
+    298          {
+   \   000000   74F3         MOV     A,#-0xd
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 13
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 2,R1
+   \   000007   EA           MOV     A,R2
+   \   000008   FE           MOV     R6,A
+   \   000009   EB           MOV     A,R3
+   \   00000A   FF           MOV     R7,A
+   \   00000B   8C..         MOV     ?V0 + 4,R4
+    299            unsigned char i;
+    300            
+    301            I2C_Start();  //∆Ù∂ØI2C
+   \   00000D                ; Setup parameters for call to function I2C_Start
+   \   00000D   12....       LCALL   ??I2C_Start?relay
+    302            SendData(sla);//∑¢ÀÕ∆˜º˛µÿ÷∑
+   \   000010                ; Setup parameters for call to function SendData
+   \   000010   A9..         MOV     R1,?V0 + 2
+   \   000012   12....       LCALL   ??Subroutine12_0 & 0xFFFF
+    303            if(!Test_Ack())
+   \                     ??CrossCallReturnLabel_12:
+   \   000015   700A         JNZ     ??WriteNByte_0
+    304            {	
+    305              WR_Flag = 1;
+   \                     ??WriteNByte_1:
+   \   000017   90....       MOV     DPTR,#WR_Flag
+   \   00001A   7401         MOV     A,#0x1
+   \   00001C   F0           MOVX    @DPTR,A
+    306              return(0);
+   \   00001D   7900         MOV     R1,#0x0
+   \   00001F   801F         SJMP    ??WriteNByte_2
+    307            }
+    308            for(i=0;i<n;i++)//–¥»Î8◊÷Ω⁄ ˝æ›
+   \                     ??WriteNByte_0:
+   \   000021   75..00       MOV     ?V0 + 3,#0x0
+   \   000024   800E         SJMP    ??WriteNByte_3
+    309            {
+    310              SendData(*(s+i));
+   \                     ??WriteNByte_4:
+   \   000026                ; Setup parameters for call to function SendData
+   \   000026   85....       MOV     ?V0 + 0,?V0 + 3
+   \   000029   12....       LCALL   ?Subroutine8 & 0xFFFF
+    311              if(!Test_Ack())
+    312              {
+    313                WR_Flag = 1;
+    314                return(0);
+    315              }
+    316            }
+   \                     ??CrossCallReturnLabel_2:
+   \   00002C   E0           MOVX    A,@DPTR
+   \   00002D   12....       LCALL   ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_10:
+   \   000030   60E5         JZ      ??WriteNByte_1
+   \   000032   05..         INC     ?V0 + 3
+   \                     ??WriteNByte_3:
+   \   000034   E5..         MOV     A,?V0 + 3
+   \   000036   C3           CLR     C
+   \   000037   95..         SUBB    A,?V0 + 4
+   \   000039   40EB         JC      ??WriteNByte_4
+    317            I2C_Stop();
+   \   00003B                ; Setup parameters for call to function I2C_Stop
+   \   00003B   12....       LCALL   ??I2C_Stop?relay
+    318            return(1);
+   \   00003E   7901         MOV     R1,#0x1
+   \                     ??WriteNByte_2:
+   \   000040   7F05         MOV     R7,#0x5
+   \   000042   02....       LJMP    ?BANKED_LEAVE_XDATA
+    319          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine8:
+   \   000000   EE           MOV     A,R6
+   \   000001   25..         ADD     A,?V0 + 0
+   \   000003   F582         MOV     DPL,A
+   \   000005   EF           MOV     A,R7
+   \   000006   3400         ADDC    A,#0x0
+   \   000008   F583         MOV     DPH,A
+   \   00000A   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine7:
+   \   000000   F9           MOV     R1,A
+   \   000001                REQUIRE ??Subroutine12_0
+   \   000001                ; // Fall through to label ??Subroutine12_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine12_0:
+   \   000000   12....       LCALL   ??SendData?relay
+   \   000003                ; Setup parameters for call to function Test_Ack
+   \   000003                ; Setup parameters for call to function Test_Ack
+   \   000003                ; Setup parameters for call to function Test_Ack
+   \   000003   12....       LCALL   ??Test_Ack?relay
+   \   000006   E9           MOV     A,R1
+   \   000007   22           RET
+    320          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    321          char ReadNByte(unsigned char Sal, unsigned char *p,unsigned char n)
+   \                     ReadNByte:
+    322          {
+   \   000000   74F1         MOV     A,#-0xf
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 15
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 4,R1
+   \   000007   EA           MOV     A,R2
+   \   000008   FE           MOV     R6,A
+   \   000009   EB           MOV     A,R3
+   \   00000A   FF           MOV     R7,A
+   \   00000B   8C..         MOV     ?V0 + 5,R4
+    323            unsigned char i;
+    324            I2C_Start();    // ∆Ù∂ØI2C
+   \   00000D                ; Setup parameters for call to function I2C_Start
+   \   00000D   12....       LCALL   ??I2C_Start?relay
+    325            SendData((Sal)| 0x01); //∑¢ÀÕ∆˜º˛µÿ÷∑
+   \   000010                ; Setup parameters for call to function SendData
+   \   000010   7401         MOV     A,#0x1
+   \   000012   45..         ORL     A,?V0 + 4
+   \   000014   12....       LCALL   ?Subroutine7 & 0xFFFF
+    326            if(!Test_Ack())
+   \                     ??CrossCallReturnLabel_11:
+   \   000017   700A         JNZ     ??ReadNByte_0
+    327            {
+    328            	WR_Flag = 1;
+   \   000019   90....       MOV     DPTR,#WR_Flag
+   \   00001C   7401         MOV     A,#0x1
+   \   00001E   F0           MOVX    @DPTR,A
+    329          	return(0);
+   \   00001F   7900         MOV     R1,#0x0
+   \   000021   805A         SJMP    ??ReadNByte_1
+    330            }
+    331            Delay1us(10);  
+   \                     ??ReadNByte_0:
+   \   000023                ; Setup parameters for call to function Delay1us
+   \   000023   7A0A         MOV     R2,#0xa
+   \   000025   7B00         MOV     R3,#0x0
+   \   000027   12....       LCALL   ??Delay1us?relay
+    332            Delay1us(10);
+   \   00002A                ; Setup parameters for call to function Delay1us
+   \   00002A   7A0A         MOV     R2,#0xa
+   \   00002C   7B00         MOV     R3,#0x0
+   \   00002E   12....       LCALL   ??Delay1us?relay
+    333            Delay1us(10); // —” ± ±º‰±ÿ–Î¥Û”⁄30us ÷ª“™¥Û”⁄ 30us “‘…œµƒ÷µ∂ºø…“‘ µ´ «◊Ó∫√≤ª“™Ã´≥§ £¨≤‚ ‘ ±£¨ ‘π˝25MS∂ºOK£° 
+   \   000031                ; Setup parameters for call to function Delay1us
+   \   000031   7A0A         MOV     R2,#0xa
+   \   000033   7B00         MOV     R3,#0x0
+   \   000035   12....       LCALL   ??Delay1us?relay
+    334                  
+    335            for(i=0;i<n-1;i++)  //∂¡»°◊÷Ω⁄ ˝æ›
+   \   000038   75..00       MOV     ?V0 + 6,#0x0
+   \   00003B   800D         SJMP    ??ReadNByte_2
+    336            {
+    337               *(p+i)=ReceiveData(); //∂¡»° ˝æ›
+   \                     ??ReadNByte_3:
+   \   00003D                ; Setup parameters for call to function ReceiveData
+   \   00003D   12....       LCALL   ??ReceiveData?relay
+   \   000040   12....       LCALL   ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   000043   E9           MOV     A,R1
+   \   000044   F0           MOVX    @DPTR,A
+    338               Ack(); 
+   \   000045                ; Setup parameters for call to function Ack
+   \   000045   12....       LCALL   ??Ack?relay
+    339            }
+   \   000048   05..         INC     ?V0 + 6
+   \                     ??ReadNByte_2:
+   \   00004A   85....       MOV     ?V0 + 0,?V0 + 6
+   \   00004D   85....       MOV     ?V0 + 2,?V0 + 5
+   \   000050   E5..         MOV     A,?V0 + 2
+   \   000052   24FF         ADD     A,#-0x1
+   \   000054   F8           MOV     R0,A
+   \   000055   E4           CLR     A
+   \   000056   34FF         ADDC    A,#-0x1
+   \   000058   F9           MOV     R1,A
+   \   000059   C3           CLR     C
+   \   00005A   E5..         MOV     A,?V0 + 0
+   \   00005C   98           SUBB    A,R0
+   \   00005D   E4           CLR     A
+   \   00005E   99           SUBB    A,R1
+   \   00005F   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   000061   65D0         XRL     A,PSW
+   \   000063   33           RLC     A
+   \   000064   40D7         JC      ??ReadNByte_3
+    340            *(p+n-1)=ReceiveData();        
+   \   000066                ; Setup parameters for call to function ReceiveData
+   \   000066   12....       LCALL   ??ReceiveData?relay
+   \   000069   E9           MOV     A,R1
+   \   00006A   C0E0         PUSH    A
+   \   00006C   85....       MOV     ?V0 + 0,?V0 + 5
+   \   00006F   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   000072   D0E0         POP     A
+   \   000074   F0           MOVX    @DPTR,A
+    341            NoAck();
+   \   000075                ; Setup parameters for call to function NoAck
+   \   000075   12....       LCALL   ??NoAck?relay
+    342            I2C_Stop(); 
+   \   000078                ; Setup parameters for call to function I2C_Stop
+   \   000078   12....       LCALL   ??I2C_Stop?relay
+    343            return(1);	 
+   \   00007B   7901         MOV     R1,#0x1
+   \                     ??ReadNByte_1:
+   \   00007D   7F07         MOV     R7,#0x7
+   \   00007F   02....       LJMP    ?BANKED_LEAVE_XDATA
+    344          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   EE           MOV     A,R6
+   \   000001   25..         ADD     A,?V0 + 0
+   \   000003   F8           MOV     R0,A
+   \   000004   EF           MOV     A,R7
+   \   000005   3400         ADDC    A,#0x0
+   \   000007   F9           MOV     R1,A
+   \   000008   E8           MOV     A,R0
+   \   000009   24FF         ADD     A,#-0x1
+   \   00000B   F582         MOV     DPL,A
+   \   00000D   E9           MOV     A,R1
+   \   00000E   34FF         ADDC    A,#-0x1
+   \   000010   F583         MOV     DPH,A
+   \   000012   22           RET
+    345          
+    346          ///º∆À„CRC–£—È¬Î	
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    347          unsigned int CRC16(unsigned char *ptr, unsigned char len)
+   \                     CRC16:
+    348          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    349             unsigned int crc=0xffff;
+   \   000005   7CFF         MOV     R4,#-0x1
+   \   000007   7DFF         MOV     R5,#-0x1
+    350             unsigned char i;
+    351             while(len--)
+   \                     ??CRC16_0:
+   \   000009   E9           MOV     A,R1
+   \   00000A   FE           MOV     R6,A
+   \   00000B   74FF         MOV     A,#-0x1
+   \   00000D   2E           ADD     A,R6
+   \   00000E   19           DEC     R1
+   \   00000F   04           INC     A
+   \   000010   602E         JZ      ??CRC16_1
+    352             {
+    353                 crc ^=*ptr++;
+   \   000012   8A82         MOV     DPL,R2
+   \   000014   8B83         MOV     DPH,R3
+   \   000016   E0           MOVX    A,@DPTR
+   \   000017   6C           XRL     A,R4
+   \   000018   FC           MOV     R4,A
+   \   000019   A3           INC     DPTR
+   \   00001A   AA82         MOV     R2,DPL
+   \   00001C   AB83         MOV     R3,DPH
+    354                 for(i=0;i<8;i++)
+   \   00001E   7808         MOV     R0,#0x8
+    355          	   {
+    356          	       if(crc & 0x1)
+   \                     ??CRC16_2:
+   \   000020   EC           MOV     A,R4
+   \   000021   A2E0         MOV     C,0xE0 /* A   */.0
+   \   000023   ED           MOV     A,R5
+   \   000024   500E         JNC     ??CRC16_3
+    357          		   {
+    358          		      crc>>=1;
+    359          			  crc^=0xa001;
+   \   000026   C3           CLR     C
+   \   000027   13           RRC     A
+   \   000028   FD           MOV     R5,A
+   \   000029   EC           MOV     A,R4
+   \   00002A   13           RRC     A
+   \   00002B   6401         XRL     A,#0x1
+   \   00002D   FC           MOV     R4,A
+   \   00002E   ED           MOV     A,R5
+   \   00002F   64A0         XRL     A,#0xa0
+   \   000031   FD           MOV     R5,A
+   \   000032   8006         SJMP    ??CRC16_4
+    360          		   }
+    361          		   else
+    362          		   {
+    363          		      crc>>=1;
+   \                     ??CRC16_3:
+   \   000034   C3           CLR     C
+   \   000035   13           RRC     A
+   \   000036   FD           MOV     R5,A
+   \   000037   EC           MOV     A,R4
+   \   000038   13           RRC     A
+   \   000039   FC           MOV     R4,A
+    364          		   }
+    365          	   }
+   \                     ??CRC16_4:
+   \   00003A   18           DEC     R0
+   \   00003B   E8           MOV     A,R0
+   \   00003C   60CB         JZ      ??CRC16_0
+   \   00003E   80E0         SJMP    ??CRC16_2
+    366             }
+    367             return crc;
+   \                     ??CRC16_1:
+   \   000040   EC           MOV     A,R4
+   \   000041   FA           MOV     R2,A
+   \   000042   ED           MOV     A,R5
+   \   000043   FB           MOV     R3,A
+   \   000044                REQUIRE ?Subroutine3
+   \   000044                ; // Fall through to label ?Subroutine3
+    368          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   7F02         MOV     R7,#0x2
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+    369          ///ºÏ≤‚CRC–£—È¬Î «∑Ò’˝»∑
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    370          unsigned char CheckCRC(unsigned char *ptr,unsigned char len)
+   \                     CheckCRC:
+    371          {
+   \   000000   74F5         MOV     A,#-0xb
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   89..         MOV     ?V0 + 2,R1
+    372            unsigned int crc;
+    373          	crc=(unsigned int)CRC16(ptr,len-2);
+   \   00000B                ; Setup parameters for call to function CRC16
+   \   00000B   19           DEC     R1
+   \   00000C   19           DEC     R1
+   \   00000D   12....       LCALL   ??CRC16?relay
+    374          	if(ptr[len-1]==(crc>>8) && ptr[len-2]==(crc & 0x00ff))
+   \   000010   85....       MOV     ?V0 + 0,?V0 + 2
+   \   000013   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   000016   E0           MOVX    A,@DPTR
+   \   000017   C0E0         PUSH    A
+   \   000019   EB           MOV     A,R3
+   \   00001A   F8           MOV     R0,A
+   \   00001B   D0E0         POP     A
+   \   00001D   68           XRL     A,R0
+   \   00001E   7014         JNZ     ??CheckCRC_0
+   \   000020   EE           MOV     A,R6
+   \   000021   25..         ADD     A,?V0 + 0
+   \   000023   24FE         ADD     A,#-0x2
+   \   000025   F582         MOV     DPL,A
+   \   000027   E9           MOV     A,R1
+   \   000028   34FF         ADDC    A,#-0x1
+   \   00002A   F583         MOV     DPH,A
+   \   00002C   E0           MOVX    A,@DPTR
+   \   00002D   6A           XRL     A,R2
+   \   00002E   7004         JNZ     ??CheckCRC_0
+    375          	{
+    376          	    return 0xff;
+   \   000030   79FF         MOV     R1,#-0x1
+   \   000032   8002         SJMP    ??CheckCRC_1
+    377          	}
+    378          	else
+    379          	{
+    380          	   return 0x0;
+   \                     ??CheckCRC_0:
+   \   000034   7900         MOV     R1,#0x0
+   \                     ??CheckCRC_1:
+   \   000036   7F03         MOV     R7,#0x3
+   \   000038   02....       LJMP    ?BANKED_LEAVE_XDATA
+    381          	}
+    382          }
+    383          
+    384          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    385          void Waken(void)
+   \                     Waken:
+    386          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    387            I2C_Start();       // ∆Ù∂ØI2C
+   \   000004                ; Setup parameters for call to function I2C_Start
+   \   000004   12....       LCALL   ??I2C_Start?relay
+    388            SendData(IIC_Add); // ∑¢ÀÕ∆˜º˛µÿ÷∑
+   \   000007                ; Setup parameters for call to function SendData
+   \   000007   79B8         MOV     R1,#-0x48
+   \   000009   12....       LCALL   ??SendData?relay
+    389            Test_Ack();	       // ªΩ–—÷∏¡Ó ± ¥´∏–∆˜≤ªª·ªÿACK µ´ «µ⁄“ª∂®“™∑¢ºÏ≤‚ACKµƒ ±÷” ∑Ò‘Úª·≥ˆ¥Ì
+   \   00000C                ; Setup parameters for call to function Test_Ack
+   \   00000C   12....       LCALL   ??Test_Ack?relay
+    390            delay_ms(2);       // ÷¡…Ÿ—” ±1∏ˆMs	Àµ√˜ È¿Ô£¨”–∏ˆ◊Ó¥Û÷µ £¨ µº µ±÷– ƒ„÷ª“™¥Û”⁄1MS
+   \   00000F                ; Setup parameters for call to function delay_ms
+   \   00000F   7A02         MOV     R2,#0x2
+   \   000011   7B00         MOV     R3,#0x0
+   \   000013   12....       LCALL   ??delay_ms?relay
+    391            I2C_Stop();	
+   \   000016                ; Setup parameters for call to function I2C_Stop
+   \   000016   12....       LCALL   ??I2C_Stop?relay
+    392          }
+   \   000019   02....       LJMP    ??Subroutine10_0 & 0xFFFF
+    393          
+    394          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    395          void Get_Temp(uint8 *temp,uint8 *humi)
+   \                     Get_Temp:
+    396          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   8C..         MOV     ?V0 + 0,R4
+   \   00000B   8D..         MOV     ?V0 + 1,R5
+    397            WR_Flag = 0;
+   \   00000D   90....       MOV     DPTR,#WR_Flag
+   \   000010   E4           CLR     A
+   \   000011   F0           MOVX    @DPTR,A
+    398            Waken();	  // ªΩ–—¥´∏–∆˜
+   \   000012                ; Setup parameters for call to function Waken
+   \   000012   12....       LCALL   ??Waken?relay
+    399            //∑¢ÀÕ∂¡÷∏¡Ó
+    400            WriteNByte(IIC_Add,IIC_CMD,3); 
+   \   000015                ; Setup parameters for call to function WriteNByte
+   \   000015   7C03         MOV     R4,#0x3
+   \   000017   7A..         MOV     R2,#IIC_CMD & 0xff
+   \   000019   7B..         MOV     R3,#(IIC_CMD >> 8) & 0xff
+   \   00001B   79B8         MOV     R1,#-0x48
+   \   00001D   12....       LCALL   ??WriteNByte?relay
+    401            //∑¢ÀÕ∂¡»°ªÚ–¥ ˝æ›√¸¡Ó∫Û£¨÷¡…Ÿµ»¥˝2MS£®∏¯ÃΩÕ∑∑µªÿ ˝æ›◊˜ ±º‰◊º±∏£©
+    402            delay_ms(2);    
+   \   000020                ; Setup parameters for call to function delay_ms
+   \   000020   7A02         MOV     R2,#0x2
+   \   000022   7B00         MOV     R3,#0x0
+   \   000024   12....       LCALL   ??delay_ms?relay
+    403            //∂¡∑µªÿ ˝æ›
+    404            ReadNByte(IIC_Add,Buffer,8);
+   \   000027                ; Setup parameters for call to function ReadNByte
+   \   000027   7C08         MOV     R4,#0x8
+   \   000029   7A..         MOV     R2,#Buffer & 0xff
+   \   00002B   7B..         MOV     R3,#(Buffer >> 8) & 0xff
+   \   00002D   79B8         MOV     R1,#-0x48
+   \   00002F   12....       LCALL   ??ReadNByte?relay
+    405            
+    406            Set_IIC_SCL();
+   \   000032   D297         SETB    0x90.7
+    407            Set_IIC_SDA();//»∑»œ Õ∑≈◊‹œﬂ
+   \   000034   D296         SETB    0x90.6
+    408            
+    409            if(WR_Flag == 0)
+   \   000036   90....       MOV     DPTR,#WR_Flag
+   \   000039   E0           MOVX    A,@DPTR
+   \   00003A   702C         JNZ     ??Get_Temp_0
+    410            {
+    411              if(CheckCRC(Buffer,8))
+   \   00003C                ; Setup parameters for call to function CheckCRC
+   \   00003C   7908         MOV     R1,#0x8
+   \   00003E   7A..         MOV     R2,#Buffer & 0xff
+   \   000040   7B..         MOV     R3,#(Buffer >> 8) & 0xff
+   \   000042   12....       LCALL   ??CheckCRC?relay
+   \   000045   E9           MOV     A,R1
+   \   000046   6020         JZ      ??Get_Temp_0
+    412              { 
+    413                *humi = (Buffer[2]*256+Buffer[3])/10;
+   \   000048   90....       MOV     DPTR,#Buffer + 2
+   \   00004B   12....       LCALL   ?Subroutine9 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   00004E   12....       LCALL   ?S_DIV_MOD
+   \   000051   E8           MOV     A,R0
+   \   000052   85..82       MOV     DPL,?V0 + 0
+   \   000055   85..83       MOV     DPH,?V0 + 1
+   \   000058   F0           MOVX    @DPTR,A
+    414                *temp = (Buffer[4]*256+Buffer[5])/10;	   
+   \   000059   90....       MOV     DPTR,#Buffer + 4
+   \   00005C   12....       LCALL   ?Subroutine9 & 0xFFFF
+    415              }
+    416            }    
+   \                     ??CrossCallReturnLabel_5:
+   \   00005F   12....       LCALL   ?S_DIV_MOD
+   \   000062   E8           MOV     A,R0
+   \   000063   8E82         MOV     DPL,R6
+   \   000065   8F83         MOV     DPH,R7
+   \   000067   F0           MOVX    @DPTR,A
+    417          }
+   \                     ??Get_Temp_0:
+   \   000068   02....       LJMP    ?Subroutine3 & 0xFFFF
+   \   00006B                REQUIRE _A_P1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine9:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F9           MOV     R1,A
+   \   000002   A3           INC     DPTR
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   F8           MOV     R0,A
+   \   000005   7A0A         MOV     R2,#0xa
+   \   000007   7B00         MOV     R3,#0x0
+   \   000009   22           RET
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for IIC_CMD>`:
+   \   000000   03           DB 3
+   \   000001   00           DB 0
+   \   000002   04           DB 4
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_Config?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_Config
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_SDA_IN?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_SDA_IN
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_SDA_OUT?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_SDA_OUT
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??MicroWait?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    MicroWait
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Delay1us?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Delay1us
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??delay_ms?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    delay_ms
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AM232XX_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AM232XX_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??I2C_Start?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    I2C_Start
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??I2C_Stop?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    I2C_Stop
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Ack?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Ack
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??NoAck?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    NoAck
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Test_Ack?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Test_Ack
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SendData?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SendData
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??ReceiveData?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ReceiveData
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??WriteNByte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    WriteNByte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??ReadNByte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ReadNByte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??CRC16?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    CRC16
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??CheckCRC?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    CheckCRC
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Waken?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Waken
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Get_Temp?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Get_Temp
+    418          
+    419          
+
+   Maximum stack usage in bytes:
+
+     Function         ISTACK PSTACK XSTACK
+     --------         ------ ------ ------
+     AM232XX_Init         2      0      0
+       -> IIC_Config      4      0      0
+     Ack                  2      0     15
+       -> Delay1us        4      0      0
+       -> Delay1us        4      0      0
+     CRC16                0      0     21
+     CheckCRC             1      0     21
+       -> CRC16           0      0     22
+     Delay1us             0      0     24
+       -> MicroWait       0      0     18
+     Get_Temp             1      0     10
+       -> Waken           0      0     20
+       -> WriteNByte      0      0     20
+       -> delay_ms        0      0     20
+       -> ReadNByte       0      0     20
+       -> CheckCRC        0      0     20
+     I2C_Start            2      0     15
+       -> Delay1us        4      0      0
+       -> Delay1us        4      0      0
+     I2C_Stop             2      0     15
+       -> Delay1us        4      0      0
+       -> Delay1us        4      0      0
+     IIC_Config           0      0      0
+     IIC_SDA_IN           0      0      0
+     IIC_SDA_OUT          0      0      0
+     MicroWait            0      0      9
+     NoAck                2      0     15
+       -> Delay1us        4      0      0
+       -> Delay1us        4      0      0
+     ReadNByte            1      0     25
+       -> I2C_Start       0      0     30
+       -> SendData        0      0     30
+       -> Test_Ack        0      0     30
+       -> Delay1us        0      0     30
+       -> Delay1us        0      0     30
+       -> Delay1us        0      0     30
+       -> ReceiveData     0      0     30
+       -> Ack             0      0     30
+       -> ReceiveData     0      0     30
+       -> NoAck           0      0     30
+       -> I2C_Stop        0      0     30
+     ReceiveData          0      0     24
+       -> Delay1us        0      0     18
+       -> Delay1us        0      0     18
+     SendData             0      0     24
+       -> Delay1us        0      0     18
+       -> Delay1us        0      0     18
+     Test_Ack             2      0     15
+       -> Delay1us        4      0      0
+       -> Delay1us        4      0      0
+     Waken                2      0     10
+       -> I2C_Start       4      0      0
+       -> SendData        4      0      0
+       -> Test_Ack        4      0      0
+       -> delay_ms        4      0      0
+       -> I2C_Stop        4      0      0
+     WriteNByte           0      0     23
+       -> I2C_Start       0      0     26
+       -> SendData        0      0     26
+       -> Test_Ack        0      0     26
+       -> SendData        0      0     26
+       -> Test_Ack        0      0     26
+       -> I2C_Stop        0      0     26
+     delay_ms             0      0     19
+       -> MicroWait       0      0     18
+
+
+   Segment part sizes:
+
+     Function/Label             Bytes
+     --------------             -----
+     _A_P1                         1
+     P1SEL                         1
+     P1DIR                         1
+     IIC_CMD                       3
+     Buffer                        8
+     WR_Flag                       1
+     IIC_Config                    9
+     ?Subroutine1                  6
+     IIC_SDA_IN                    6
+     IIC_SDA_OUT                   2
+     MicroWait                    24
+     Delay1us                     23
+     ?Subroutine2                  5
+     delay_ms                     46
+     AM232XX_Init                 11
+     ?Subroutine0                  2
+     ??Subroutine10_0              7
+     I2C_Start                    27
+     ?Subroutine4                  4
+     I2C_Stop                     14
+     ??Subroutine11_0             17
+     Ack                          16
+     ?Subroutine5                  2
+     NoAck                        16
+     Test_Ack                     26
+     SendData                     51
+     ReceiveData                  56
+     WriteNByte                   69
+     ?Subroutine8                 11
+     ?Subroutine7                  1
+     ??Subroutine12_0              8
+     ReadNByte                   130
+     ?Subroutine6                 19
+     CRC16                        68
+     ?Subroutine3                  5
+     CheckCRC                     59
+     Waken                        28
+     Get_Temp                    107
+     ?Subroutine9                 10
+     ?<Initializer for IIC_CMD>    3
+     ??IIC_Config?relay            6
+     ??IIC_SDA_IN?relay            6
+     ??IIC_SDA_OUT?relay           6
+     ??MicroWait?relay             6
+     ??Delay1us?relay              6
+     ??delay_ms?relay              6
+     ??AM232XX_Init?relay          6
+     ??I2C_Start?relay             6
+     ??I2C_Stop?relay              6
+     ??Ack?relay                   6
+     ??NoAck?relay                 6
+     ??Test_Ack?relay              6
+     ??SendData?relay              6
+     ??ReceiveData?relay           6
+     ??WriteNByte?relay            6
+     ??ReadNByte?relay             6
+     ??CRC16?relay                 6
+     ??CheckCRC?relay              6
+     ??Waken?relay                 6
+     ??Get_Temp?relay              6
+
+ 
+ 885 bytes in segment BANKED_CODE
+ 120 bytes in segment BANK_RELAYS
+   3 bytes in segment SFR_AN
+   3 bytes in segment XDATA_I
+   3 bytes in segment XDATA_ID
+   9 bytes in segment XDATA_Z
+ 
+ 1 008 bytes of CODE  memory
+     0 bytes of DATA  memory (+ 3 bytes shared)
+    12 bytes of XDATA memory
+
+Errors: none
+Warnings: none
