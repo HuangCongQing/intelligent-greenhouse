@@ -1,6 +1,8 @@
 # intelligent-greenhous
 物联网实验（监控 20118（秋））
-
+温湿度传感器采集实验
+二氧化碳传感器采集实验
+土壤温湿度传感器采集实验
 
 * [Eclipse+ADT+Android SDK 搭建安卓开发环境](http://www.cnblogs.com/Li-Cheng/p/4335418.html)
 
