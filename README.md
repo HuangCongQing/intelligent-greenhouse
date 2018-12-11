@@ -7,7 +7,7 @@
 ### Tips
 * 文件夹“HumiTemp_Heater”，放在Zigbee协议栈中【C:\Texas Instruments\ZStack-CC2530-2.4.0-1.4.0\Projects\zstack\Samples】
 * apk在bin文件夹里
-* 小数点&&耦合关系
+* 2位小数点&&耦合关系
 * java数据结构，数据类型结构
 ### 软件
 
